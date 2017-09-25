@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
+
+body {
+	margin: 0 auto;
+	font-size: 16px;
+	font-family: "Rubik", "Helvetica", "Arial", sans-serif;
+	background-color: white;
+	overflow-x: hidden;
+}
+
+::-moz-selection {
+    color: inherit;
+    background: #e4e4e4;
+}
+
+::selection {
+    color: inherit;
+    background: #e4e4e4;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+	color: black;
+	text-decoration: none;
+	transition: color .25s ease-in-out;
+}
+
+a:hover {
+	color: #aaa;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+	text-transform: capitalize;
+	font-weight: 400;
+}
+
+.head {
+	font-size: 2.5em;
+}
+
+.subhead {
+	font-size: 2em;
+}
+
+.card {
+	background-color: white;
+	transition: box-shadow .1s ease-in-out !important;
+	box-shadow: 0px 1px 2px 1px #bbb;
+	padding: 20px;
+	border: 1px solid #bbb;
+}
+
+.card:hover {
+	box-shadow: 0px 2px 7px 1px #999;
+	border: 1px solid #999;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+ul {
+	-webkit-padding-start: 0px;
+	padding-left: 0px;
+}
+
+.mobile-splash {
+	display: none;
+	height: 750px;
+	background-color: white;
+	background: repeating-linear-gradient(
+		180deg,
+		#fff,
+		150px,
+		white
+	);
+}
+
+.mobile-splash > div {
+	text-align: center;
+	font-size: 3em;
+	line-height: .75;
+}
+
+.mobile-splash > div > a > span {
+	color: #aaa;
+	font-size: .33em;
+}
+
+.mobile-splash > div > a > i {
+	color: #aaa;
+}
+
+.mobile-splash a:visited,
+.mobile-splash a:hover {
+	color: black;
+}
+
+.section-wrap {
+	padding: 30px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.header-section {
+	background-color: white;
+}
+
+.about-section {
+	background: repeating-linear-gradient( 360deg, #e2e2e2, white );
+}
+
+.portfolio-section {
+	background-color: #e2e2e2;
+}
+
+.contact-section {
+	background: repeating-linear-gradient( 360deg, white, #e2e2e2 );
+	margin-bottom: -2px;
+}
+
+footer {
+	background-color: white;
+	padding: 100px 0px 20px 0px;
+	text-align: center;
+	color: #bbb;
+	transition: color .25s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {}
+@media only screen and (max-width: 540px) {
+	.section-wrap {
+		padding: 20px;
+	}
+
+	#myCanvas {
+		display: none;
+	}
+
+	.mobile-splash {
+		display: flex;
+		justify-content: center;
+		padding-top: 300px;
+	}
+}

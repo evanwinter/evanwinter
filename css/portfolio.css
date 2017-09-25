@@ -1,0 +1,96 @@
+.projects {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* uncomment for autofill columns */
+	/*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+	grid-auto-rows: minmax(100px, auto);
+	grid-gap: 20px;
+}
+.code-project {
+	background-color: white;
+	border-bottom: 1px solid #ccc;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(100px, auto);
+	transition: box-shadow .1s ease-in-out;
+	padding: 0px;
+}
+
+.project-section > h1 {
+	text-transform: uppercase;
+}
+.project-section-one {
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 1px solid #f2f2f2;
+}
+.project-section-two {
+	padding: 20px;
+}
+
+.specs {
+	list-style-type: none;
+}
+.specs > li {
+	margin: 10px 0;
+}
+.technologies {
+	font-size: 1.5em;
+	color: #858585;
+}
+.code-project-links {
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;	
+}
+.code-project-link {
+	font-size: 1.35em;
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+}
+.demo-link,
+.source-link {
+	margin: 10px 0;
+	display: inline-block;
+}
+.demo-link > a,
+.source-link > a {
+	border: 1px solid black;
+	padding: 10px;
+	transition: none;
+}
+.demo-link > a:hover {
+	border: 1px solid #000;
+	background-color: #000;
+	color: white;
+}
+.source-link > a:hover {
+	border: 1px solid #000;
+	background-color: #000;
+	color: white;
+}
+@media only screen and (max-width: 1048px) {}
+@media only screen and (max-width: 991px) {}
+@media only screen and (max-width: 768px) {	
+	.grid {
+		grid-template-columns: 1fr;
+	}
+	.project-section-two > h1 {
+		font-size: 3em;
+	}
+}
+@media only screen and (max-width: 700px) {
+	/* ... */
+}
+@media only screen and (max-width: 607px) {
+	/* ... */
+}
+@media only screen and (max-width: 414px) {
+}
+@media only screen and (max-width: 360px) {
+}
