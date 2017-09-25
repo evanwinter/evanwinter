@@ -37,7 +37,7 @@ function getPosClick(e) {
 	context.beginPath();
 	context.moveTo(z,n);
 	context.lineTo(Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width), Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height));
-	context.strokeStyle="DARKRED";
+	context.strokeStyle="lightblue";
 	context.stroke();
 	z = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
 	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
