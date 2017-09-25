@@ -32,8 +32,28 @@
 </head>
 <body>
 <section class="header-section">
-	<?php include_once("data/analytics.php"); ?>
-	<?php include("navbar.html"); ?>
+	<!-- NAVBAR START-->
+    <nav id="nav-main" role="navigation">
+        <div class="nav-container">
+            <div class="nav-section nav-header">
+                <a href="#">
+                    <div id="header" class="anchor nav-item nav-brand"> evan winter </div>
+                </a>
+            </div>
+            <div class="nav-section nav-links">
+                <a href="#">
+                    <div id="about" class="anchor nav-item nav-link">about</div>
+                </a>
+                <a href="#">
+                    <div id="portfolio" class="anchor nav-item nav-link">portfolio</div>
+                </a>
+                <a href="#">
+                    <div id="contact" class="anchor nav-item nav-link">contact</div>
+                </a>
+            </div>
+        </div>
+    </nav><!-- .nav-main -->
+<!-- NAVBAR END --> 
 	<div id="canvas-container">
 		<canvas id="myCanvas" class="myCanvas" onmousemove="getPosHover(event)" onclick="getPosClick(event)" width="1048px" height="400px"></canvas>
 	</div>
