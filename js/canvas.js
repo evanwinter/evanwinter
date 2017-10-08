@@ -25,19 +25,17 @@ function getPosHover(e) {
 }
 
 function getPosClick(e) {
-
 	var rect = canvas.getBoundingClientRect();
 	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
 	if (z == null) {
 		z = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
 		n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
-
 	}
 	//otherwise draw from the previous point (x, y) to the new coordinates (e.clientX, e.clientY).
 	context.beginPath();
 	context.moveTo(z,n);
 	context.lineTo(Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width), Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height));
-	context.strokeStyle="lightblue";
+	context.strokeStyle="blue";
 	context.stroke();
 	z = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
 	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);

@@ -6,17 +6,13 @@ body {
 	background-color: white;
 	overflow-x: hidden;
 }
-a,
-a:visited,
-a:hover,
-a:focus,
-a:active {
-	color: black;
+a, a:visited, a:focus {
+	color: #aaa;
+	transition: all .2s ease-in-out;
 	text-decoration: none;
-	transition: color .25s ease-in-out;
 }
 a:hover {
-	color: #aaa;
+	color: #777;
 }
 h1, h2, h3, h4, h5 {
 	margin: 0;
@@ -26,9 +22,11 @@ h1, h2, h3, h4, h5 {
 }
 .head {
 	font-size: 2.5em;
+	text-shadow: 0.5px 0.5px #ccc;
 }
 .subhead {
 	font-size: 2em;
+	text-shadow: 0.5px 0.5px #ddd;
 }
 .card {
 	background-color: white;
@@ -38,8 +36,8 @@ h1, h2, h3, h4, h5 {
 	border: 1px solid #bbb;
 }
 .card:hover {
-	box-shadow: 0px 2px 7px 1px #999;
-	border: 1px solid #999;
+	box-shadow: 0px 2px 7px 1px #bbb;
+	border: 1px solid #aaa;
 }
 img {
 	max-width: 100%;
@@ -49,35 +47,8 @@ ul {
 	-webkit-padding-start: 0px;
 	padding-left: 0px;
 }
-.mobile-splash {
-	display: none;
-	height: 750px;
-	background-color: white;
-	background: repeating-linear-gradient(
-		180deg,
-		#fff,
-		150px,
-		white
-	);
-}
-.mobile-splash > div {
-	text-align: center;
-	font-size: 3em;
-	line-height: .75;
-}
-.mobile-splash > div > a > span {
-	color: #aaa;
-	font-size: .33em;
-}
-.mobile-splash > div > a > i {
-	color: #aaa;
-}
-.mobile-splash a:visited,
-.mobile-splash a:hover {
-	color: black;
-}
 .section-wrap {
-	padding: 30px;
+	padding-top: 30px;
 	width: 90%;
 	margin: 0 auto;
 }
@@ -91,31 +62,33 @@ ul {
 	background-color: white;
 }
 .about-section {
-	background: repeating-linear-gradient( 360deg, #e2e2e2, white );
+	background: repeating-linear-gradient( 360deg, #f2f2f2, white );
+	padding-top: 0px;
 }
 .portfolio-section {
-	background-color: #e2e2e2;
+	background-color: #f2f2f2;
 }
 .contact-section {
-	background: repeating-linear-gradient( 360deg, white, #e2e2e2 );
+	background: repeating-linear-gradient( 360deg, white, #f2f2f2 );
 	margin-bottom: -2px;
 }
 footer {
 	background-color: white;
-	padding: 100px 0px 20px 0px;
+	padding: 50px 0px 20px 0px;
 	text-align: center;
-	color: #bbb;
 	transition: color .25s ease-in-out;
 }
 @media only screen and (max-width: 768px) {}
 @media only screen and (max-width: 540px) {
 	.section-wrap {
-		padding: 20px;
+		/*padding: 20px;*/
 	}
-		#myCanvas {
+	
+	#myCanvas {
 		display: none;
 	}
-		.mobile-splash {
+	
+	.mobile-splash {
 		display: flex;
 		justify-content: center;
 		padding-top: 300px;
