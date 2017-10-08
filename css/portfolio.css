@@ -56,22 +56,13 @@
 	transition: none;
 	margin-right: 5px;
 	background-color: white;
-}
-.source-link > a {
-	background-color: white;
-	color: black;
-}
-.demo-link > a {
-	border-color: green;
-	color: green;
-}
-.source-link > a:hover {
 	background-color: black;
 	color: white;
 }
 .demo-link > a:hover {
 	background-color: green;
 	color: white;
+	border-color: green;
 }
 @media only screen and (max-width: 1048px) {}
 @media only screen and (max-width: 991px) {}
