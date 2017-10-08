@@ -1,5 +1,7 @@
-.projects {
+.portfolio-content {
 	max-width: 768px;
+}
+.projects {
 	margin: 0 auto;
 }
 .grid {
@@ -7,7 +9,6 @@
 	grid-template-columns: 1fr 1fr;
 	/* uncomment for autofill columns */
 	/*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-	/*grid-auto-rows: minmax(100px, auto);*/
 	grid-gap: 20px;
 }
 .code-project {
@@ -28,7 +29,7 @@
 }
 .technologies {
 	font-size: 1.5em;
-	color: #aaa;
+	color: #777;
 }
 .project-section {
 	margin: 2.5px 0;
@@ -72,7 +73,6 @@
 	background-color: green;
 	color: white;
 }
-
 @media only screen and (max-width: 1048px) {}
 @media only screen and (max-width: 991px) {}
 @media only screen and (max-width: 768px) {	

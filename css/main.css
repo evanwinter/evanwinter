@@ -48,15 +48,9 @@ ul {
 	padding-left: 0px;
 }
 .section-wrap {
-	padding-top: 30px;
+	padding-top: 50px;
 	width: 90%;
 	margin: 0 auto;
-}
-.section-heading {
-	font-size: 3em;
-	text-transform: uppercase;
-	margin-bottom: 20px;
-	text-align: center;
 }
 .header-section {
 	background-color: white;
@@ -80,10 +74,11 @@ footer {
 }
 @media only screen and (max-width: 768px) {}
 @media only screen and (max-width: 540px) {
-	.section-wrap {
-		/*padding: 20px;*/
-	}
 	
+	.section-wrap {
+		padding-top: 25px;
+	}
+
 	#myCanvas {
 		display: none;
 	}
