@@ -13,7 +13,6 @@
 }
 .code-project {
 	background-color: white;
-	border-radius: 2px;
 	transition: box-shadow .1s ease-in-out;
 	padding: 20px;
 	display: flex;
@@ -39,8 +38,7 @@
 	text-transform: uppercase;
 	font-size: 2em;
 }
-.project-section-body {
-}
+.project-section-body {}
 .project-section-footer {
 	display: flex;
 	flex-direction: row;
@@ -53,16 +51,19 @@
 	border: 1px solid black;
 	border-radius: 2px;
 	padding: 10px;
-	transition: none;
 	margin-right: 5px;
 	background-color: white;
 	background-color: black;
 	color: white;
+	box-shadow: 1px 1px 3px #aaa;
+	transition: box-shadow .2s ease-in-out, background-color .2s ease-in-out, border-color .2s ease-in-out;
 }
+
 .demo-link > a:hover {
 	background-color: green;
 	color: white;
 	border-color: green;
+	box-shadow: 1px 2px 5px #aaa;
 }
 @media only screen and (max-width: 1048px) {}
 @media only screen and (max-width: 991px) {}

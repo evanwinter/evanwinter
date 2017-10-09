@@ -4,3 +4,8 @@
 @import 'portfolio.css';
 @import 'aboutme.css';
 @import 'contact.css';
+
+:root{
+	--main-color: black;
+	--secondary-color: #aaa;
+}

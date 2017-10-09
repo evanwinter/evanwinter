@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
+
 body {
 	margin: 0 auto;
 	font-size: 16px;
@@ -30,14 +31,15 @@ h1, h2, h3, h4, h5 {
 }
 .card {
 	background-color: white;
-	transition: box-shadow .1s ease-in-out !important;
+	transition: box-shadow .1s ease-in-out !important, border-color .1s ease-in-out;
 	box-shadow: 0px 1px 2px 1px #ccc;
 	padding: 20px;
 	border: 1px solid #bbb;
+	border-radius: 2px;
 }
 .card:hover {
 	box-shadow: 0px 2px 7px 1px #bbb;
-	border: 1px solid #aaa;
+	border-color: #aaa;
 }
 img {
 	max-width: 100%;

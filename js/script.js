@@ -5,6 +5,5 @@ $(".js-anchor").click(function(e){
 });
 
 // $(".code-project").click(function(e){
-// 	console.log("click");
-// 	$(this).children('div').children('div').next('.project-section-body').slideToggle('fast');
+// 	$(this).children('div').next('.project-section-body').slideToggle('fast');
 // });
