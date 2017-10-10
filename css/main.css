@@ -13,7 +13,7 @@ a, a:visited, a:focus {
 	text-decoration: none;
 }
 a:hover {
-	color: #777;
+	color: slategray;
 }
 h1, h2, h3, h4, h5 {
 	margin: 0;
