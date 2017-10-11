@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700');
-
 body {
 	margin: 0 auto;
 	font-size: 16px;
@@ -58,36 +57,31 @@ ul {
 	background-color: white;
 }
 .about-section {
-	background: repeating-linear-gradient( 360deg, #f2f2f2, white );
+	background: repeating-linear-gradient( 360deg, #eee, white );
 	padding-top: 0px;
 }
 .portfolio-section {
-	background-color: #f2f2f2;
+	background-color: #eee;
 }
 .contact-section {
-	background: repeating-linear-gradient( 360deg, white, #f2f2f2 );
+	background: repeating-linear-gradient( 360deg, white, #eee );
 	margin-bottom: -2px;
 }
 footer {
 	background-color: white;
-	padding: 50px 0px 20px 0px;
+	margin-top: 100px;
+	padding: 30px;
+	font-size: .75em;
 	text-align: center;
 	transition: color .25s ease-in-out;
+	text-shadow: 0.5px 0.5px #ddd;
 }
 @media only screen and (max-width: 768px) {}
 @media only screen and (max-width: 540px) {
-	
 	.section-wrap {
 		padding-top: 25px;
 	}
-
 	#myCanvas {
 		display: none;
-	}
-	
-	.mobile-splash {
-		display: flex;
-		justify-content: center;
-		padding-top: 300px;
 	}
 }

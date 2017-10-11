@@ -26,7 +26,7 @@
 	margin: 10px 0;
 	line-height: 1.35;
 }
-.technologies {
+.subhead {
 	font-size: 1.5em;
 	color: #777;
 }
@@ -39,7 +39,7 @@
 	font-size: 2em;
 }
 .project-section-body {
-	text-shadow: 0.5px 0.5px #ccc;
+	text-shadow: 0.5px 0.5px #ddd;
 }
 .project-section-footer {
 	display: flex;
