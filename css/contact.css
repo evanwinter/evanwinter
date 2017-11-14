@@ -1,8 +1,5 @@
 .contact-content {
 	max-width: 768px;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 20px;
 }
 .contact-item {
 	text-transform: uppercase;
