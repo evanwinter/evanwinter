@@ -7,6 +7,8 @@ nav {
 	width: 100%;
 	background-color: white;
 	top: 0;
+	transition: top 0.2s ease-in-out;
+
 
 	box-shadow: 1px 1px 5px #aaa;
 }
@@ -54,6 +56,9 @@ nav a:active {
 .navbar-spacer {
 	height: 59px;
 }
+.hidden {
+	display: none;
+}
 @media only screen and (max-width: 1048px) {}
 @media only screen and (max-width: 991px) {}
 @media only screen and (max-width: 767px) {
@@ -72,6 +77,9 @@ nav a:active {
 @media only screen and (max-width: 540px) {
 	#header {
 		display: none;
+	}
+	.nav-up {
+	    top: -72px;
 	}
 }
 @media only screen and (max-width: 414px) {}

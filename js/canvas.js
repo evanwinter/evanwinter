@@ -41,4 +41,4 @@ function getPosClick(e) {
 	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
 }
 
-$("nav").css("border-bottom", "none");
+// $("nav").css("border-bottom", "none");
