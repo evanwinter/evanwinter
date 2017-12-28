@@ -23,6 +23,10 @@ setInterval(function() {
 
 function hasScrolled() {
     var st = $(this).scrollTop();
+
+    if ($(window).width > 700) {
+        console.log("full");
+    }
     
     if(Math.abs(lastScrollTop - st) <= delta)
         return;
