@@ -40,6 +40,9 @@
 .project-section-body {
 	text-shadow: 0.5px 0.5px #ddd;
 }
+.tags {
+	font-style: italic;
+}
 .project-section-footer {
 	display: flex;
 	flex-direction: row;
@@ -67,7 +70,6 @@
 }
 #all-projects > li {
 	background-color: white;
-	
 }
 @media only screen and (max-width: 1048px) {}
 @media only screen and (max-width: 991px) {}
