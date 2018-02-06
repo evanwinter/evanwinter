@@ -1,11 +1,213 @@
-@import 'main.css';
-@import 'navbar.css';
-@import 'canvas.css';
-@import 'portfolio.css';
-@import 'aboutme.css';
-@import 'contact.css';
+/*!
+ *  v1.0.0 (https://github.com/evanwinter/evanwinter.github.io#readme)
+ * Evan Winter
+ * Licensed under MIT
+ */
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-size: 16px;
+  font-family: system-ui, "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  overflow-x: hidden !important;
+  height: 1000px;
+  background-color: white; }
 
-:root{
-	--main-color: black;
-	--secondary-color: #aaa;
-}
+svg {
+  margin-left: 0.1rem; }
+
+img {
+  max-width: 100%; }
+
+button {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #212529;
+  background-color: white;
+  border: 1px solid #212529;
+  border-radius: 3px;
+  transition: box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
+  padding: 0.5rem 1rem;
+  margin: 0.25rem 0; }
+  button:hover {
+    cursor: pointer;
+    border-color: blue;
+    color: blue; }
+  @media (max-width: 540px) {
+    button {
+      width: 100%;
+      padding: 1rem;
+      display: block; } }
+
+a {
+  color: blue;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  font-weight: 500; }
+  a:hover {
+    border-bottom: 2px solid blue;
+    color: blue !important; }
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 0; }
+
+#back-to-top {
+  position: fixed;
+  display: none;
+  border-radius: 5px;
+  bottom: 1rem;
+  left: 1rem; }
+  #back-to-top:hover {
+    cursor: pointer; }
+  @media (max-width: 768px) {
+    #back-to-top {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center; } }
+
+.accent-element {
+  width: 100%;
+  height: 0.5rem;
+  margin: 3rem auto;
+  background-color: blue; }
+
+.section-heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding: 0; }
+
+#canvas-primary,
+#canvas-secondary {
+  background-color: black;
+  height: 400px;
+  width: 100%;
+  transition: height .25s ease-in-out; }
+
+#canvas-secondary {
+  height: 200px; }
+
+@media only screen and (max-width: 540px) {
+  #canvas-primary,
+  #canvas-secondary {
+    height: 0;
+    width: 100%; }
+  .masthead {
+    margin-bottom: 0rem; } }
+
+#about {
+  margin: 2.5rem 0; }
+  @media (max-width: 540px) {
+    #about {
+      margin: 1rem 0; } }
+  #about .summary {
+    margin: 1rem 0;
+    font-size: 2.5rem; }
+  #about .sub-summary {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 400; }
+  #about .contact-point {
+    padding: 1rem 2rem;
+    margin-right: 0.5rem; }
+  #about a:hover {
+    border-bottom-color: transparent; }
+  #about h2 {
+    color: #7e8b98; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1.5rem; }
+  @media (max-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1.25rem; } }
+  @media (max-width: 540px) {
+    .grid {
+      grid-template-columns: 1fr; } }
+
+.project {
+  margin-bottom: 1rem; }
+  .project .project-title,
+  .project .project-languages {
+    margin: 0;
+    padding: 0;
+    font-weight: 600; }
+  .project .project-title {
+    font-size: 1.75rem; }
+  .project .project-languages {
+    font-size: 1.25rem;
+    color: #7e8b98; }
+  .project ul {
+    list-style-type: none;
+    -webkit-padding-start: 0rem; }
+  .project li {
+    margin: 1rem 0; }
+  .project button {
+    margin: 0.25rem 0; }
+
+.project-img {
+  width: 100%; }
+
+.work-portfolio-link {
+  margin: 0 0 3rem 0;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%; }
+  .work-portfolio-link a:hover {
+    border-bottom-color: transparent; }
+  .work-portfolio-link button {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1.25rem;
+    border-width: 2px; }
+    .work-portfolio-link button:hover {
+      text-decoration: underline;
+      text-decoration-skip: ink; }
+  @media (max-width: 540px) {
+    .work-portfolio-link {
+      margin: 1rem 0; } }
+
+nav {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  background-color: white; }
+  nav a {
+    color: #212529;
+    font-weight: 700; }
+    nav a:hover {
+      border-bottom: 2px solid transparent; }
+
+.nav-container {
+  margin: 0 auto;
+  max-width: 85%; }
+
+.nav-links-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style-type: none; }
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end; }
+  .nav-links a {
+    font-size: 1.25rem;
+    padding: 1.5rem 1rem; }
+    @media (max-width: 540px) {
+      .nav-links a {
+        padding: 1rem 0.5rem; } }
+
+.nav-brand {
+  font-weight: 700;
+  font-size: 2rem; }
+  .nav-brand .nav-brand-image {
+    display: none; }
+  @media (max-width: 540px) {
+    .nav-brand .nav-brand-text {
+      display: none; }
+    .nav-brand .nav-brand-image {
+      display: inherit; } }

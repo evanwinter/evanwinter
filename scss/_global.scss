@@ -1,0 +1,116 @@
+body {
+	margin: 0 auto;
+	padding: 0;
+	font-size: 16px;
+	font-family: system-ui, "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+	overflow-x: hidden !important;
+	height: 1000px;
+	background-color: white;
+}
+
+svg {
+	margin-left: 0.1rem;
+}
+
+img {
+	max-width: 100%;
+}
+
+button {
+	font-size: 1rem;
+	font-weight: 400;
+	color: $dark;
+	background-color: white;
+	border: 1px solid $dark;
+	border-radius: 3px;
+	transition: box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
+	padding: 0.5rem 1rem;
+	margin: 0.25rem 0;
+	&:hover {
+		cursor: pointer;
+		border-color: $accent;
+		color: $accent;
+	}
+	@media (max-width: 540px) {
+		width: 100%;
+		padding: 1rem;
+		display: block;
+	}
+}
+
+a {
+	color: $accent;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	font-weight: 500;
+	&:hover {
+		border-bottom: 2px solid $accent;
+		color: $accent !important;
+	}
+}
+
+.container {
+	width: 85%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+#back-to-top {
+  position: fixed;
+  display: none;
+  border-radius: 5px;
+  bottom: 1rem;
+  left: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    button {}
+  }
+}
+
+.accent-element {
+	width: 100%;
+	height: 0.5rem;
+	margin: 3rem auto;
+	background-color: $accent;
+}
+
+.section-heading {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	padding: 0;
+}
+
+#canvas-primary,
+#canvas-secondary {
+	background-color: black;
+	height: 400px;
+	width: 100%;
+	transition: height .25s ease-in-out;
+}
+
+#canvas-secondary {
+	height: 200px
+}
+
+
+@media only screen and (max-width: 540px) {
+
+	#canvas-primary,
+	#canvas-secondary {
+		height: 0;
+		width: 100%;
+	}
+
+	.masthead {
+		margin-bottom: 0rem;
+	}
+}
+
+
+
+

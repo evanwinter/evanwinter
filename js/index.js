@@ -1,12 +1,14 @@
 // http://stackoverflow.com/questions/40064493/how-to-get-mouseover-to-draw-on-html-canvas-with-event-listener-with-my-code-ht/40065244
-var canvas = document.getElementById('myCanvas');
-var context = canvas.getContext('2d');
 var x = null;
 var y = null;
 var z = null;
 var n = null;
 
-function getPosHover(e) {
+function drawHover(e) {
+
+	var canvas = document.getElementById(e.path[0].id);
+	var context = canvas.getContext('2d');
+
 	var rect = canvas.getBoundingClientRect();
 	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
 	if (x == null) {
@@ -24,7 +26,10 @@ function getPosHover(e) {
 	y = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
 }
 
-function getPosClick(e) {
+function drawClick(e) {
+	
+	var canvas = document.getElementById(e.path[0].id);
+	var context = canvas.getContext('2d');
 	var rect = canvas.getBoundingClientRect();
 	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
 	if (z == null) {
@@ -41,4 +46,23 @@ function getPosClick(e) {
 	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
 }
 
-// $("nav").css("border-bottom", "none");
+$('#back-to-top').click(function() {
+	$("html, body").animate({ scrollTop: 0 }, "slow");
+})
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+		var backToTopBtn = document.getElementById('back-to-top');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopBtn.style.display = "flex";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+}
+
+$(".js-target").click(function(e){
+	var scrollTarget = this.className.split(' ')[1];
+	scrollTarget = "."+scrollTarget+"-section";
+	$("html, body").animate({ scrollTop: $(scrollTarget).offset().top-32 }, "slow");
+});
