@@ -6,7 +6,7 @@ var n = null;
 
 function drawHover(e) {
 
-	var canvas = document.getElementById(e.path[0].id);
+	var canvas = document.getElementById(e.target.id);
 	var context = canvas.getContext('2d');
 
 	var rect = canvas.getBoundingClientRect();
@@ -28,7 +28,7 @@ function drawHover(e) {
 
 function drawClick(e) {
 	
-	var canvas = document.getElementById(e.path[0].id);
+	var canvas = document.getElementById(e.target.id);
 	var context = canvas.getContext('2d');
 	var rect = canvas.getBoundingClientRect();
 	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
