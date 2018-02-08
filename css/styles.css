@@ -20,10 +20,10 @@ img {
 
 button {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   color: #212529;
   background-color: white;
-  border: 1px solid #212529;
+  border: 2px solid #212529;
   border-radius: 3px;
   transition: box-shadow 0.1s ease-in-out, background-color 0.1s ease-in-out;
   padding: 0.5rem 1rem;
@@ -35,7 +35,6 @@ button {
   @media (max-width: 540px) {
     button {
       width: 100%;
-      padding: 1rem;
       display: block; } }
 
 a {
@@ -56,8 +55,8 @@ a {
   position: fixed;
   display: none;
   border-radius: 5px;
-  bottom: 1rem;
-  left: 1rem; }
+  top: 1rem;
+  right: 1rem; }
   #back-to-top:hover {
     cursor: pointer; }
   @media (max-width: 768px) {
@@ -145,8 +144,9 @@ a {
   .project li {
     margin: 1rem 0;
     line-height: 1.5; }
-  .project button {
-    margin: 0.25rem 0; }
+  @media (max-width: 540px) {
+    .project button {
+      padding: 1rem; } }
 
 .project-img {
   width: 100%; }
@@ -159,7 +159,7 @@ a {
   .work-portfolio-link a:hover {
     border-bottom-color: transparent; }
   .work-portfolio-link button {
-    padding: 1rem;
+    padding: 1rem 1.25rem;
     width: 100%;
     font-size: 1.25rem;
     border-width: 2px; }

@@ -35,7 +35,9 @@
 		line-height: 1.5;
 	}
 	button {
-		margin: 0.25rem 0;
+		@media (max-width: 540px) {
+			padding: 1rem;
+		}
 	}
 }
 
@@ -52,7 +54,7 @@
 		border-bottom-color: transparent;
 	}
 	button {
-		padding: 1rem;
+		padding: 1rem 1.25rem;
 		width: 100%;
 		font-size: 1.25rem;
 		border-width: 2px;

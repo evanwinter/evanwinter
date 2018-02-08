@@ -54,7 +54,7 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
 		var backToTopBtn = document.getElementById('back-to-top');
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopBtn.style.display = "flex";
     } else {
         backToTopBtn.style.display = "none";
