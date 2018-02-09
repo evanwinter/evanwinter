@@ -32,10 +32,6 @@ button {
     cursor: pointer;
     border-color: blue;
     color: blue; }
-  @media (max-width: 540px) {
-    button {
-      width: 100%;
-      display: block; } }
 
 a {
   color: blue;
@@ -59,11 +55,6 @@ a {
   right: 1rem; }
   #back-to-top:hover {
     cursor: pointer; }
-  @media (max-width: 768px) {
-    #back-to-top {
-      margin: 0 auto;
-      display: flex;
-      justify-content: center; } }
 
 .accent-element {
   width: 100%;
@@ -106,9 +97,13 @@ a {
     font-size: 1.5rem;
     line-height: 1.5;
     font-weight: 400; }
-  #about .contact-point {
+  #about button {
     padding: 1rem 2rem;
     margin-right: 0.5rem; }
+    @media (max-width: 540px) {
+      #about button {
+        width: 100%;
+        display: block; } }
   #about a:hover {
     border-bottom-color: transparent; }
   #about h2 {
@@ -146,7 +141,9 @@ a {
     line-height: 1.5; }
   @media (max-width: 540px) {
     .project button {
-      padding: 1rem; } }
+      padding: 1rem;
+      display: block;
+      width: 100%; } }
 
 .project-img {
   width: 100%; }

@@ -37,6 +37,8 @@
 	button {
 		@media (max-width: 540px) {
 			padding: 1rem;
+			display: block;
+			width: 100%;
 		}
 	}
 }

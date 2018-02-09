@@ -14,9 +14,13 @@
 		font-weight: 400;
 	}
 
-	.contact-point {
+	button {
 		padding: 1rem 2rem;
 		margin-right: 0.5rem;
+		@media (max-width: 540px) {
+			width: 100%;
+			display: block;
+		}
 	}
 
 	a:hover {
