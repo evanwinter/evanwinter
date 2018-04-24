@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="js/vendor/smoothscroll/smooth-scroll.min.js"></script>
     <link href="css/styles.min.css" rel="stylesheet">
 
     <meta property='og:title' content="Evan Winter"/>
@@ -36,7 +37,6 @@
         </ul>
       </div>
     </nav>
-    <div class="nav-spacer"></div>
   </header>
 
   <div id="back-to-top">
@@ -49,9 +49,10 @@
     <div class="container">
     
       <section id="about" class="about-section">
-        <h1 class="summary">Evan is a <span class="blue-underline">web developer</span> living in Madison, Wisconsin.</h1>
-        <p class="sub-summary">He is currently a <strong>Web/UI Developer</strong> for the Wisconsin School of Business and a <strong>full-time student</strong> at the University of Wisconsin-Madison.</p>
-
+        <h1 class="summary">Evan is a <span class="blue-underline">web developer</span> based in Madison, Wisconsin.</h1>
+        <p class="sub-summary">
+          He writes software and creates cool websites and web apps using JavaScript, HTML, CSS, and Python.
+        </p>
         <div class="contact-points">
           <a href="mailto:evan@evanwinter.me"><button class="contact-point">Email <i class="far fa-envelope"></i></button></a>
           <a href="https://github.com/evanwinter/" target="_blank"><button class="contact-point">GitHub <i class="fab fa-github"></i></button></a>
@@ -68,16 +69,16 @@
         <div class="projects grid">
           <div class="project">
             <div class="project-section-top">
-              <h1 class="project-title">Lyric Scraper</h1>
-              <h2 class="project-languages">JavaScript, jQuery, HTML, CSS</h2>
+              <h1 class="project-title">Lyrics</h1>
+              <h2 class="project-languages">JavaScript, HTML, CSS</h2>
               <ul class="project-info">
-                <li>Finds the lyrics to all songs by a specified artist on <a target="_blank" href="https://genius.com/">Genius.com</a> and displays them.</li>
-                <li>Uses the <a target="_blank" href="https://docs.genius.com/">Genius API</a> for retrieving song data and jQuery for extracting lyrics.</li>
+                <li>A web app that leverages the <a target="_blank" href="https://docs.genius.com/">Genius API</a> to allow a user to procure song lyrics and basic text analyses of song lyrics.</li>
+                <li></li>
               </ul>
             </div>
             <div class="project-section-bottom">
               <a href="http://getlyrics.surge.sh" target="_blank"><button>Demo <i class="far fa-window-restore"></i></button></a>
-              <a href="https://github.com/evanwinter/lyric-scraper" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/lyric-scraper" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
           </div>
           <div class="project">
@@ -86,12 +87,12 @@
               <h2 class="project-languages">JavaScript, HTML, SCSS</h2>
               <ul class="project-info">
                 <li>A web app for testing one's typing speed and accuracy.</li>
-                <li>Rewrite of an old project &mdash; once built with jQuery and Bootstrap CSS but recently rewritten with vanilla JS and custom SCSS.</li>
+                <li>Rewrite of an old project &mdash; once built with jQuery and Bootstrap CSS but recently rewritten with vanilla JS and SCSS.</li>
               </ul>
             </div>
             <div class="project-section-bottom">
               <a href="http://typetest.surge.sh" target="_blank"><button>Demo <i class="far fa-window-restore"></i></button></a>
-              <a href="https://github.com/evanwinter/typetest" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/typetest" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
           </div>
           <div class="project">
@@ -104,33 +105,33 @@
               </ul>
             </div>
             <div class="project-section-bottom">
-              <a href="https://github.com/evanwinter/lyric-analyzer" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/lyric-analyzer" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
           </div>
-          <div class="project">
+          <!-- <div class="project">
             <div class="project-section-top">
               <h1 class="project-title"> Pinned Repos </h1>
               <h2 class="project-languages">JavaScript, HTML, CSS</h2>
               <ul class="project-info">
-                <li>Via the <a href="https://developer.github.com/v3/" target="_blank">GitHub API</a>, fetch a user's public repositories and display them as Pinned Repositories.</li>
+                <li>Via the <a href="https://developer.github.com/v3/" target="_blank">GitHub API</a>, fetch a user's public repositories and display them in the style of Pinned Repositories.</li>
               </ul>
             </div>
             <div class="project-section-bottom">
               <a href="http://reporenderer.surge.sh" target="_blank"><button>Demo <i class="far fa-window-restore"></i></button></a>
-              <a href="https://github.com/evanwinter/github-repository-renderer" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/github-repository-renderer" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
-          </div>
+          </div> -->
           <div class="project">
             <div class="project-section-top">
-              <h1 class="project-title">Fake News Tracker</h1>
+              <h1 class="project-title">False News Tracker</h1>
               <h2 class="project-languages">Python</h2>
               <ul class="project-info">
-                <li>Analyzes Twitter data in real-time to track the spread of potentially fake news articles.</li>
+                <li>Analyzes Twitter data in real-time to track the spread of potentially false news articles.</li>
                 <li>Makes use of the <a target="_blank" href="http://docs.tweepy.org/en/v3.4.0/index.html">Tweepy Streaming API</a> and the <a href="https://azure.microsoft.com/en-us/services/cognitive-services/bing-news-search-api/" target="_blank">Bing News Search API</a>.</li>
               </ul>
             </div>
             <div class="project-section-bottom">
-              <a href="https://github.com/evanwinter/find-fake-news" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/find-fake-news" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
           </div>
           <div class="project">
@@ -142,7 +143,19 @@
               </ul>
             </div>
             <div class="project-section-bottom">
-              <a href="https://github.com/evanwinter/transcript-scraper" target="_blank"><button>Source <i class="fab fa-github"></i></button></a>
+              <a href="https://github.com/evanwinter/transcript-scraper" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-section-top">
+              <h1 class="project-title">Planet Hudson, LLC</h1>
+              <h2 class="project-languages">HTMl, SCSS, Bootstrap</h2>
+              <ul class="project-info">
+                <li>Paid freelance website design and development I did for Planet Hudson, LLC, a recycling company based in Wisconsin.</li>
+              </ul>
+            </div>
+            <div class="project-section-bottom">
+              <a href="https://github.com/evanwinter/transcript-scraper" target="_blank"><button>Code <i class="fab fa-github"></i></button></a>
             </div>
           </div>
 

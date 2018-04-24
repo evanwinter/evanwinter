@@ -46,6 +46,11 @@ function drawClick(e) {
 	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
 }
 
+function _( el ) {
+	return document.querySelectorAll(el)[0]
+}
+
+
 $('#back-to-top').click(function() {
 	$("html, body").animate({ scrollTop: 0 }, "slow");
 })
