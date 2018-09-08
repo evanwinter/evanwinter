@@ -1,24 +1,21 @@
 {
-  "name": "evanwinter",
+  "name": "boiler",
   "version": "1.0.0",
-  "description": "my personal site",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evanwinter/evanwinter.github.io.git"
+    "url": ""
   },
   "author": "Evan Winter",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/evanwinter/evanwinter.github.io/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/evanwinter/evanwinter.github.io#readme",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
+  "homepage": "",
   "devDependencies": {
     "browser-sync": "2.18.13",
     "gulp": "^3.9.1",

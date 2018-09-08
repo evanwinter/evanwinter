@@ -1,17 +1,28 @@
-$gray: #aaa !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #868e96 !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+// white, gray, black
+$light: #fefefe;
+$medium: #999;
+$dark: #333;
 
-// Variables
-$accent: blue;
-$light-gray: #f3f4f4;
-$med-gray: #ddd;
-$dark-gray: #aaa;
-$dark: #212529;
+// colors
+$blue-kitandace: #002573;
+$blue-donetodeath: #130DB1;
+$blue-atlassian: #0747a6;
+$blue: $blue-atlassian;
+$lightblue: #74B3CE;
+$yellow: #f7d708;
+$tan: #FFDBB5;
+$ice: #F1FAEE;
+$red: #B80C09;
+$orange: #FE9000;
+$pink: #FF8484;
+
+// element colors
+$text-color: $dark;
+$bg-color: $ice;
+$link-color: $text-color;
+$link-hover-color: $yellow;
+
+// transition durations
+$fast: 150ms;
+$normal: 500ms;
+$slow: 1000ms;

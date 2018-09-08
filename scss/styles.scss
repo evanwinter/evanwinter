@@ -1,6 +1,99 @@
-@import "variables.scss";
-@import "global.scss";
-@import "about.scss";
-@import "projects.scss";
-@import "contact.scss";
-@import "navbar.scss";
+@import './variables';
+
+body {
+	font-family: system-ui, 'Helvetica Neue', 'Arial', sans-serif;
+	font-size: 16px;
+	color: $text-color;
+	background-color: $bg-color;
+	background: linear-gradient(180deg, $bg-color, $light);
+	height: 100vh;
+	margin: 0;
+	padding: 1rem;
+	-webkit-font-smoothing: antialiased;
+
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+nav {
+	font-size: 0.9rem;
+	a {
+		text-decoration: none;
+	}
+}
+
+ul {
+	padding: 0.25rem 0;
+	margin: 0 0 1rem 0;
+	list-style-type: none;
+
+	display: flex;
+	justify-content: space-between;
+
+	border-bottom: 2px solid $text-color;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+::-moz-selection { background: $yellow; }
+::selection { background: $yellow; }
+
+a {
+	color: $link-color;
+	&:hover { color: $link-hover-color; }
+}
+
+.link-group {
+	display: flex;
+	li + li {
+		margin-left: 0.5rem;
+	}
+}
+
+.links {
+	margin-top: 32px;
+}
+
+.link {
+	text-decoration: none;
+	display: inline-block;
+	margin-right: 1rem;
+	color: $text-color;
+	font-weight: 200;
+	letter-spacing: 0.5px;
+}
+
+.large {
+	font-size: 6vw;
+	margin-bottom: 3rem;
+	line-height: 1;
+	letter-spacing: -0.03rem;
+}
+
+p {
+	font-size: 1.5rem;
+	font-weight: 400;
+	max-width: 600px;
+	line-height: 1.25;
+	font-family: 'Spectral', 'Gotham';
+}
+
+@media only screen and (min-width: 480px) {
+	nav {
+		font-size: 1rem;
+	}
+
+	.link-group {
+		li + li {
+			margin-left: 1rem;
+		}
+	}
+
+	.large {
+		font-weight: 500;
+	}
+
+}
