@@ -8,7 +8,6 @@ body {
   font-size: 16px;
   color: #333;
   background-color: #F1FAEE;
-  background: linear-gradient(180deg, #F1FAEE, #fefefe);
   height: 100vh;
   margin: 0;
   padding: 1rem;
@@ -30,41 +29,30 @@ ul {
   justify-content: space-between;
   border-bottom: 2px solid #333; }
 
-.container {
-  margin: 0 auto; }
-
 ::-moz-selection {
-  background: #f7d708; }
+  background: #eee; }
 
 ::selection {
-  background: #f7d708; }
+  background: #eee; }
 
 a {
   color: #333; }
   a:hover {
-    color: #f7d708; }
+    color: #130DB1; }
 
 .link-group {
   display: flex; }
   .link-group li + li {
     margin-left: 0.5rem; }
 
-.links {
-  margin-top: 32px; }
-
-.link {
-  text-decoration: none;
-  display: inline-block;
-  margin-right: 1rem;
-  color: #333;
-  font-weight: 200;
-  letter-spacing: 0.5px; }
-
 .large {
-  font-size: 6vw;
   margin-bottom: 3rem;
+  font-size: 1.8rem;
+  font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03rem; }
+  .large span {
+    font-size: 1.25rem; }
 
 p {
   font-size: 1.5rem;
@@ -79,4 +67,8 @@ p {
   .link-group li + li {
     margin-left: 1rem; }
   .large {
-    font-weight: 500; } }
+    font-size: 6vw;
+    font-weight: 500;
+    position: sticky; }
+    .large span {
+      font-size: 4vw; } }
