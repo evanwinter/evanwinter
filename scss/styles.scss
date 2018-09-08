@@ -5,7 +5,6 @@ body {
 	font-size: 16px;
 	color: $text-color;
 	background-color: $bg-color;
-	height: 100vh;
 	margin: 0;
 	padding: 1rem;
 	-webkit-font-smoothing: antialiased;
@@ -13,6 +12,31 @@ body {
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+
+	display: flex;
+	justify-content: flex-end;
+
+	a {
+		opacity: 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 1rem;
+		padding: 1rem;
+		transform: translateX(-1rem);
+		transition: opacity $normal ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.fade-in {
+		opacity: 1;
+	}
 }
 
 nav {
@@ -30,15 +54,22 @@ ul {
 	display: flex;
 	justify-content: space-between;
 
-	border-bottom: 2px solid $text-color;
+	border-bottom: 2px solid;
 }
 
 ::-moz-selection { background: #eee; }
 ::selection { background: #eee; }
 
 a {
-	color: $link-color;
-	&:hover { color: $link-hover-color; }
+	color: inherit;
+}
+
+.light-link--hover:hover {
+	color: darken($light, 15%);
+}
+
+.dark-link--hover:hover {
+	color: lighten($dark, 30%);
 }
 
 .link-group {
@@ -62,7 +93,7 @@ p {
 	font-weight: 400;
 	max-width: 600px;
 	line-height: 1.25;
-	font-family: 'Spectral', 'Gotham';
+	font-family: $serif;
 }
 
 @media only screen and (min-width: 480px) {
@@ -79,7 +110,6 @@ p {
 	.large {
 		font-size: 6vw;
 		font-weight: 500;
-		position: sticky;
 		span { font-size: 4vw; }
 	}
 }
