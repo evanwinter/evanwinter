@@ -1,73 +1,70 @@
-// http://stackoverflow.com/questions/40064493/how-to-get-mouseover-to-draw-on-html-canvas-with-event-listener-with-my-code-ht/40065244
-var x = null;
-var y = null;
-var z = null;
-var n = null;
+function _( el ) { return document.querySelector(el) }
+function $( el ) { return Array.from(document.querySelectorAll(el)) }
 
-function drawHover(e) {
 
-	var canvas = document.getElementById(e.target.id);
-	var context = canvas.getContext('2d');
+const dark = '#111'
+const light = '#fefefe'
+const blue = '#002573'
+const yellow = '#f7d708'
+const tan = '#FFDBB5'
+const ice = '#F1FAEE'
+const red = '#B80C09'
+const pink = '#FF8484'
+const green = '#239a3b'
 
-	var rect = canvas.getBoundingClientRect();
-	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
-	if (x == null) {
-		x = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
-		y = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
+const ONE_MINUTE = 60000
 
-	}
-	//otherwise draw from the previous point (x, y) to the new coordinates (e.clientX, e.clientY).
-	context.beginPath();
-	context.moveTo(x,y);
-	context.lineTo(Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width), Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height));
-	context.strokeStyle="white";
-	context.stroke();
-	x = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
-	y = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
+let index = 1
+const colors = [
+	{ background: ice, lightText: false },
+	{ background: dark, lightText: true },
+	{ background: light, lightText: false },
+	{ background: blue, lightText: true },
+	{ background: yellow, lightText: false },
+	{ background: tan, lightText: false },
+	{ background: red, lightText: true },
+	{ background: pink, lightText: true },
+	{ background: green, lightText: true },
+]
+
+function setDarkHoverStates() {
+	Array.from($('a')).forEach(link => {
+		link.classList.add('dark-link--hover')
+		link.classList.remove('light-link--hover')
+	})
 }
 
-function drawClick(e) {
+function setLightHoverStates() {
+	Array.from($('a')).forEach(link => {
+		link.classList.add('light-link--hover')
+		link.classList.remove('dark-link--hover')
+	})
+}
+
+
+_('footer a').addEventListener('click', (event) => {
+
+	// increment background color
+	_('body').style.backgroundColor = colors[index].background
 	
-	var canvas = document.getElementById(e.target.id);
-	var context = canvas.getContext('2d');
-	var rect = canvas.getBoundingClientRect();
-	//if it is the first time the event listener is called then set x and y to the new mouse coordinate
-	if (z == null) {
-		z = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
-		n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
+	// set appropriate text shade and hover states
+	if (colors[index].lightText === true) {
+		_('body').style.color = light
+		setLightHoverStates()
+	} else {
+		_('body').style.color = dark
+		setDarkHoverStates()
 	}
-	//otherwise draw from the previous point (x, y) to the new coordinates (e.clientX, e.clientY).
-	context.beginPath();
-	context.moveTo(z,n);
-	context.lineTo(Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width), Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height));
-	context.strokeStyle="blue";
-	context.stroke();
-	z = Math.round((e.clientX-rect.left)/(rect.right-rect.left)*canvas.width);
-	n = Math.round((e.clientY-rect.top)/(rect.bottom-rect.top)*canvas.height);
-}
 
-function _( el ) {
-	return document.querySelectorAll(el)[0]
-}
+	// if at end of colors array, loop to beginning
+	index = (index === colors.length-1) ? 0 : index+1
 
-
-$('#back-to-top').click(function() {
-	$("html, body").animate({ scrollTop: 0 }, "slow");
 })
 
-window.onscroll = function() {scrollFunction()};
+document.addEventListener('DOMContentLoaded', () => {
+	setDarkHoverStates()
 
-function scrollFunction() {
-		var backToTopBtn = document.getElementById('back-to-top');
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        backToTopBtn.style.display = "flex";
-    } else {
-        backToTopBtn.style.display = "none";
-    }
-}
-
-$(".js-target").click(function(e){
-	var scrollTarget = this.className.split(' ')[1];
-	scrollTarget = "."+scrollTarget+"-section";
-	$("html, body").animate({ scrollTop: $(scrollTarget).offset().top-32 }, "slow");
-});
+	setTimeout(() => {
+		_('footer a').classList.add('fade-in')
+	}, ONE_MINUTE)
+})
