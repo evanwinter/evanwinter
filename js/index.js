@@ -64,7 +64,8 @@ _('footer a').addEventListener('click', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
 	setDarkHoverStates()
 
-	setTimeout(() => {
+	setInterval(() => {
 		_('footer a').classList.add('fade-in')
-	}, ONE_MINUTE)
+	}, ONE_MINUTE/2)
+
 })
