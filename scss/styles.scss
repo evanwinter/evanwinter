@@ -23,7 +23,7 @@ footer {
 	justify-content: flex-end;
 
 	a {
-		opacity: 0;
+		// opacity: 0;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-size: 1rem;
@@ -36,6 +36,14 @@ footer {
 	}
 	.fade-in {
 		opacity: 1;
+	}
+
+	#color-shuffle {
+		opacity: 0.25;
+		transition: opacity $normal ease-in-out;
+		&:hover {
+			opacity: 1;
+		}
 	}
 }
 

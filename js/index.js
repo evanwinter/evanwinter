@@ -18,7 +18,6 @@ let index = 1
 const colors = [
 	{ background: ice, lightText: false },
 	{ background: dark, lightText: true },
-	{ background: light, lightText: false },
 	{ background: blue, lightText: true },
 	{ background: yellow, lightText: false },
 	{ background: tan, lightText: false },
