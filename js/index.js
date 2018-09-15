@@ -8,6 +8,7 @@ const darkblue = '#002573'
 const yellow = '#f7d708'
 const tan = '#FFDBB5'
 const ice = '#F1FAEE'
+const lightTan = 'floralwhite'
 const red = '#B80C09'
 const pink = '#FF8484'
 const green = '#239a3b'
@@ -16,9 +17,10 @@ const ONE_MINUTE = 60000
 
 let index = 1
 const colors = [
-	{ background: ice, lightText: false },
+	{ background: lightTan, lightText: false },
 	{ background: dark, lightText: true },
 	{ background: darkblue, lightText: true },
+	{ background: ice, lightText: false },
 	{ background: yellow, lightText: false },
 	{ background: tan, lightText: false },
 	{ background: red, lightText: true },
