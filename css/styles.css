@@ -22,9 +22,10 @@ footer {
   display: flex;
   justify-content: flex-end; }
   footer a {
+    opacity: 0;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 0.75rem;
     padding: 1rem;
     transform: translateX(-1rem);
     transition: opacity 500ms ease-in-out; }
@@ -32,11 +33,6 @@ footer {
       opacity: 1; }
   footer .fade-in {
     opacity: 1; }
-  footer #color-shuffle {
-    opacity: 0.25;
-    transition: opacity 500ms ease-in-out; }
-    footer #color-shuffle:hover {
-      opacity: 1; }
 
 nav {
   font-size: 0.9rem; }
@@ -72,7 +68,7 @@ a {
     margin-left: 0.5rem; }
 
 .large {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 1;
@@ -81,9 +77,8 @@ a {
     font-size: 1.25rem; }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
-  max-width: 600px;
   letter-spacing: -0.05rem;
   line-height: 1.25;
   font-family: "Spectral", serif; }
@@ -98,3 +93,10 @@ p {
     font-weight: 500; }
     .large span {
       font-size: 4vw; } }
+
+@media only screen and (min-width: 768px) {
+  .large {
+    margin-bottom: 3vw; }
+  p {
+    font-size: 1.5rem;
+    max-width: 768px; } }
