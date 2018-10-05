@@ -7,7 +7,7 @@ body {
   font-family: system-ui, 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 16px;
   color: #333;
-  background-color: floralwhite;
+  background-color: #fefefe;
   margin: 0;
   padding: 1rem;
   -webkit-font-smoothing: antialiased;
@@ -34,10 +34,8 @@ footer {
   footer .fade-in {
     opacity: 1; }
 
-nav {
-  font-size: 0.9rem; }
-  nav a {
-    text-decoration: none; }
+nav a {
+  text-decoration: none; }
 
 ul {
   padding: 0.25rem 0;
