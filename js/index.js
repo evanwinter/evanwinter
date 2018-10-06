@@ -15,7 +15,6 @@ const green = '#239a3b'
 
 const ONE_MINUTE = 60000
 
-let index = 1
 const colors = [
 	{ background: lightTan, lightText: false },
 	{ background: dark, lightText: true },
@@ -42,6 +41,7 @@ function setLightHoverStates() {
 	})
 }
 
+let index = 0;
 
 _('footer a').addEventListener('click', (event) => {
 
@@ -51,9 +51,11 @@ _('footer a').addEventListener('click', (event) => {
 	// set appropriate text shade and hover states
 	if (colors[index].lightText === true) {
 		_('body').style.color = light
+		_('#shuffle path').setAttribute('fill', `${light}`)
 		setLightHoverStates()
 	} else {
 		_('body').style.color = dark
+		_('#shuffle path').setAttribute('fill', `${dark}`)
 		setDarkHoverStates()
 	}
 
