@@ -16,7 +16,6 @@ const green = '#239a3b'
 const ONE_MINUTE = 60000
 
 const colors = [
-	{ background: lightTan, lightText: false },
 	{ background: dark, lightText: true },
 	{ background: darkblue, lightText: true },
 	{ background: ice, lightText: false },
