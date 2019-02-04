@@ -1,0 +1,14 @@
+{
+    "name": "Evan",
+    "short_name": "Evan",
+    "icons": [
+        {
+            "src": "/public/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "transparent",
+    "background_color": "transparent",
+    "display": "standalone"
+}
