@@ -1,2 +1,8 @@
-node_modules
-styles.css
+# node modules
+node_modules/
+
+# dist
+dist/
+
+# cache
+.cache/
