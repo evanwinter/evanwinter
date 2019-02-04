@@ -1,3 +1,11 @@
+/* 	
+ *	Main app entry
+ *
+ */
+
+// Import styles
+import styles from "../scss/styles.scss"
+
 function _( el ) { return document.querySelector(el) }
 function $( el ) { return Array.from(document.querySelectorAll(el)) }
 

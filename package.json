@@ -1,29 +1,23 @@
 {
-  "name": "Evan Winter's Website",
+  "name": "evanwinter",
   "version": "1.0.0",
-  "description": "",
+  "description": "evan winter's website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/evanwinter/evanwinter.github.io.git"
   },
-  "author": "Evan Winter",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/evanwinter/evanwinter.github.io/issues"
   },
-  "homepage": "",
-  "devDependencies": {
-    "browser-sync": "2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "3.9.0",
-    "gulp-filter": "^5.0.1",
-    "gulp-header": "1.8.9",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "3.0.0"
-  }
+  "homepage": "https://github.com/evanwinter/evanwinter.github.io#readme",
+  "dependencies": {
+    "parcel": "^1.11.0"
+  },
+  "devDependencies": {}
 }
