@@ -1,0 +1,14 @@
+# node modules
+node_modules/
+
+<<<<<<< HEAD
+# dist
+dist/
+
+# cache
+.cache/
+=======
+# parcel post-build stuff
+.cache/
+dist/
+>>>>>>> feature/use-parcel
