@@ -1,6 +1,5 @@
 /* 	
  *	Main app entry
- *
  */
 
 // Import styles
@@ -8,7 +7,6 @@ import styles from "../scss/styles.scss"
 
 function _( el ) { return document.querySelector(el) }
 function $( el ) { return Array.from(document.querySelectorAll(el)) }
-
 
 const dark = '#111'
 const light = '#fefefe'
@@ -50,32 +48,32 @@ function setLightHoverStates() {
 
 let index = 0;
 
-_('footer a').addEventListener('click', (event) => {
+// _('footer a').addEventListener('click', (event) => {
 
-	// set next background color
-	_('body').style.backgroundColor = colors[index].background
+// 	// set next background color
+// 	_('body').style.backgroundColor = colors[index].background
 	
-	// set appropriate text shade and hover states
-	if (colors[index].lightText === true) {
-		_('body').style.color = light
-		_('#shuffle path').setAttribute('fill', `${light}`)
-		setLightHoverStates()
-	} else {
-		_('body').style.color = dark
-		_('#shuffle path').setAttribute('fill', `${dark}`)
-		setDarkHoverStates()
-	}
+// 	// set appropriate text shade and hover states
+// 	if (colors[index].lightText === true) {
+// 		_('body').style.color = light
+// 		_('#shuffle path').setAttribute('fill', `${light}`)
+// 		setLightHoverStates()
+// 	} else {
+// 		_('body').style.color = dark
+// 		_('#shuffle path').setAttribute('fill', `${dark}`)
+// 		setDarkHoverStates()
+// 	}
 
-	// if last color in array, jump back to beginning
-	index = (index === colors.length-1) ? 0 : index+1
+// 	// if last color in array, jump back to beginning
+// 	index = (index === colors.length-1) ? 0 : index+1
 
-})
+// })
 
 document.addEventListener('DOMContentLoaded', () => {
 	setDarkHoverStates()
 
 	setInterval(() => {
-		_('footer a').classList.add('fade-in')
+		// _('footer a').classList.add('fade-in')
 	}, ONE_MINUTE/2)
 
 })

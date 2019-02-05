@@ -1,2 +1,6 @@
-node_modules
-styles.css
+# node modules
+node_modules/
+
+# parcel post-build stuff
+.cache/
+dist/

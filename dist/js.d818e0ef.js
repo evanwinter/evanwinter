@@ -185,7 +185,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 /* 	
  *	Main app entry
- *
  */
 // Import styles
 function _(el) {
@@ -247,34 +246,26 @@ function setLightHoverStates() {
   });
 }
 
-var index = 0;
-
-_('footer a').addEventListener('click', function (event) {
-  // set next background color
-  _('body').style.backgroundColor = colors[index].background; // set appropriate text shade and hover states
-
-  if (colors[index].lightText === true) {
-    _('body').style.color = light;
-
-    _('#shuffle path').setAttribute('fill', "".concat(light));
-
-    setLightHoverStates();
-  } else {
-    _('body').style.color = dark;
-
-    _('#shuffle path').setAttribute('fill', "".concat(dark));
-
-    setDarkHoverStates();
-  } // if last color in array, jump back to beginning
-
-
-  index = index === colors.length - 1 ? 0 : index + 1;
-});
+var index = 0; // _('footer a').addEventListener('click', (event) => {
+// 	// set next background color
+// 	_('body').style.backgroundColor = colors[index].background
+// 	// set appropriate text shade and hover states
+// 	if (colors[index].lightText === true) {
+// 		_('body').style.color = light
+// 		_('#shuffle path').setAttribute('fill', `${light}`)
+// 		setLightHoverStates()
+// 	} else {
+// 		_('body').style.color = dark
+// 		_('#shuffle path').setAttribute('fill', `${dark}`)
+// 		setDarkHoverStates()
+// 	}
+// 	// if last color in array, jump back to beginning
+// 	index = (index === colors.length-1) ? 0 : index+1
+// })
 
 document.addEventListener('DOMContentLoaded', function () {
   setDarkHoverStates();
-  setInterval(function () {
-    _('footer a').classList.add('fade-in');
+  setInterval(function () {// _('footer a').classList.add('fade-in')
   }, ONE_MINUTE / 2);
 });
 },{"../scss/styles.scss":"src/scss/styles.scss"}],"../../../../../usr/local/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -304,7 +295,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63704" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65212" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
