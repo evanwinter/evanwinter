@@ -1,79 +1,139 @@
-/* 	
+/*
  *	Main app entry
  */
 
 // Import styles
 import styles from "../scss/styles.scss"
 
-function _( el ) { return document.querySelector(el) }
-function $( el ) { return Array.from(document.querySelectorAll(el)) }
+function _(el) {
+	return document.querySelector(el)
+}
+function $(el) {
+	return Array.from(document.querySelectorAll(el))
+}
 
-const dark = '#111'
-const light = '#fefefe'
-const darkblue = '#002573'
-const yellow = '#f7d708'
-const tan = '#FFDBB5'
-const ice = '#F1FAEE'
-const lightTan = 'floralwhite'
-const red = '#B80C09'
-const pink = '#FF8484'
-const green = '#239a3b'
+const dark = "#111"
+const light = "#fefefe"
+const darkblue = "#002573"
+const yellow = "#f7d708"
+const tan = "#FFDBB5"
+const ice = "#F1FAEE"
+const lightTan = "floralwhite"
+const red = "#B80C09"
+const pink = "#FF8484"
+const green = "#239a3b"
+const papayawhip = "papayawhip"
 
-const ONE_MINUTE = 60000
-
-const colors = [
-	{ background: dark, lightText: true },
-	{ background: darkblue, lightText: true },
-	{ background: ice, lightText: false },
-	{ background: yellow, lightText: false },
-	{ background: tan, lightText: false },
-	{ background: red, lightText: true },
-	{ background: pink, lightText: true },
-	{ background: green, lightText: true },
+const THEMES = [
+	{ 
+		background: dark, 
+		color: light, 
+		linkColor: light 
+	},
+	{ 
+		background: light, 
+		color: dark, 
+		linkColor: dark 
+	},
+	{ 
+		background: darkblue, 
+		color: light, 
+		linkColor: light 
+	},
+	{ 
+		background: green, 
+		color: light, 
+		linkColor: light 
+	},
+	{ 
+		background: ice, 
+		color: dark, 
+		linkColor: dark 
+	},
+	{ 
+		background: pink, 
+		color: light, 
+		linkColor: light 
+	},
+	{ 
+		background: red, 
+		color: light, 
+		linkColor: light 
+	},
+	{ 
+		background: tan, 
+		color: dark, 
+		linkColor: dark 
+	},
+	{ 
+		background: yellow, 
+		color: dark, 
+		linkColor: dark 
+	},
+	{ 
+		background: papayawhip, 
+		color: dark, 
+		linkColor: dark 
+	},
 ]
 
-function setDarkHoverStates() {
-	Array.from($('a')).forEach(link => {
-		link.classList.add('dark-link--hover')
-		link.classList.remove('light-link--hover')
-	})
+class ThemeManager {
+	constructor() {
+		this.trigger = document.querySelector("#secret-button")
+	}
+
+	listen() {
+		this.trigger.addEventListener("click", this.handleUpdate)
+	}
+
+	unlisten() {
+		this.trigger.removeEventListener("click", this.handleUpdate)
+	}
+
+	handleUpdate() {
+		// get a random themes
+		const randInt = randomIntFromInterval(0, THEMES.length-1)
+		const nextTheme = THEMES[randInt]
+		const { background, color, linkColor } = nextTheme
+
+		// get target elements
+		const body = _("body")
+		const links = $("a")
+
+		// apply styles
+		body.style.background = background
+		body.style.color = color
+		links.forEach(link => link.style.color = linkColor)
+
+	}
+
 }
 
-function setLightHoverStates() {
-	Array.from($('a')).forEach(link => {
-		link.classList.add('light-link--hover')
-		link.classList.remove('dark-link--hover')
-	})
+const randomIntFromInterval = (min, max) => {
+	return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-let index = 0;
-
-// _('footer a').addEventListener('click', (event) => {
-
-// 	// set next background color
-// 	_('body').style.backgroundColor = colors[index].background
-	
-// 	// set appropriate text shade and hover states
-// 	if (colors[index].lightText === true) {
-// 		_('body').style.color = light
-// 		_('#shuffle path').setAttribute('fill', `${light}`)
-// 		setLightHoverStates()
-// 	} else {
-// 		_('body').style.color = dark
-// 		_('#shuffle path').setAttribute('fill', `${dark}`)
-// 		setDarkHoverStates()
-// 	}
-
-// 	// if last color in array, jump back to beginning
-// 	index = (index === colors.length-1) ? 0 : index+1
-
-// })
-
-document.addEventListener('DOMContentLoaded', () => {
-	setDarkHoverStates()
-
-	setInterval(() => {
-		// _('footer a').classList.add('fade-in')
-	}, ONE_MINUTE/2)
-
+document.addEventListener("DOMContentLoaded", () => {
+	main()
 })
+
+function main() {
+
+	// const hello = document.querySelector("#hello")
+	// setTimeout(() => {
+	// 	hello.classList.add("animate-in")
+	// }, 0)
+
+	// setTimeout(() => {
+	// 	hello.classList.remove("animate-in")
+	// }, 2000)
+
+	setTimeout(() => {
+		Array.from(document.querySelectorAll(".animate")).forEach(el => el.classList.add("animate-in"))
+	}, 100)
+
+	// listen for theme changes
+	const themeManager = new ThemeManager()
+	themeManager.listen()
+
+}

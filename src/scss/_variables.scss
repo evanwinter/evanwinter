@@ -7,6 +7,7 @@ $dark: #333;
 $blue-kitandace: #002573;
 $blue-donetodeath: #130DB1;
 $blue-atlassian: #0747a6;
+$perfect-blue: rgb(7, 71, 166);
 $blue: $blue-donetodeath;
 $lightblue: #74B3CE;
 $yellow: #f7d708;
@@ -14,26 +15,41 @@ $tan: #FFDBB5;
 $ice: #F1FAEE;
 $red: #B80C09;
 $orange: #FE9000;
+$orange-vibrant: #FF6700;
 $pink: #FF8484;
+$lime: #00FF4F;
 
 $papayawhip: papayawhip;
 $linen: linen;
 $oldlace: oldlace;
 
+// breakpoints
+$breakpoint-sm: 400px;
+$breakpoint-md: 800px;
+$breakpoint-lg: 1200px;
 
 // element colors
 $text-color: $dark;
 $bg-color: $light;
 $link-color: $text-color;
-$link-hover-color: $blue;
+$link-color-hover: $blue;
+$highlight-color: $papayawhip;
 
 // transition durations
-$fast: 150ms;
-$normal: 500ms;
-$slow: 1000ms;
+$fast: 50ms;
+$normal: 350ms;
+$slow: 750ms;
+$very-slow: 1250ms;
 
 // easings
-$bezier: cubic-bezier(.79,.08,.41,.1);
+$bezier-1: cubic-bezier(.79,.08,.41,.1) !default;
+$glide: cubic-bezier(.14,.23,.13,.32) !default;
+
+$transition-default: $very-slow ease;
 
 // fonts
-$serif: 'Spectral', serif;
+$sans: Helvetica, Arial, system-ui, sans-serif;
+$serif: 'Spectral', Gotham, serif;
+
+// typography
+$baseline-font-size: 16px;
