@@ -1,6 +1,0 @@
-# node modules
-node_modules/
-
-# parcel post-build stuff
-.cache/
-dist/
