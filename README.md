@@ -1,4 +1,10 @@
-My website is built with HTML, SCSS, and JavaScript. I use parcel as a bundler.
+This is souce code for my personal website. 
+
+* Built with HTML, SCSS, and JavaScript
+* Bundled with [Parcel]('https://github.com/parcel-bundler/parcel/')
+* Hosted with [Github Pages]('https://pages.github.com/')
+
+Below are instructions for setting it up locally for development, and for publishing it live on a GitHub Pages User page.
 
 ### Setup
 
@@ -12,6 +18,8 @@ npm install
 
 ### Development
 
+Do all development on the `develop` branch. When you're ready to publish, follow instructions in the **Production** section.
+
 ```bash
 # Build and watch for changes
 npm start
@@ -22,12 +30,20 @@ npm start
 Since GitHub Pages requires "User" pages to use the `master` branch, we need to push the production-ready `dist/` folder to the `master` branch using `git subtree`.
 
 ```bash
-# Build the dist/ folder
+# Step 1.
+# ---
+# Build the dist/ folder with Parcel
 npm run build
 
-# Commit the new files
-git add dist && git commit -m "publishing this"
+# Step 2.
+# ---
+# Commit the newly built files
+git add dist && git commit -m "Publishing new stuff 🤠"
 
-# Use subtree push to send it to the master branch.
+# Step 3.
+# ---
+# Use subtree push to send it to the master branch
 git subtree push --prefix dist origin master
 ```
+
+Your `master` branch should only contain the built/compressed/minified files that were created by Parcel and put in the `dist/` folder during Step 1.
