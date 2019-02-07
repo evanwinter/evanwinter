@@ -8,7 +8,8 @@ $blue-kitandace: #002573;
 $blue-donetodeath: #130DB1;
 $blue-atlassian: #0747a6;
 $perfect-blue: rgb(7, 71, 166);
-$blue: $blue-donetodeath;
+$emoji-guy-blue: #2726cf;
+$blue: $emoji-guy-blue;
 $lightblue: #74B3CE;
 $yellow: #f7d708;
 $tan: #FFDBB5;
@@ -24,16 +25,18 @@ $linen: linen;
 $oldlace: oldlace;
 
 // breakpoints
-$breakpoint-sm: 400px;
+$breakpoint-xs: 400px;
+$breakpoint-sm: 600px;
 $breakpoint-md: 800px;
-$breakpoint-lg: 1200px;
+$breakpoint-lg: 1000px;
+$breakpoint-xl: 1200px;
 
 // element colors
 $text-color: $dark;
 $bg-color: $light;
 $link-color: $text-color;
 $link-color-hover: $blue;
-$highlight-color: $papayawhip;
+$highlight-color: yellow;
 
 // transition durations
 $fast: 50ms;
@@ -48,8 +51,10 @@ $glide: cubic-bezier(.14,.23,.13,.32) !default;
 $transition-default: $very-slow ease;
 
 // fonts
-$sans: Helvetica, Arial, system-ui, sans-serif;
-$serif: 'Spectral', Gotham, serif;
+$sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
+$serif: "adobe-garamond-pro", Gotham, serif;
+// $serif: "adobe-caslon", Gotham, serif;
+
 
 // typography
 $baseline-font-size: 16px;

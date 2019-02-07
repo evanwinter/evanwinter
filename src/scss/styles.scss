@@ -101,9 +101,6 @@ header {
 		.nav-link {
 			display: inline;
 			color: inherit;
-			&:hover {
-
-			}
 		}
 
 		.title {
@@ -115,25 +112,41 @@ header {
 main {
 	.about-section {
 		p {
-			text-shadow: 0.5px 0.5px 1px rgba($dark, 0.1);
+			color: $blue;
+			&:first-of-type {
+				margin-top: 0;
+				// border-top: 1px solid;
+			}
 			font-weight: 400;
 			font-size: 1.25rem;
-			max-width: $breakpoint-md;
-			font-family: $serif;
-			letter-spacing: -0.05rem;
+			max-width: 600px;
+			transition: color $transition-default;
+			// font-family: $serif;
 		}
+	}
+}
+
+.intro-section {
+	max-width: $breakpoint-lg;
+	@include larger-than(lg) {
+		font-size: 12rem;
 	}
 }
 
 
 .large {
-	padding: 3vw 0;
-	font-size: 2rem;
+	padding: 1rem 0;
+	font-size: 2.55rem;
 	font-weight: 500;
-	text-shadow: 1px 1px 2px rgba($dark, 0.1);
 	@include larger-than(sm) {
-		font-size: 7.75vw;
+		padding: 3vw 0;
+		font-size: 8vw;
 		line-height: 1;
+	}
+	@include larger-than(lg) {
+		font-size: 7vw;
+		padding: 2vw 0;
+		line-height: 0.875;
 	}
 }
 
@@ -162,11 +175,11 @@ main {
 	color: $light;
 }
 
-.hide-on-small {
+.title {
 	display: none;
 	@include larger-than(sm) {
 		// Keep this hidden for now
-		// display: inline;
+		display: inline;
 	}
 }
 
@@ -174,8 +187,7 @@ main {
 .animate,
 .animate-manual {
 	opacity: 0;
-	transform: scale(0.95);
-	// transform: translateY(10vh);
+	transform: translateY(10vh);
 	transition: opacity $transition-default, transform $transition-default;
 	&.step-1 {
 		transition-delay: 0.35s;
