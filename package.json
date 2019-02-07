@@ -18,10 +18,9 @@
     "url": "https://github.com/evanwinter/evanwinter.github.io/issues"
   },
   "homepage": "https://github.com/evanwinter/evanwinter.github.io#readme",
-  "dependencies": {
-    "parcel": "^1.11.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "parcel-bundler": "^1.11.0",
     "sass": "^1.16.1"
   }
 }
