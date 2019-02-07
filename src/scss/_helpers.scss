@@ -1,5 +1,0 @@
-@mixin larger-than($breakpoint) {
-  @if $breakpoint == "sm" { @media (min-width: $breakpoint-sm + 1) { @content; } }
-  @else if $breakpoint == "md" { @media (min-width: $breakpoint-md + 1) { @content; } }
-  @else if $breakpoint == "lg" { @media (min-width: $breakpoint-lg + 1) { @content; } }
-}
