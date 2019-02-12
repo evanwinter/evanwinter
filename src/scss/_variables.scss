@@ -35,7 +35,7 @@ $breakpoint-xl: 1200px;
 $text-color: $dark;
 $bg-color: $light;
 $link-color: $text-color;
-$link-color-hover: $blue;
+$link-color-hover: lighten($text-color, 20%);
 $highlight-color: yellow;
 
 // transition durations
@@ -43,12 +43,14 @@ $fast: 50ms;
 $normal: 350ms;
 $slow: 750ms;
 $very-slow: 1250ms;
+$speed-default: $slow;
 
 // easings
 $bezier-1: cubic-bezier(.79,.08,.41,.1) !default;
 $glide: cubic-bezier(.14,.23,.13,.32) !default;
+$easing-default: ease;
 
-$transition-default: $very-slow ease;
+$transition-default: $speed-default $easing-default;
 
 // fonts
 $sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
