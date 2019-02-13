@@ -38,7 +38,7 @@ npm run build
 # Step 2.
 # ---
 # Commit the newly built files
-git add dist && git commit -m "Publishing new stuff 🤠"
+git add dist -f && git commit -m "Publishing new stuff 🤠"
 
 # Step 3.
 # ---
