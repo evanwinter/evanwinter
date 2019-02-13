@@ -163,7 +163,7 @@ main {
 	color: $light;
 }
 
-.title {
+.hide-on-small {
 	display: none;
 	@include larger-than(sm) {
 		// Keep this hidden for now
