@@ -25,6 +25,26 @@ const orange = "orange"
 const green = "#239a3b"
 const papayawhip = "papayawhip"
 
+const COLORS = {
+	
+	// monochromatic
+	dark: "#111",
+	gray: "#888888",
+	light: "#fefefe",
+
+	blue: "blue",
+	green: "#239a3b",
+	yellow: "#f7d708",
+	red: "#B80C09",
+	pink: "#FF8484",
+	orange: "orange",
+
+	darkblue: "#002573",
+	tan: "#FFDBB5",
+	ice: "#F1FAEE",
+	papayawhip: "papayawhip",
+}
+
 const THEMES = [
 	{
 		background: dark,

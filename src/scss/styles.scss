@@ -1,5 +1,6 @@
 @import './variables';
 @import './helpers';
+@import './resets';
 
 // Baseline styles
 
@@ -36,42 +37,21 @@ body {
 
 .container {
 	padding: 1rem;
+	min-height: 300vh;
 }
 
-// reset button styles
-button {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-
-    background: transparent;
-
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-}
-
-/* Remove excess padding and border in Firefox 4+ */
-::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+.top-layer {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: $z-top;
+	pointer-events: none;
 }
 
 a {
 	text-decoration: none;
 	color: $link-color;
+	transition: color $fast $easing-default;
 	&:hover {
 		color: $link-color-hover;
 	}
@@ -100,7 +80,6 @@ header {
 
 		.nav-link {
 			display: inline;
-			color: inherit;
 		}
 
 		.title {
@@ -112,16 +91,13 @@ header {
 main {
 	.about-section {
 		p {
-			color: $blue;
 			&:first-of-type {
 				margin-top: 0;
-				// border-top: 1px solid;
 			}
-			font-weight: 400;
+			font-weight: 500;
 			font-size: 1.25rem;
 			max-width: 600px;
 			transition: color $transition-default;
-			// font-family: $serif;
 		}
 	}
 }
@@ -137,7 +113,7 @@ main {
 .large {
 	padding: 1rem 0;
 	font-size: 2.55rem;
-	font-weight: 500;
+	font-weight: 600;
 	@include larger-than(sm) {
 		padding: 3vw 0;
 		font-size: 8vw;
@@ -153,6 +129,18 @@ main {
 #secret-button {
 	cursor: pointer;
 	padding: 0 0.25rem;
+
+	@include keyframes(hey) {
+	  0% { transform: translateY(0); }
+	  2% { transform: translateY(-5px); }
+	  10% { transform: translateY(0); }
+	  100% { transform: translateY(0); }
+
+	}
+
+	@include animation('hey 10s infinite');
+	animation-delay: 10s;
+
 }
 
 .bg-dark {
@@ -205,11 +193,32 @@ main {
 	}
 }
 
-#hello {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+// #hello {
+// 	position: absolute;
+// 	width: 100%;
+// 	height: 100vh;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+// .dec {
+// 	position: absolute;
+// }
+
+// #yellow-tall-right {
+// 	background: yellow;
+// 	z-index: $z-under;
+// 	width: 25vw;
+// 	height: 100vh;
+// 	right: 0;
+// }
+
+// #red-wide-bottom {
+// 	background: $red;
+// 	z-index: $z-under - 1;
+// 	width: 100%;
+// 	height: 10vh;
+// 	right: 0;
+// 	bottom: 0;
+// }
