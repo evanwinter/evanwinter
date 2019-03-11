@@ -110,9 +110,9 @@ main {
   .intro-section {
     p {
       margin: 1.25rem 0;
-    }
-    @include larger-than(lg) {
-      margin: 1.5rem 0;
+      @include larger-than(lg) {
+        margin: 1.5rem 0;
+      }
     }
   }
 
