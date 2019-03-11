@@ -20,7 +20,7 @@
   "homepage": "https://github.com/evanwinter/evanwinter.github.io#readme",
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "^1.11.0",
-    "sass": "^1.17.0"
+    "parcel-bundler": "^1.12.0",
+    "sass": "^1.17.2"
   }
 }
