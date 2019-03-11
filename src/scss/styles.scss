@@ -111,6 +111,9 @@ main {
     p {
       margin: 1.25rem 0;
     }
+    @include larger-than(lg) {
+      margin: 1.5rem 0;
+    }
   }
 
   .about-section {
@@ -138,6 +141,7 @@ main {
 
   @include larger-than(lg) {
     font-size: 3.75rem;
+    margin: 2rem 0;
   }
 }
 
