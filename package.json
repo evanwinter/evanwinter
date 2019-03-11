@@ -1,0 +1,26 @@
+{
+  "name": "evanwinter",
+  "version": "0.0.1",
+  "description": "evan winter's website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url /evanwinter.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanwinter/evanwinter.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanwinter/evanwinter.github.io/issues"
+  },
+  "homepage": "https://github.com/evanwinter/evanwinter.github.io#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.0",
+    "sass": "^1.17.2"
+  }
+}
