@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html --public-url .",
-    "publish": "npm run build && git add dist && git commit -m 'publish' && git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force"
+    "publish": "npm run build && echo 'evanwinter.me' > dist/CNAME && git add dist && git commit -m 'publish' && git push origin `git subtree split --prefix dist gh-pages`:gh-pages --force"
   },
   "repository": {
     "type": "git",
