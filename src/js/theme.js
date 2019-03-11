@@ -66,7 +66,7 @@ class ThemeManager {
 	}
 
 	handleUpdate() {
-		// get a random themes
+		// get a random theme
 		let nextRandInt = null
 		do {
 			nextRandInt = randomIntFromInterval(0, THEMES.length - 1)
@@ -113,8 +113,7 @@ class ThemeManager {
 		}
 
 		// this.setTheme(THEMES[n])
-		// this.setTheme(THEMES[n])
-		this.currentIndex = n
+		// this.currentIndex = n
 	}
 }
 export default ThemeManager
