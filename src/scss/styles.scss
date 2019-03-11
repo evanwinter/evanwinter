@@ -1,196 +1,218 @@
-@import './variables';
-@import './helpers';
-@import './resets';
+@import "./variables";
+@import "./helpers";
+@import "./resets";
 
 // Baseline styles
 
-::-moz-selection { background: $highlight-color; }
-::selection { background: $highlight-color; }
+::-moz-selection {
+  background: $highlight-color;
+}
 
-* { 
-	box-sizing: border-box; 
+::selection {
+  background: $highlight-color;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
-	font-size: $baseline-font-size;
+  font-size: $baseline-font-size;
 }
 
 body {
-	font-family: system-ui, 'Helvetica Neue', 'Arial', sans-serif;
-	font-size: 16px;
-	color: $text-color;
-	background-color: $bg-color;
-	margin: 0;
-	padding: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-
-	display: flex;
-	flex-direction: column;
-	overflow-x: hidden;
-	overflow-y: hidden;
-
-	transition: background $transition-default, color $transition-default;
-
-	// background-image: repeating-linear-gradient(to bottom, transparent 0px, transparent ($baseline-font-size - 1), $blue $baseline-font-size, $blue $baseline-font-size);
+  font-family: system-ui, 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 16px;
+  color: $text-color;
+  background-color: $bg-color;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  transition: background $transition-default, color $transition-default;
 }
 
 .container {
-	padding: 1rem;
-	min-height: 300vh;
+  padding: 1rem;
+  min-height: 300vh;
 }
 
 .top-layer {
-	width: 100%;
-	height: 100vh;
-	position: absolute;
-	z-index: $z-top;
-	pointer-events: none;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: $z-top;
+  pointer-events: none;
 }
 
 a {
-	text-decoration: none;
-	color: $link-color;
-	transition: color $fast $easing-default;
-	&:hover {
-		color: $link-color-hover;
-	}
+  text-decoration: none;
+  color: $link-color;
+  transition: color $fast $easing-default;
+
+  &:hover {
+    color: $link-color-hover;
+  }
 }
 
 p {
-	line-height: 1.25;
+  line-height: 1.25;
 }
 
 header {
-	.nav {
-		padding: 0.5rem 0;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 2px solid;
+  .nav {
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid;
 
-		.nav-links {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			.nav-link:not(:last-of-type) {
-				margin-right: 0.25rem;
-			}
-		}
+    .nav-links {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
 
-		.nav-link {
-			display: inline;
-		}
+      .nav-link:not(:last-of-type) {
+        margin-right: 0.25rem;
+      }
+    }
 
-		.title {
-			margin-left: 0.15rem;
-		}
-	}
+    .nav-link {
+      display: inline;
+    }
+
+    .title {
+      margin-left: 0.15rem;
+    }
+  }
 }
 
 main {
-	.about-section {
-		p {
-			&:first-of-type {
-				margin-top: 0;
-			}
-			font-weight: 500;
-			font-size: 1.25rem;
-			max-width: 600px;
-			transition: color $transition-default;
-		}
-	}
+  .about-section {
+    p {
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      font-weight: 400;
+      font-size: 1.25rem;
+      max-width: 600px;
+      transition: color $transition-default;
+    }
+  }
 }
 
 .intro-section {
-	max-width: $breakpoint-lg;
-	@include larger-than(lg) {
-		font-size: 12rem;
-	}
+  max-width: $breakpoint-lg;
+
+  @include larger-than(lg) {
+    font-size: 12rem;
+  }
 }
 
-
 .large {
-	padding: 1rem 0;
-	font-size: 2.55rem;
-	font-weight: 600;
-	@include larger-than(sm) {
-		padding: 3vw 0;
-		font-size: 8vw;
-		line-height: 1;
-	}
-	@include larger-than(lg) {
-		font-size: 7vw;
-		padding: 2vw 0;
-		line-height: 0.875;
-	}
+  padding: 1rem 0;
+  font-size: 2.55rem;
+  font-weight: 600;
+
+  @include larger-than(sm) {
+    padding: 3vw 0;
+    font-size: 8vw;
+    line-height: 1;
+  }
+
+
+  @include larger-than(lg) {
+    font-size: 7vw;
+    padding: 2vw 0;
+    line-height: 0.875;
+  }
 }
 
 #secret-button {
-	cursor: pointer;
-	padding: 0 0.25rem;
+  cursor: pointer;
+  padding: 0 0.25rem;
 
-	@include keyframes(hey) {
-	  0% { transform: translateY(0); }
-	  2% { transform: translateY(-5px); }
-	  10% { transform: translateY(0); }
-	  100% { transform: translateY(0); }
+  @include keyframes(hey) {
+    0% {
+      transform: translateY(0);
+    }
 
-	}
+    2% {
+      transform: translateY(-5px);
+    }
 
-	@include animation('hey 10s infinite');
-	animation-delay: 10s;
+    10% {
+      transform: translateY(0);
+    }
 
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+  @include animation("hey 10s infinite");
+
+  animation-delay: 10s;
 }
 
 .bg-dark {
-	background: $dark;
+  background: $dark;
 }
 
 .bg-light {
-	background: $light;
+  background: $light;
 }
 
 .text-dark {
-	color: $dark;
+  color: $dark;
 }
 
 .text-lightgray {
-	color: $medium;
+  color: $medium;
 }
 
 .text-light {
-	color: $light;
+  color: $light;
 }
 
 .hide-on-small {
-	display: none;
-	@include larger-than(sm) {
-		// Keep this hidden for now
-		display: inline;
-	}
-}
+  display: none;
 
+  @include larger-than(sm) {
+    // Keep this hidden for now
+    display: inline;
+  }
+}
 
 .animate,
 .animate-manual {
-	opacity: 0;
-	transform: translateY(10vh);
-	transition: opacity $transition-default, transform $transition-default;
-	&.step-1 {
-		transition-delay: 0.35s;
-	}
-	&.step-2 {
-		transition-delay: 0.7s;
-	}
-	&.step-3 {
-		transition-delay: 1.05s;
-	}
-	&.animate-in {
-		opacity: 1;
-		transform: scale(1);
-		transform: translateY(0vh);
-	}
+  opacity: 0;
+  transform: translateY(10vh);
+  transition: opacity $transition-default, transform $transition-default;
+
+  &.step-1 {
+    transition-delay: 0.35s;
+  }
+
+  &.step-2 {
+    transition-delay: 0.7s;
+  }
+
+  &.step-3 {
+    transition-delay: 1.05s;
+  }
+
+  &.animate-in {
+    opacity: 1;
+    transform: scale(1);
+    transform: translateY(0vh);
+  }
 }
 
 // #hello {

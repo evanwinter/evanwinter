@@ -1,8 +1,7 @@
-/*
- *	Main app entry
+/**
+ * Main app entry
  */
 
-// Import styles
 import styles from "../scss/styles.scss"
 
 function _(el) {
@@ -26,7 +25,6 @@ const green = "#239a3b"
 const papayawhip = "papayawhip"
 
 const COLORS = {
-	
 	// monochromatic
 	dark: "#111",
 	gray: "#888888",
@@ -42,65 +40,21 @@ const COLORS = {
 	darkblue: "#002573",
 	tan: "#FFDBB5",
 	ice: "#F1FAEE",
-	papayawhip: "papayawhip",
+	papayawhip: "papayawhip"
 }
 
 const THEMES = [
-	{
-		background: dark,
-		color: light,
-		linkColor: light
-	},
-	{
-		background: light,
-		color: dark,
-		linkColor: dark
-	},
-	{
-		background: darkblue,
-		color: light,
-		linkColor: light
-	},
-	{
-		background: green,
-		color: light,
-		linkColor: light
-	},
-	{
-		background: ice,
-		color: dark,
-		linkColor: dark
-	},
-	{
-		background: pink,
-		color: light,
-		linkColor: light
-	},
-	{
-		background: red,
-		color: light,
-		linkColor: light
-	},
-	{
-		background: tan,
-		color: dark,
-		linkColor: dark
-	},
-	{
-		background: yellow,
-		color: dark,
-		linkColor: dark
-	},
-	{
-		background: papayawhip,
-		color: dark,
-		linkColor: dark
-	},
-	{
-		background: orange,
-		color: dark,
-		linkColor: dark
-	}
+	{ background: dark, color: light, linkColor: light },
+	{ background: light, color: dark, linkColor: dark },
+	{ background: darkblue, color: light, linkColor: light },
+	{ background: green, color: light, linkColor: light },
+	{ background: ice, color: dark, linkColor: dark },
+	{ background: pink, color: light, linkColor: light },
+	{ background: red, color: light, linkColor: light },
+	{ background: tan, color: dark, linkColor: dark },
+	{ background: yellow, color: dark, linkColor: dark },
+	{ background: papayawhip, color: dark, linkColor: dark },
+	{ background: orange, color: dark, linkColor: dark }
 ]
 
 class ThemeManager {
@@ -184,12 +138,14 @@ function main() {
 
 	const showSplashPage = false
 	const splashDuration = 3000
-	if (showSplashPage)
-		showSplash(splashDuration)
-	
-	setTimeout(() => {
-		Array.from(document.querySelectorAll(".animate")).forEach(el =>
-			el.classList.add("animate-in")
-		)
-	}, showSplashPage ? splashDuration : 1000)
+	if (showSplashPage) showSplash(splashDuration)
+
+	setTimeout(
+		() => {
+			Array.from(document.querySelectorAll(".animate")).forEach(el =>
+				el.classList.add("animate-in")
+			)
+		},
+		showSplashPage ? splashDuration : 1000
+	)
 }
