@@ -1,4 +1,4 @@
-This is souce code for my personal website. 
+This is souce code for my personal website.
 
 * Built with HTML, SCSS, and JavaScript
 * Bundled with [Parcel]('https://github.com/parcel-bundler/parcel/')
@@ -18,10 +18,17 @@ npm install
 
 ### Development
 
-Do all development on the `develop` branch. When you're ready to publish, follow instructions in the **Production** section.
+Do all development on the `develop` branch. When you're ready to publish, follow instructions in the **Publishing** section.
 
 ```bash
 # Build and watch for changes
 npm start
 ```
 
+### Publishing
+
+When you're ready simply run the following publish script.
+
+```bash
+npm run publish
+```
