@@ -24,13 +24,3 @@ Do all development on the `develop` branch. When you're ready to publish, follow
 # Build and watch for changes
 npm start
 ```
-
-### Publishing
-
-When you're ready simply run the following publish script.
-
-```bash
-npm run publish
-```
-
-It (1) builds your bundle into the `dist/` folder and (2) pushes its contents to the root of the `gh-pages` branch. That way, GitHub Pages can serve it properly.
