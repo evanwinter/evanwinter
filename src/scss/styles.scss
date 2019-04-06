@@ -57,6 +57,10 @@ a {
   }
 }
 
+p {
+  transition: color $transition-default;
+}
+
 img {
   width: 100%;
 }

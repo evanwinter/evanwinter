@@ -1,4 +1,4 @@
-import { COLORS, THEMES, DARK_THEME, LIGHT_THEME } from './themes'
+import { COLORS, THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from './themes'
 
 const randomIntFromInterval = (min, max) => {
 	return Math.floor(Math.random() * (max - min + 1) + min)
@@ -68,8 +68,9 @@ class ThemeManager {
 		const numThemes = THEMES.length
 		const now = new Date()
 		let currentHour = now.getHours()
-		while (currentHour >= numThemes) currentHour = currentHour - numThemes
+		// while (currentHour >= numThemes) currentHour = currentHour - numThemes // wrap if fewer themes than current hour
 		this.setTheme(currentHour > 17 ? DARK_THEME : LIGHT_THEME)
+		// this.setTheme(BLUE_THEME)
 	}
 }
 export default ThemeManager

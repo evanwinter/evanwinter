@@ -43,3 +43,4 @@ export const THEMES = [
 
 export const [DARK_THEME] = THEMES.filter(theme => theme['backgroundColor'] === dark)
 export const [LIGHT_THEME] = THEMES.filter(theme => theme['backgroundColor'] === light)
+export const [BLUE_THEME] = THEMES.filter(theme => theme['backgroundColor'] === darkblue)
