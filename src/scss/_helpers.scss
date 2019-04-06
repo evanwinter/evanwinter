@@ -1,3 +1,6 @@
+/**
+ * Trigger styles when the screen is wider than `$breakpoint`
+ */
 @mixin larger-than($breakpoint) {
   @if $breakpoint == "xs" { @media (min-width: $breakpoint-xs + 1) { @content; } }
   @else if $breakpoint == "sm" { @media (min-width: $breakpoint-sm + 1) { @content; } }
@@ -6,6 +9,9 @@
   @else if $breakpoint == "xl" { @media (min-width: $breakpoint-xl + 1) { @content; } }
 }
 
+/**
+ * Mixin that handles prefixes for keyframes
+ */
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
@@ -28,6 +34,9 @@
   }
 }
 
+/**
+ * Mixin that handles prefixes for animations
+ */
 @mixin animation($str) {
   -webkit-animation: #{$str};
   -moz-animation: #{$str};
@@ -36,24 +45,9 @@
   animation: #{$str};
 }
 
-/*
-
-@animation Usage:
-
-@include keyframes(slide-down) {
-  0% { opacity: 1; }
-  90% { opacity: 0; }
-}
-
-.element {
-  width: 100px;
-  height: 100px;
-  background: black;
-  @include animation('slide-down 5s 3');
-}
-
-*/
-
+/**
+ * Mixin that handles prefixes for transitions
+ */
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
@@ -61,21 +55,3 @@
   -o-transition: $args;
   transition: $args;
 }
-
-/*
-
-@transition Usage:
-
-@include keyframes(slide-down) {
-  0% { opacity: 1; }
-  90% { opacity: 0; }
-}
-
-.element {
-  width: 100px;
-  height: 100px;
-  background: black;
-  @include animation('slide-down 5s 3');
-}
-
-*/

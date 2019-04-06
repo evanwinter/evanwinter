@@ -32,10 +32,11 @@ $breakpoint-lg: 1000px;
 $breakpoint-xl: 1200px;
 
 // element colors
+$primary: $lime;
 $text-color: $dark;
 $bg-color: $light;
-$link-color: $text-color;
-$link-color-hover: lighten($text-color, 20%);
+$link-color: $primary;
+$link-color-hover: $primary;
 $highlight-color: yellow;
 
 // transition durations
@@ -51,17 +52,16 @@ $glide: cubic-bezier(.14,.23,.13,.32) !default;
 $easing-default: ease;
 
 $transition-default: $speed-default $easing-default;
+$transition-fast: $fast $easing-default;
 
 // fonts
 $sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
 $serif: "adobe-garamond-pro", Gotham, serif;
-// $serif: "adobe-caslon", Gotham, serif;
-
 
 // typography
 $baseline-font-size: 16px;
 
-
+$gutter: 1rem;
 
 $z-top: 10;
 $z-middle: 5;
