@@ -183,8 +183,8 @@ main {
   @include animation('slide-down 1s 5');
 
   @include keyframes(slide-down) {
-      0% { transform: translateY(-3px); }
-      50% { transform: translateY(0); }
-      100% { transform: translateY(-3px); }
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+      100% { transform: translateY(0px); }
     }
 }
