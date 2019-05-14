@@ -1,7 +1,7 @@
-import { COLORS, THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from './themes'
+import { COLORS, THEMES, DARK_THEME, LIGHT_THEME } from "./themes"
 
-const randomIntFromInterval = (min, max) => {
-	return Math.floor(Math.random() * (max - min + 1) + min)
+const randomInt = max => {
+	return Math.floor(Math.random() * (max + 1))
 }
 
 /**
@@ -12,25 +12,25 @@ const querySelectorAll = selector => [...document.querySelectorAll(selector)]
 
 class ThemeManager {
 	constructor() {
-		this.trigger = document.querySelector('#secret-button')
+		this.trigger = document.querySelector("#secret-button")
 		this.setTheme = this.setTheme.bind(this)
 		this.handleUpdate = this.handleUpdate.bind(this)
 		this.currentIndex = 0
 	}
 
 	listen() {
-		this.trigger.addEventListener('click', this.handleUpdate)
+		this.trigger.addEventListener("click", this.handleUpdate)
 	}
 
 	unlisten() {
-		this.trigger.removeEventListener('click', this.handleUpdate)
+		this.trigger.removeEventListener("click", this.handleUpdate)
 	}
 
 	handleUpdate() {
 		// get a random theme
 		let nextRandInt = null
 		do {
-			nextRandInt = randomIntFromInterval(0, THEMES.length - 1)
+			nextRandInt = randomInt(THEMES.length - 1)
 		} while (nextRandInt === this.currentIndex)
 		const nextTheme = THEMES[nextRandInt]
 
@@ -46,10 +46,10 @@ class ThemeManager {
 		const { backgroundColor, textColor, linkColor } = theme
 
 		// get target elements
-		const body = document.querySelector('body')
-		const paragraphs = querySelectorAll('p')
-		const links = querySelectorAll('a')
-		const icons = querySelectorAll('svg')
+		const body = document.querySelector("body")
+		const paragraphs = querySelectorAll("p")
+		const links = querySelectorAll("a")
+		const icons = querySelectorAll("svg")
 
 		// apply styles
 		body.style.background = backgroundColor
@@ -67,10 +67,10 @@ class ThemeManager {
 		// the current hour of day
 		const numThemes = THEMES.length
 		const now = new Date()
-		let currentHour = now.getHours()
-		// while (currentHour >= numThemes) currentHour = currentHour - numThemes // wrap if fewer themes than current hour
-		this.setTheme(currentHour > 17 ? DARK_THEME : LIGHT_THEME)
-		// this.setTheme(BLUE_THEME)
+		const currentHour = now.getHours()
+		// Use dark theme after 5pm (17th hour)
+		const currentThemeName = currentHour > 17 ? "dark" : "light"
+		this.setTheme(THEMES.find(theme => theme.name === currentThemeName))
 	}
 }
 export default ThemeManager
