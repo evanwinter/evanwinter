@@ -21,7 +21,6 @@ html {
 }
 
 body {
-  // font-family: system-ui, 'Helvetica Neue', 'Arial', sans-serif;
   font-size: 16px;
   color: $text-color;
   background-color: $bg-color;
@@ -36,7 +35,7 @@ body {
 }
 
 .container {
-  padding: 1rem;
+  padding: $gutter;
   min-height: 100vh;
 }
 
@@ -49,20 +48,21 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: $link-color;
-  transition: color $transition-default;
+  transition: color $transition-default, opacity $transition-fast;
 
   &:hover {
     color: $link-color-hover;
+    opacity: 0.65;
   }
 }
 
 p {
-  line-height: 1.25;
-  font-weight: 400;
-  font-size: 1.25rem;
   transition: color $transition-default;
+}
+
+img {
+  width: 100%;
 }
 
 header {
@@ -72,6 +72,10 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid;
+
+    a {
+      text-decoration: none;
+    }
 
     .nav-links {
       list-style-type: none;
@@ -85,9 +89,11 @@ header {
 
     .nav-link {
       display: inline-block;
+
       a {
         display: flex;
         align-items: center;
+
         svg {
           margin-right: 0.35rem;
         }
@@ -108,17 +114,40 @@ header {
 
 main {
   .intro-section {
-    p {
-      margin: 1.25rem 0;
-      @include larger-than(lg) {
-        margin: 1.5rem 0;
+    h1 {
+      font-weight: 500;
+      margin: 1rem 0;
+      font-size: 16vw;
+      line-height: 1.15;
+      letter-spacing: -2px;
+
+      @include larger-than(sm) {
+        font-size: 8vw;
+        letter-spacing: -2px;
+      }
+
+      @include larger-than(md) {
+        font-size: 8vw;
+        letter-spacing: -2px;
       }
     }
   }
 
   .about-section {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+
+    @include larger-than(sm) {
+      margin: 2rem 0;
+      flex-direction: row;
+    }
+
     p {
       max-width: 600px;
+      line-height: 1.5;
+      padding-right: 1rem;
+      font-size: 1.5rem;
 
       &:first-of-type {
         margin-top: 0;
@@ -127,38 +156,20 @@ main {
   }
 }
 
-.large {
-  font-size: 2rem;
-  font-weight: 500;
-  button {
-    vertical-align: text-bottom;
-  }
-
-  @include larger-than(sm) {
-    font-size: 6vw;
-    line-height: 1.15;
-  }
-
-  @include larger-than(lg) {
-    font-size: 3.75rem;
-    margin: 2rem 0;
-  }
-}
-
 #secret-button {
   cursor: pointer;
-  // padding: 0 0.25rem;
-  
   will-change: transform;
-  transition: transform 150ms ease;
+  transition: transform 150ms ease, opacity 150ms ease;
   transform-origin: center;
-
   @include larger-than(sm) {
     font-size: 0.8em;
   }
+  &:focus {
+    opacity: 1;
+  }
 
   &:hover {
-    transform: scale(1.05);
+    opacity: 0.65;
   }
 }
 
@@ -168,4 +179,16 @@ main {
   @include larger-than(sm) {
     display: inline;
   }
+}
+
+.animate {
+  animation-delay: 10s;
+
+  @include animation('slide-down 1s 5');
+
+  @include keyframes(slide-down) {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-3px); }
+      100% { transform: translateY(0px); }
+    }
 }
