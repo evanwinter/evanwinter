@@ -1,9 +1,4 @@
-# DS Store
-.DS_Store*
-
-# node modules
-node_modules/
-
-# parcel post-build stuff
-.cache/
-dist/
+.DS_Store
+node_modules
+.cache
+dist
