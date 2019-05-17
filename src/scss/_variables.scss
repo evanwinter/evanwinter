@@ -1,0 +1,69 @@
+// white, gray, black
+$light: #fefefe;
+$medium: #999;
+$dark: #333;
+
+// colors
+$blue-kitandace: #002573;
+$blue-donetodeath: #130DB1;
+$blue-atlassian: #0747a6;
+$perfect-blue: rgb(7, 71, 166);
+$emoji-guy-blue: #2726cf;
+$blue: $emoji-guy-blue;
+$lightblue: #74B3CE;
+$yellow: #f7d708;
+$tan: #FFDBB5;
+$ice: #F1FAEE;
+$red: #B80C09;
+$orange: #FE9000;
+$orange-vibrant: #FF6700;
+$pink: #FF8484;
+$lime: #00FF4F;
+
+$papayawhip: papayawhip;
+$linen: linen;
+$oldlace: oldlace;
+
+// breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 800px;
+$breakpoint-lg: 1000px;
+$breakpoint-xl: 1200px;
+
+// element colors
+$primary: $dark;
+$text-color: $dark;
+$bg-color: $light;
+$link-color: $primary;
+$link-color-hover: $primary;
+$highlight-color: rgba(lightgray, 0.5);
+
+// transition durations
+$fast: 50ms;
+$normal: 350ms;
+$slow: 750ms;
+$very-slow: 1250ms;
+$speed-default: $normal;
+
+// easings
+$bezier-1: cubic-bezier(.79,.08,.41,.1) !default;
+$glide: cubic-bezier(.14,.23,.13,.32) !default;
+$easing-default: ease;
+
+$transition-default: $speed-default $easing-default;
+$transition-fast: $fast $easing-default;
+
+$duration: $speed-default;
+$ease: $easing-default;
+
+// fonts
+$sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
+$serif: "adobe-garamond-pro", Gotham, serif;
+
+$gutter: 1rem;
+
+$z-top: 10;
+$z-middle: 5;
+$z-bottom: 0;
+$z-under: -1;
