@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	themeManager.setInitialTheme()
 	themeManager.listen()
 
+	const root = document.documentElement
+	setTimeout(() => root.style.setProperty('--theme', 'dark'), 1000)
+
 	// Wait longer to animate the button because I think users are more likely
 	// to discover it on their own on a non-touchscreen
 	const delay = device.mobile() || device.tablet() ? 5000 : 15000

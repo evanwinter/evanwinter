@@ -25,7 +25,7 @@ $linen: linen;
 $oldlace: oldlace;
 
 // breakpoints
-$breakpoint-xs: 400px;
+$breakpoint-xs: 320px;
 $breakpoint-sm: 600px;
 $breakpoint-md: 800px;
 $breakpoint-lg: 1000px;
@@ -44,7 +44,7 @@ $fast: 50ms;
 $normal: 350ms;
 $slow: 750ms;
 $very-slow: 1250ms;
-$speed-default: $slow;
+$speed-default: $normal;
 
 // easings
 $bezier-1: cubic-bezier(.79,.08,.41,.1) !default;
@@ -54,12 +54,12 @@ $easing-default: ease;
 $transition-default: $speed-default $easing-default;
 $transition-fast: $fast $easing-default;
 
+$duration: $speed-default;
+$ease: $easing-default;
+
 // fonts
 $sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
 $serif: "adobe-garamond-pro", Gotham, serif;
-
-// typography
-$baseline-font-size: 16px;
 
 $gutter: 1rem;
 

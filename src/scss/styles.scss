@@ -2,6 +2,14 @@
 @import "./helpers";
 @import "./resets";
 
+::root {
+
+}
+
+$theme-colors: (
+  dark: '#454545'
+);
+
 // Baseline styles
 
 ::-moz-selection {
@@ -17,13 +25,13 @@
 }
 
 html {
-  font-size: $baseline-font-size;
+  font-size: 16px;
 }
 
 body {
   font-size: 16px;
   color: $text-color;
-  background-color: $bg-color;
+  background-color: map-get($theme-colors, var(--background-color));
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
@@ -53,7 +61,7 @@ a {
 
   &:hover {
     color: $link-color-hover;
-    opacity: 0.65;
+    opacity: 0.75;
   }
 }
 
@@ -67,11 +75,15 @@ img {
 
 header {
   .nav {
-    padding: 0.5rem 0;
+    padding: 0 0 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid;
+    font-size: 0.85rem;
+    @include larger-than(xs) {
+      font-size: 1rem;
+    }
 
     a {
       text-decoration: none;
@@ -83,7 +95,10 @@ header {
       margin: 0;
 
       .nav-link:not(:last-of-type) {
-        margin-right: 0.5rem;
+        margin-right: 0.25rem;
+        @include larger-than(xs) {
+          margin-right: 0.5rem;
+        }
       }
     }
 
@@ -113,27 +128,22 @@ header {
 }
 
 main {
-  .intro-section {
+  section.intro {
     h1 {
       font-weight: 500;
       margin: 1rem 0;
-      font-size: 3rem;
-      line-height: 1.15;
+      font-size: 11vw;
+      line-height: 1.05;
       letter-spacing: -2px;
 
       @include larger-than(sm) {
-        // font-size: 8vw;
-        letter-spacing: -2px;
-      }
-
-      @include larger-than(md) {
-        // font-size: 8vw;
+        font-size: 8.6vw;
         letter-spacing: -2px;
       }
     }
   }
 
-  .about-section {
+  section.about {
     display: flex;
     flex-direction: column;
     margin: 1rem 0;
@@ -145,7 +155,7 @@ main {
 
     p {
       max-width: 600px;
-      line-height: 1.5;
+      line-height: 1.25;
       padding-right: 1rem;
       font-size: 1.5rem;
 
@@ -160,16 +170,8 @@ main {
   cursor: pointer;
   will-change: transform;
   transition: transform 150ms ease, opacity 150ms ease;
-  transform-origin: center;
+  // transform-origin: center;
   @include larger-than(sm) {
-    font-size: 0.8em;
-  }
-  &:focus {
-    opacity: 1;
-  }
-
-  &:hover {
-    opacity: 0.65;
   }
 }
 
@@ -179,6 +181,11 @@ main {
   @include larger-than(sm) {
     display: inline;
   }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .animate {
@@ -191,4 +198,22 @@ main {
       50% { transform: translateY(-3px); }
       100% { transform: translateY(0px); }
     }
+}
+
+section.projects {
+  transition: transform $duration $ease;
+  &.hidden {
+    transform: translateY(10vh);
+  }
+}
+
+button.button {
+  margin: 1rem 0;
+  border: 1px solid $light;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem 0.7rem;
+  cursor: pointer;
+  &:hover {
+    background: rgba($light, 0.1);
+  }
 }
