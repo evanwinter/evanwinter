@@ -1,4 +1,4 @@
-import { COLORS, THEMES, DARK_THEME, LIGHT_THEME } from "./themes"
+import { COLORS, THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from "./themes"
 
 const randomInt = max => {
 	return Math.floor(Math.random() * (max + 1))
@@ -12,65 +12,67 @@ const querySelectorAll = selector => [...document.querySelectorAll(selector)]
 
 class ThemeManager {
 	constructor() {
-		this.trigger = document.querySelector("#secret-button")
 		this.setTheme = this.setTheme.bind(this)
 		this.handleUpdate = this.handleUpdate.bind(this)
 		this.currentIndex = 0
 	}
 
 	listen() {
-		this.trigger.addEventListener("click", this.handleUpdate)
-	}
-
-	unlisten() {
-		this.trigger.removeEventListener("click", this.handleUpdate)
+		document.querySelector("#secret-button").addEventListener("click", this.handleUpdate)
 	}
 
 	handleUpdate() {
 		// get a random theme
-		let nextRandInt = null
-		do {
-			nextRandInt = randomInt(THEMES.length - 1)
-		} while (nextRandInt === this.currentIndex)
-		const nextTheme = THEMES[nextRandInt]
+		do { var nextInt = randomInt(THEMES.length - 1) } while (nextInt === this.currentIndex)
+		const nextTheme = THEMES[nextInt]
 
 		// set next theme
 		this.setTheme(nextTheme)
-		this.currentIndex = nextRandInt
+		this.currentIndex = nextInt
 	}
 
 	/**
 	 * Apply the provided theme by updating certain elements' inline styles
 	 */
 	setTheme(theme) {
-		const { backgroundColor, textColor, linkColor } = theme
-
-		// get target elements
-		const body = document.querySelector("body")
-		const paragraphs = querySelectorAll("p")
-		const links = querySelectorAll("a")
-		const icons = querySelectorAll("svg")
-
-		// apply styles
-		body.style.background = backgroundColor
-		body.style.color = textColor
-		links.forEach(link => (link.style.color = linkColor))
-		paragraphs.forEach(paragraph => (paragraph.style.color = textColor))
-		icons.forEach(icon => (icon.style.fill = textColor))
+		const rootElement = document.querySelector(':root')
+		for (let key in theme) {
+			const cssVarKey = key.replace(/_/g, '-')
+			rootElement.style.setProperty(cssVarKey, theme[key])
+		}
 	}
 
 	/**
-	 * Set the initial theme based on the time of day (dark/light mode).
+	 * Set the initial theme based user preferences (if supported) or time of day
+	 * if unsupported or if no preference is specified.
 	 */
 	setInitialTheme() {
-		// Get the theme whose index position in the THEMES array corresponds to
-		// the current hour of day
-		const numThemes = THEMES.length
-		const now = new Date()
-		const currentHour = now.getHours()
-		// Use dark theme after 5pm (17th hour)
-		const currentThemeName = currentHour > 17 ? "dark" : "light"
-		this.setTheme(THEMES.find(theme => theme.name === currentThemeName))
+
+		// Sometimes I like the blue theme
+		this.setTheme(BLUE_THEME)
+		return
+
+		// Check for user preferences, if supported (Firefox only so far)
+		const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+		const prefersLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+		const noPreference = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+
+		const noSupport = !prefersDarkMode && !prefersLightMode && !noPreference
+
+		// If not supported or there's no preference specified, default to dark
+		// or late based on time of day
+		if (noSupport || noPreference) {
+			// Get the current hour
+			const now = new Date()
+			const hour = now.getHours()
+			// Use dark theme before 5 a.m. and after 5 p.m.
+			const theme = hour < 5 || hour > 17? DARK_THEME : LIGHT_THEME
+			console.log(`Setting to ${theme.name} mode based on current time of day.`)
+			this.setTheme(theme)
+		} else {
+			if (prefersDarkMode) setTheme('dark')
+			if (prefersLightMode) setTheme('light')
+		}
 	}
 }
 export default ThemeManager

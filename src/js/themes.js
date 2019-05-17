@@ -12,35 +12,19 @@ const orange = 'orange'
 const green = 'green'
 const papayawhip = 'papayawhip'
 
-export const COLORS = {
-	dark: dark,
-	gray: gray,
-	light: light,
-	green: green,
-	yellow: yellow,
-	red: red,
-	pink: pink,
-	orange: orange,
-	darkblue: darkblue,
-	tan: tan,
-	ice: ice,
-	papayawhip: papayawhip,
-}
-
 export const THEMES = [
-	{ name: 'dark', backgroundColor: dark, textColor: light, linkColor: light },
-	{ name: 'light', backgroundColor: light, textColor: dark, linkColor: dark },
-	{ name: 'darkblue', backgroundColor: darkblue, textColor: light, linkColor: light },
-	{ name: '', backgroundColor: green, textColor: light, linkColor: light },
-	{ name: '', backgroundColor: ice, textColor: dark, linkColor: dark },
-	{ name: '', backgroundColor: pink, textColor: light, linkColor: light },
-	{ name: '', backgroundColor: red, textColor: light, linkColor: light },
-	{ name: '', backgroundColor: tan, textColor: dark, linkColor: dark },
-	{ name: '', backgroundColor: yellow, textColor: dark, linkColor: dark },
-	{ name: '', backgroundColor: papayawhip, textColor: dark, linkColor: dark },
-	{ name: '', backgroundColor: orange, textColor: dark, linkColor: dark },
+	{ name: 'dark', __background_color: dark, __text_color: light, __link_color: light },
+	{ name: 'light', __background_color: light, __text_color: dark, __link_color: dark },
+	{ name: 'darkblue', __background_color: darkblue, __text_color: light, __link_color: light },
+	{ name: 'green', __background_color: green, __text_color: light, __link_color: light },
+	{ name: 'ice', __background_color: ice, __text_color: dark, __link_color: dark },
+	{ name: 'red', __background_color: red, __text_color: light, __link_color: light },
+	{ name: 'tan', __background_color: tan, __text_color: dark, __link_color: dark },
+	{ name: 'yellow', __background_color: yellow, __text_color: dark, __link_color: dark },
+	{ name: 'papayawhip', __background_color: papayawhip, __text_color: dark, __link_color: dark },
+	{ name: 'orange', __background_color: orange, __text_color: dark, __link_color: dark },
 ]
 
-export const DARK_THEME = THEMES.find(theme => theme['backgroundColor'] === dark)
-export const LIGHT_THEME = THEMES.find(theme => theme['backgroundColor'] === light)
-export const BLUE_THEME = THEMES.find(theme => theme['backgroundColor'] === darkblue)
+export const DARK_THEME = THEMES.find(theme => theme.name === 'dark')
+export const LIGHT_THEME = THEMES.find(theme => theme.name === 'light')
+export const BLUE_THEME = THEMES.find(theme => theme.name === 'darkblue')
