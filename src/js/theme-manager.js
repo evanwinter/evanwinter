@@ -1,4 +1,4 @@
-import { COLORS, THEMES, DARK_THEME, LIGHT_THEME } from "./themes"
+import { COLORS, THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from "./themes"
 
 const randomInt = max => {
 	return Math.floor(Math.random() * (max + 1))
@@ -47,6 +47,11 @@ class ThemeManager {
 	 * if unsupported or if no preference is specified.
 	 */
 	setInitialTheme() {
+
+		// Sometimes I like the blue theme
+		this.setTheme(BLUE_THEME)
+		return
+
 		// Check for user preferences, if supported (Firefox only so far)
 		const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
 		const prefersLightMode = window.matchMedia("(prefers-color-scheme: light)").matches

@@ -14,6 +14,8 @@
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -21,13 +23,10 @@ html {
 }
 
 body {
-  font-size: 16px;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: var(--background-color);
   margin: 0;
   padding: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -72,17 +71,14 @@ header {
       list-style-type: none;
       padding: 0;
       margin: 0;
-
-      .nav-link:not(:last-of-type) {
-        margin-right: 0.25rem;
-        @include larger-than(xs) {
-          margin-right: 0.5rem;
-        }
-      }
     }
 
-    .nav-link {
+    .nav-item {
       display: inline-block;
+
+      &:not(:last-of-type) {
+        margin-right: 0.5rem;
+      }
 
       a {
         display: flex;
@@ -93,16 +89,6 @@ header {
         }
       }
     }
-
-    .title {
-      margin-left: 0.15rem;
-    }
-  }
-
-  .nav-svg-icon {
-    width: 1rem;
-    fill: $text-color;
-    transition: fill $transition-default;
   }
 }
 
@@ -116,6 +102,11 @@ main {
       letter-spacing: -2px;
 
       @include larger-than(sm) {
+        font-size: 8.6vw;
+        letter-spacing: -2px;
+      }
+
+      @include larger-than(lg) {
         font-size: 8.6vw;
         letter-spacing: -2px;
       }
@@ -147,29 +138,20 @@ main {
 
 #secret-button {
   cursor: pointer;
-  will-change: transform;
-  transition: transform 150ms ease, opacity 150ms ease;
-  // transform-origin: center;
-  @include larger-than(sm) {
-  }
+  font-size: 0.8em;
 }
 
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+// .animate {
+//   animation-delay: 10s;
 
-.animate {
-  animation-delay: 10s;
+//   @include animation('slide-down 1s 5');
 
-  @include animation('slide-down 1s 5');
-
-  @include keyframes(slide-down) {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-3px); }
-      100% { transform: translateY(0px); }
-    }
-}
+//   @include keyframes(slide-down) {
+//       0% { transform: translateY(0px); }
+//       50% { transform: translateY(-3px); }
+//       100% { transform: translateY(0px); }
+//     }
+// }
 
 // section.projects {
 //   transition: transform $duration $ease;

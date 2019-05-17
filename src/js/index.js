@@ -3,7 +3,7 @@
  */
 
 // Import styles
-import styles from "../scss/styles.scss"
+import "../scss/styles.scss"
 
 // Import theme manager
 import ThemeManager from "./theme-manager"

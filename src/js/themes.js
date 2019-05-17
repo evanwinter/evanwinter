@@ -16,13 +16,13 @@ export const THEMES = [
 	{ name: 'dark', __background_color: dark, __text_color: light, __link_color: light },
 	{ name: 'light', __background_color: light, __text_color: dark, __link_color: dark },
 	{ name: 'darkblue', __background_color: darkblue, __text_color: light, __link_color: light },
-	{ name: '', __background_color: green, __text_color: light, __link_color: light },
-	{ name: '', __background_color: ice, __text_color: dark, __link_color: dark },
-	{ name: '', __background_color: red, __text_color: light, __link_color: light },
-	{ name: '', __background_color: tan, __text_color: dark, __link_color: dark },
-	{ name: '', __background_color: yellow, __text_color: dark, __link_color: dark },
-	{ name: '', __background_color: papayawhip, __text_color: dark, __link_color: dark },
-	{ name: '', __background_color: orange, __text_color: dark, __link_color: dark },
+	{ name: 'green', __background_color: green, __text_color: light, __link_color: light },
+	{ name: 'ice', __background_color: ice, __text_color: dark, __link_color: dark },
+	{ name: 'red', __background_color: red, __text_color: light, __link_color: light },
+	{ name: 'tan', __background_color: tan, __text_color: dark, __link_color: dark },
+	{ name: 'yellow', __background_color: yellow, __text_color: dark, __link_color: dark },
+	{ name: 'papayawhip', __background_color: papayawhip, __text_color: dark, __link_color: dark },
+	{ name: 'orange', __background_color: orange, __text_color: dark, __link_color: dark },
 ]
 
 export const DARK_THEME = THEMES.find(theme => theme.name === 'dark')
