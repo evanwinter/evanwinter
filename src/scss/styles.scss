@@ -38,6 +38,12 @@ body {
   min-height: 100vh;
 }
 
+#update-theme-button {
+  cursor: pointer;
+  font-size: 0.8em;
+  line-height: 1;
+}
+
 a {
   color: var(--link-color);
   transition: color $transition-default, opacity $transition-fast;
@@ -59,9 +65,11 @@ header {
     align-items: center;
     border-bottom: 2px solid;
     font-size: 0.85rem;
+
     @include larger-than(xs) {
       font-size: 1rem;
     }
+
 
     a {
       text-decoration: none;
@@ -97,16 +105,17 @@ main {
     h1 {
       font-weight: 500;
       margin: 1rem 0;
-      font-size: 11vw;
+      font-size: 2.15rem;
       line-height: 1.05;
-      letter-spacing: -2px;
+      letter-spacing: -1px;
 
-      @include larger-than(sm) {
-        font-size: 8.6vw;
+      @include larger-than(xs) {
+        font-size: 11vw;
         letter-spacing: -2px;
       }
 
-      @include larger-than(lg) {
+
+      @include larger-than(sm) {
         font-size: 8.6vw;
         letter-spacing: -2px;
       }
@@ -123,6 +132,7 @@ main {
       flex-direction: row;
     }
 
+
     p {
       max-width: 600px;
       line-height: 1.25;
@@ -135,38 +145,3 @@ main {
     }
   }
 }
-
-#secret-button {
-  cursor: pointer;
-  font-size: 0.8em;
-}
-
-// .animate {
-//   animation-delay: 10s;
-
-//   @include animation('slide-down 1s 5');
-
-//   @include keyframes(slide-down) {
-//       0% { transform: translateY(0px); }
-//       50% { transform: translateY(-3px); }
-//       100% { transform: translateY(0px); }
-//     }
-// }
-
-// section.projects {
-//   transition: transform $duration $ease;
-//   &.hidden {
-//     transform: translateY(10vh);
-//   }
-// }
-
-// button.button {
-//   margin: 1rem 0;
-//   border: 1px solid $light;
-//   font-size: 1rem;
-//   padding: 0.5rem 0.75rem 0.7rem;
-//   cursor: pointer;
-//   &:hover {
-//     background: rgba($light, 0.1);
-//   }
-// }

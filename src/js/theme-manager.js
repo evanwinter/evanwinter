@@ -1,14 +1,4 @@
-import { COLORS, THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from "./themes"
-
-const randomInt = max => {
-	return Math.floor(Math.random() * (max + 1))
-}
-
-/**
- * Wrapper function that makes document.querySelectorAll return an Array
- * instead of a NodeList
- */
-const querySelectorAll = selector => [...document.querySelectorAll(selector)]
+import { THEMES, DARK_THEME, LIGHT_THEME, BLUE_THEME } from "./themes"
 
 class ThemeManager {
 	constructor() {
@@ -17,56 +7,59 @@ class ThemeManager {
 		this.currentIndex = 0
 	}
 
+	/**
+	 * Update the theme when the user clicks the emoji button
+	 */
 	listen() {
-		document.querySelector("#secret-button").addEventListener("click", this.handleUpdate)
+		document.querySelector("#update-theme-button").addEventListener("click", this.handleUpdate)
 	}
 
 	handleUpdate() {
-		// get a random theme
-		do { var nextInt = randomInt(THEMES.length - 1) } while (nextInt === this.currentIndex)
+		// Get a random theme
+		const randomInt = max => Math.floor(Math.random() * (max + 1))
+		// Keep getting new theme until it's different than the current one
+		do {
+			var nextInt = randomInt(THEMES.length - 1)
+		} while (nextInt === this.currentIndex)
 		const nextTheme = THEMES[nextInt]
 
-		// set next theme
+		// Set next theme
 		this.setTheme(nextTheme)
 		this.currentIndex = nextInt
 	}
 
 	/**
-	 * Apply the provided theme by updating certain elements' inline styles
+	 * Apply a theme by updating CSS custom properties
 	 */
 	setTheme(theme) {
-		const rootElement = document.querySelector(':root')
+		const rootElement = document.querySelector(":root")
 		for (let key in theme) {
-			const cssVarKey = key.replace(/_/g, '-')
+			const cssVarKey = key.replace(/_/g, "-")
 			rootElement.style.setProperty(cssVarKey, theme[key])
 		}
 	}
 
 	/**
-	 * Set the initial theme based user preferences (if supported) or time of day
-	 * if unsupported or if no preference is specified.
+	 * Set the initial theme based on the following factors:
+	 * 1. User-defined preferences (if supported) (Firefox only for now)
+	 * 2. Time of day, if user preferences aren't supported
 	 */
 	setInitialTheme() {
-		// Check for user preferences, if supported (Firefox only so far)
 		const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
 		const prefersLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
 		const noPreference = window.matchMedia("(prefers-color-scheme: no-preference)").matches
-
 		const noSupport = !prefersDarkMode && !prefersLightMode && !noPreference
 
-		// If not supported or there's no preference specified, default to dark
-		// or late based on time of day
 		if (noSupport || noPreference) {
 			// Get the current hour
 			const now = new Date()
 			const hour = now.getHours()
 			// Use dark theme before 5 a.m. and after 5 p.m.
-			const theme = hour < 5 || hour > 17? DARK_THEME : LIGHT_THEME
-			console.log(`Setting to ${theme.name} mode based on current time of day.`)
+			const theme = hour < 5 || hour > 17 ? DARK_THEME : LIGHT_THEME
 			this.setTheme(theme)
 		} else {
-			if (prefersDarkMode) setTheme('dark')
-			if (prefersLightMode) setTheme('light')
+			if (prefersDarkMode) setTheme(DARK_THEME)
+			if (prefersLightMode) setTheme(LIGHT_THEME)
 		}
 	}
 }
