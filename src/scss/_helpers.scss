@@ -1,6 +1,3 @@
-/**
- * Trigger styles when the screen is wider than `$breakpoint`
- */
 @mixin larger-than($breakpoint) {
   @if $breakpoint == "xs" { @media (min-width: $breakpoint-xs + 1) { @content; } }
   @else if $breakpoint == "sm" { @media (min-width: $breakpoint-sm + 1) { @content; } }
@@ -9,34 +6,6 @@
   @else if $breakpoint == "xl" { @media (min-width: $breakpoint-xl + 1) { @content; } }
 }
 
-/**
- * Mixin that handles prefixes for keyframes
- */
-@mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @-o-keyframes #{$animation-name} {
-    @content;
-  }
-
-  @keyframes #{$animation-name} {
-    @content;
-  }
-}
-
-/**
- * Mixin that handles prefixes for animations
- */
 @mixin animation($str) {
   -webkit-animation: #{$str};
   -moz-animation: #{$str};
@@ -45,9 +14,6 @@
   animation: #{$str};
 }
 
-/**
- * Mixin that handles prefixes for transitions
- */
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;

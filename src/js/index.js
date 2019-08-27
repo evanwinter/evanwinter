@@ -1,15 +1,7 @@
-/**
- * Main app entry
- */
-
 // Import styles
-import "../scss/styles.scss"
+import "../scss/index.scss"
 
-// Import theme manager
-import ThemeManager from "./theme-manager"
+// Detect characteristics of current device
+import device from "current-device"
 
-document.addEventListener("DOMContentLoaded", () => {
-	const themeManager = new ThemeManager()
-	themeManager.setInitialTheme()
-	themeManager.listen()
-})
+console.log("Running")
