@@ -1,6 +1,8 @@
 @import "./variables";
+@import "./fonts";
 @import "./helpers";
 @import "./resets";
+@import "./cube";
 
 ::-moz-selection {
   background: $highlight-color;
@@ -35,6 +37,7 @@ body {
   margin: 0 auto;
   max-width: 1024px;
   padding: 2rem;
+  position: relative;
 }
 
 a {
@@ -46,13 +49,13 @@ a {
   }
 }
 
-img {
-  width: 100%;
+.space-between {
+  display: flex;
+  justify-content: space-between;
 }
 
 main {
   h1 {
-    margin-top: 0;
     font-size: 5vw;
     @include larger-than(sm) {
       font-size: 2rem;
@@ -66,14 +69,33 @@ main {
 }
 
 html.portrait {
-  h1 {
-    font-size: 6vw;
-    max-width: 70%;
-  }
+  // h1 {
+  //   font-size: 6vw;
+  //   max-width: 70%;
+  // }
 }
 
-p {
+.absolute {
+  position: absolute;
+}
 
+// .circle {
+//   border-radius: 50%;
+//   width: 1px;
+//   height: 1px;
+//   background: black;
+//   transition: transform 500ms ease;
+//   &.expand {
+//     transform: scale(50);
+//   }
+// }
+
+.cube-wrapper {
+  // position: absolute;
+  // right: $cube-size;
+  // top: $cube-size / 2;
+  // right: 3rem;
+  // top: 2rem;
 }
 
 // header {
