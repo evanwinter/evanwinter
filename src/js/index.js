@@ -5,27 +5,36 @@ import "../scss/index.scss"
 import device from "current-device"
 
 // Import typography library
-import Typography from 'typography'
+import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: '16px',
-  baseLineHeight: 1.45,
-  headerFontFamily: ['Space Grotesk', '-apple-system', 'system-ui', 'sans-serif'],
-  bodyFontFamily: ['Space Grotesk', '-apple-system', 'system-ui', 'sans-serif'],
+	baseFontSize: "16px",
+	baseLineHeight: 1.5,
+	headerFontFamily: ["Space Grotesk", "-apple-system", "system-ui", "sans-serif"],
+	bodyFontFamily: ["Space Grotesk", "-apple-system", "system-ui", "sans-serif"],
 })
-
-const setInvertedText = () => {
-	document.querySelectorAll("")
-}
 
 typography.injectStyles()
 
-document.addEventListener('DOMContentLoaded', (e) => {
+const setInvertedText = () => {
+	const h1 = document.querySelectorAll("main h1")
+	const p = document.querySelectorAll("main p")
+	const elements = [...h1, ...p]
+	elements.forEach((el) => {
+		el.classList.toggle("inverted-text")
+	})
+}
+
+const setInvertedBody = () => {
+	const body = document.querySelector("body")
+	body.classList.toggle("inverted-body")
+}
+
+document.addEventListener("DOMContentLoaded", (e) => {
 	const cube = document.querySelector(".cube")
-	const circle = document.querySelector(".circle")
-	cube.addEventListener('click', (e) => {
+	cube.addEventListener("click", (e) => {
 		cube.classList.toggle("colors")
-		circle.classList.toggle("expand")
 		setInvertedText()
+		setInvertedBody()
 	})
 })

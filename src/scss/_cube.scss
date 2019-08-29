@@ -33,6 +33,69 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 	cursor: pointer;
 	transform-style: preserve-3d;
 	animation: cube-spin 5s infinite linear;
+
+	.side {
+		position: absolute;
+		width: $cube-size;
+		height: $cube-size;
+		background: transparent;
+
+		@include transition(background 500ms ease);
+
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+
+		$s-min: 20;
+		$s-max: 70;
+		$l-min: 30;
+		$l-max: 90;
+
+		.square {
+			@include transition(background 500ms ease);
+		}
+
+		&.back {
+			transform: translateZ(($cube-size / 2) * -1) rotateY(180deg);
+			.square {
+				background: transparent;
+			}
+		}
+		&.right {
+			transform: rotateY(-270deg) translateX($cube-size / 2);
+			transform-origin: top right;
+			.square {
+				background: transparent;
+			}
+		}
+		&.left {
+			transform: rotateY(270deg) translateX(($cube-size / 2) * -1);
+			transform-origin: center left;
+			.square {
+				background: transparent;
+			}
+		}
+		&.top {
+			transform: rotateX(-90deg) translateY(($cube-size / 2) * -1);
+			transform-origin: top center;
+			.square {
+				background: transparent;
+			}
+		}
+		&.bottom {
+			transform: rotateX(90deg) translateY($cube-size / 2);
+			transform-origin: bottom center;
+			.square {
+				background: transparent;
+			}
+		}
+		&.front {
+			transform: translateZ($cube-size / 2);
+			.square {
+				background: transparent;
+			}
+		}
+	}
 }
 
 .cube.colors {
@@ -105,102 +168,9 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 	}
 }
 
-.side {
-	position: absolute;
-	width: $cube-size;
-	height: $cube-size;
-	background: none;
-
-	@include transition(background 500ms ease);
-
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr;
-
-	$s-min: 20;
-	$s-max: 70;
-	$l-min: 30;
-	$l-max: 90;
-
-	.square {
-		@include transition(background 500ms ease);
-	}
-
-	&.back {
-		transform: translateZ(($cube-size / 2) * -1) rotateY(180deg);
-		.square {
-			background: transparent;
-		}
-	}
-	&.right {
-		transform: rotateY(-270deg) translateX($cube-size / 2);
-		transform-origin: top right;
-		.square {
-			background: transparent;
-		}
-	}
-	&.left {
-		transform: rotateY(270deg) translateX(($cube-size / 2) * -1);
-		transform-origin: center left;
-		.square {
-			background: transparent;
-		}
-	}
-	&.top {
-		transform: rotateX(-90deg) translateY(($cube-size / 2) * -1);
-		transform-origin: top center;
-		.square {
-			background: transparent;
-		}
-	}
-	&.bottom {
-		transform: rotateX(90deg) translateY($cube-size / 2);
-		transform-origin: bottom center;
-		.square {
-			background: transparent;
-		}
-	}
-	&.front {
-		transform: translateZ($cube-size / 2);
-		.square {
-			background: transparent;
-		}
-	}
-}
-
 .square {
 	border: $cube-square-border-sm;
 	border-radius: $cube-square-border-radius-sm;
 	// subtle shadow around the edge of each square -- trying to make it look a little 3d
 	box-shadow: $cube-square-box-shadow-sm;
 }
-
-
-
-// .square:nth-child(1) {
-//    background: red !important;
-// }
-// .square:nth-child(2){
-//    background: orange !important;
-// }
-// .square:nth-child(3){
-//    background: yellow !important;
-// }
-// .square:nth-child(4){
-//    background: green !important;
-// }
-// .square:nth-child(5){
-//    background: blue !important;
-// }
-// .square:nth-child(6){
-//    background: white !important;
-// }
-// .square:nth-child(7){
-//    background: red !important;
-// }
-// .square:nth-child(8){
-//    background: green !important;
-// }
-// .square:nth-child(9){
-//    background: white !important;
-// }

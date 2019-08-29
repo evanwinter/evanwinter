@@ -30,6 +30,20 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+
+  transition: background 250ms ease;
+}
+
+.inverted-text {
+  color: $text-color-inverted;
+}
+
+.inverted-body {
+  background: $background-color-inverted;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .container {
@@ -57,138 +71,11 @@ a {
 main {
   h1 {
     font-size: 5vw;
-    @include larger-than(sm) {
-      font-size: 2rem;
-    }
-    max-width: 600px;
+    transition: color 250ms ease;
   }
   p {
     font-size: 1rem;
     max-width: 700px;
+    transition: color 250ms ease;
   }
 }
-
-html.portrait {
-  // h1 {
-  //   font-size: 6vw;
-  //   max-width: 70%;
-  // }
-}
-
-.absolute {
-  position: absolute;
-}
-
-// .circle {
-//   border-radius: 50%;
-//   width: 1px;
-//   height: 1px;
-//   background: black;
-//   transition: transform 500ms ease;
-//   &.expand {
-//     transform: scale(50);
-//   }
-// }
-
-.cube-wrapper {
-  // position: absolute;
-  // right: $cube-size;
-  // top: $cube-size / 2;
-  // right: 3rem;
-  // top: 2rem;
-}
-
-// header {
-//   .nav {
-//     padding: 0 0 0.5rem;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     border-bottom: 2px solid;
-//     font-size: 0.85rem;
-//     @include larger-than(xs) {
-//       font-size: 1rem;
-//     }
-
-//     a {
-//       text-decoration: none;
-//       color: var(--text-color);
-//     }
-
-//     .nav-links {
-//       list-style-type: none;
-//       padding: 0;
-//       margin: 0;
-//     }
-
-//     .nav-item {
-//       display: inline-block;
-
-//       &:not(:last-of-type) {
-//         margin-right: 0.5rem;
-//       }
-
-//       a {
-//         display: flex;
-//         align-items: center;
-
-//         svg {
-//           margin-right: 0.35rem;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// main {
-//   section.intro {
-//     h1 {
-//       font-weight: 500;
-//       margin: 1rem 0;
-//       font-size: 11vw;
-//       line-height: 1.05;
-//       letter-spacing: -2px;
-
-//       @include larger-than(sm) {
-//         font-size: 8.6vw;
-//         letter-spacing: -2px;
-//       }
-
-//       @include larger-than(lg) {
-//         font-size: 8.6vw;
-//         letter-spacing: -2px;
-//       }
-//     }
-//   }
-
-//   section.about {
-//     display: flex;
-//     flex-direction: column;
-//     margin: 1rem 0;
-
-//     @include larger-than(sm) {
-//       margin: 2rem 0;
-//       flex-direction: row;
-//     }
-
-//     p {
-//       max-width: 600px;
-//       line-height: 1.25;
-//       padding-right: 1rem;
-//       font-size: 1.25rem;
-
-//       @include larger-than(sm) {
-//         font-size: 1.5rem;
-//       }
-
-//       &:first-of-type {
-//         margin-top: 0;
-//       }
-//     }
-//   }
-// }
-
-// #secret-button {
-//   cursor: pointer;
-//   font-size: 0.8em;
-// }
