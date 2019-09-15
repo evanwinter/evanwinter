@@ -9,6 +9,8 @@
 
 $cube-colors: red, orange, yellow, green, blue, white;
 
+$cube-size-lg: 128px;
+
 $cube-size: 32px;
 $cube-square-border-radius: 3px;
 $cube-square-border: 1px solid #222;
@@ -26,7 +28,16 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 	perspective-origin: 50% $cube-size * -3;
 }
 
+.cube-wrapper.large {
+	display: block;
+	width: $cube-size-lg * 2;
+	height: $cube-size-lg * 2;
+	perspective: $cube-size-lg * 10;
+	perspective-origin: 50% $cube-size-lg * -3;
+}
+
 .cube {
+
 	padding-top: $cube-size / 2;
 	position: relative;
 	width: $cube-size;
@@ -164,6 +175,36 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 					}
 				}
 			}
+		}
+	}
+}
+
+.cube.large {
+
+	padding-top: $cube-size-lg / 2;
+	width: $cube-size-lg;
+
+	.side {
+		width: $cube-size-lg;
+		height: $cube-size-lg;
+
+		&.back {
+			transform: translateZ(($cube-size-lg / 2) * -1) rotateY(180deg);
+		}
+		&.right {
+			transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+		}
+		&.left {
+			transform: rotateY(270deg) translateX(($cube-size-lg / 2) * -1);
+		}
+		&.top {
+			transform: rotateX(-90deg) translateY(($cube-size-lg / 2) * -1);
+		}
+		&.bottom {
+			transform: rotateX(90deg) translateY($cube-size-lg / 2);
+		}
+		&.front {
+			transform: translateZ($cube-size-lg / 2);
 		}
 	}
 }
