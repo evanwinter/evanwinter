@@ -9,7 +9,7 @@
 
 $cube-colors: red, orange, yellow, green, blue, white;
 
-$cube-size-lg: 128px;
+$cube-size-lg: 256px;
 
 $cube-size: 32px;
 $cube-square-border-radius: 3px;
@@ -19,6 +19,18 @@ $cube-square-box-shadow: inset 0 0 1px 1px rgba($dark, 0.25);
 $cube-square-border-radius-sm: 2px;
 $cube-square-border-sm: 1px solid #222;
 $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
+
+$cube-square-border-radius-lg: 2px;
+$cube-square-border-lg: 2px solid #222;
+$cube-square-box-shadow-lg: inset 0 0 0px 0px rgba($dark, 1);
+
+// $cube-square-border-radius-sm-inverted: 2px;
+$cube-square-border-sm-inverted: 1px solid $light;
+// $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
+
+// $cube-square-border-radius-sm-inverted: 2px;
+$cube-square-border-sm-inverted: 2px solid $light;
+// $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
 
 .cube-wrapper {
 	display: block;
@@ -43,7 +55,7 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 	width: $cube-size;
 	cursor: pointer;
 	transform-style: preserve-3d;
-	animation: cube-spin 5s infinite linear;
+	animation: cube-spin 10s infinite linear;
 
 	.side {
 		position: absolute;
@@ -207,6 +219,15 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 			transform: translateZ($cube-size-lg / 2);
 		}
 	}
+
+	.square {
+		border: $cube-square-border-lg;
+		border-radius: $cube-square-border-radius-lg;
+		// subtle shadow around the edge of each square -- trying to make it look a little 3d
+		box-shadow: $cube-square-box-shadow-lg;
+
+		transition: border 500ms ease;
+	}
 }
 
 .square {
@@ -214,4 +235,19 @@ $cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
 	border-radius: $cube-square-border-radius-sm;
 	// subtle shadow around the edge of each square -- trying to make it look a little 3d
 	box-shadow: $cube-square-box-shadow-sm;
+
+	background: rgba(black, 0.05) !important;
+
+	transition: border 500ms ease;
+}
+
+.side.bottom .square,
+.side.top .square {
+	background: rgba(black, 0.2) !important;
+}
+
+body.inverted {
+	.cube .square {
+	  border: $cube-square-border-sm-inverted;
+	}
 }
