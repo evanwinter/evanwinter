@@ -20,7 +20,8 @@
   "homepage": "https://github.com/evanwinter/evanwinter#readme",
   "dependencies": {
     "current-device": "^0.8.2",
-    "typography": "^0.16.19"
+    "typography": "^0.16.19",
+    "utilities": "^1.0.5"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.3",

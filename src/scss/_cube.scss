@@ -9,7 +9,7 @@
 
 $cube-colors: red, orange, yellow, green, blue, white;
 
-$cube-size-lg: 256px;
+$cube-size-lg: 400px;
 
 $cube-size: 32px;
 $cube-square-border-radius: 3px;
@@ -42,8 +42,8 @@ $cube-square-border-sm-inverted: 2px solid $light;
 
 .cube-wrapper.large {
 	display: block;
-	width: $cube-size-lg * 2;
-	height: $cube-size-lg * 2;
+	width: $cube-size-lg;
+	height: $cube-size-lg;
 	perspective: $cube-size-lg * 10;
 	perspective-origin: 50% $cube-size-lg * -3;
 }
@@ -55,7 +55,7 @@ $cube-square-border-sm-inverted: 2px solid $light;
 	width: $cube-size;
 	cursor: pointer;
 	transform-style: preserve-3d;
-	animation: cube-spin 10s infinite linear;
+	// animation: cube-spin 10s infinite linear;
 
 	.side {
 		position: absolute;
@@ -193,7 +193,7 @@ $cube-square-border-sm-inverted: 2px solid $light;
 
 .cube.large {
 
-	padding-top: $cube-size-lg / 2;
+	padding-top: 20vh;
 	width: $cube-size-lg;
 
 	.side {
@@ -236,18 +236,12 @@ $cube-square-border-sm-inverted: 2px solid $light;
 	// subtle shadow around the edge of each square -- trying to make it look a little 3d
 	box-shadow: $cube-square-box-shadow-sm;
 
-	background: rgba(black, 0.05) !important;
+	// background: rgba(black, 0.05) !important;
 
 	transition: border 500ms ease;
 }
 
 .side.bottom .square,
 .side.top .square {
-	background: rgba(black, 0.2) !important;
-}
-
-body.inverted {
-	.cube .square {
-	  border: $cube-square-border-sm-inverted;
-	}
+	// background: rgba(black, 0.2) !important;
 }
