@@ -23,7 +23,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "^1.12.4",
     "sass": "^1.22.12"
   }
 }
