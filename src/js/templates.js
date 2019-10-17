@@ -1,5 +1,5 @@
 export const about = `
-	<div class="about-content">
+	<div id="content-type-root" class="about-content">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -17,7 +17,7 @@ export const about = `
 `
 
 export const work = `
-	<div class="work-content">
+	<div id="content-type-root" class="work-content">
 		<div class="grid three">
 			<div class="work-item">
 				<div class="work-item-background"></div>
@@ -69,7 +69,7 @@ export const work = `
 `
 
 export const contact = `
-	<div class="contact-content">
+	<div id="content-type-root" class="contact-content">
 		<p>Contact me!</p>
 		<a href="mailto:evan@evanwinter.me">Email</a>
 	</div>

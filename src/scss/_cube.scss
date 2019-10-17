@@ -61,7 +61,7 @@ $l-max: 90;
   width: $cube-size;
   cursor: pointer;
   transform-style: preserve-3d;
-  // animation: cube-spin 10s infinite linear;
+  animation: cube-spin 10s infinite linear;
 
   .side {
     position: absolute;
