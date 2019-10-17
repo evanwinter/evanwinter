@@ -1,7 +1,7 @@
 // white, gray, black
 $light: #fefefe;
 $medium: #999;
-$dark: #333;
+$dark: #151515;
 
 // colors
 $blue-kitandace: #002573;
@@ -43,14 +43,15 @@ $highlight-color: rgba(lightgray, 0.5);
 
 // transition durations
 $fast: 50ms;
+$pretty-fast: 250ms;
 $normal: 350ms;
 $slow: 750ms;
 $very-slow: 1250ms;
-$speed-default: $normal;
+$speed-default: $pretty-fast;
 
 // easings
-$bezier-1: cubic-bezier(.79,.08,.41,.1) !default;
-$glide: cubic-bezier(.14,.23,.13,.32) !default;
+$bezier-1: cubic-bezier(0.79, 0.08, 0.41, 0.1) !default;
+$glide: cubic-bezier(0.14, 0.23, 0.13, 0.32) !default;
 $easing-default: ease;
 
 $transition-default: $speed-default $easing-default;
@@ -63,7 +64,7 @@ $ease: $easing-default;
 $sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
 $serif: "adobe-garamond-pro", Gotham, serif;
 
-$gutter: 1rem;
+$gutter: 2rem;
 
 $z-top: 10;
 $z-middle: 5;

@@ -1,17 +1,18 @@
-@keyframes cube-spin{
-	0% {
-		transform: rotateY(0);
-	}
-	100% {
-		transform: rotateY(360deg);
-	}
+@keyframes cube-spin {
+  0% {
+    transform: rotateY(0);
+  }
+
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 $cube-colors: red, orange, yellow, green, blue, white;
 
 $cube-size-lg: 400px;
 
-$cube-size: 32px;
+$cube-size: 48px;
 $cube-square-border-radius: 3px;
 $cube-square-border: 1px solid #222;
 $cube-square-box-shadow: inset 0 0 1px 1px rgba($dark, 0.25);
@@ -26,222 +27,237 @@ $cube-square-box-shadow-lg: inset 0 0 0px 0px rgba($dark, 1);
 
 // $cube-square-border-radius-sm-inverted: 2px;
 $cube-square-border-sm-inverted: 1px solid $light;
+
 // $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
 
 // $cube-square-border-radius-sm-inverted: 2px;
 $cube-square-border-sm-inverted: 2px solid $light;
+
 // $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
 
+$s-min: 20;
+$s-max: 70;
+$l-min: 30;
+$l-max: 90;
+
+.cube {
+  display: block;
+  width: $cube-size * 2;
+  height: $cube-size * 2;
+  perspective: $cube-size * 10;
+  perspective-origin: 50% ($cube-size * -3);
+
+  &.large {
+  	width: $cube-size-lg;
+  	height: $cube-size-lg;
+  	perspective: $cube-size-lg * 10;
+  	perspective-origin: 50% ($cube-size-lg * -3);
+  }
+}
+
 .cube-wrapper {
-	display: block;
-	width: $cube-size * 2;
-	height: $cube-size * 2;
-	perspective: $cube-size * 10;
-	perspective-origin: 50% $cube-size * -3;
+  padding-top: $cube-size / 2;
+  position: relative;
+  width: $cube-size;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  // animation: cube-spin 10s infinite linear;
+
+  .side {
+    position: absolute;
+    width: $cube-size;
+    height: $cube-size;
+    background: transparent;
+
+    @include transition(background $transition-default);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .square {
+    border: $cube-square-border-sm;
+    border-radius: $cube-square-border-radius-sm;
+
+    // subtle shadow around the edge of each square -- trying to make it look a little 3d
+    box-shadow: $cube-square-box-shadow-sm;
+
+    @include transition(background $transition-default, border-color $transition-default);
+  }
+
+  .side.back {
+    transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+
+    .square {
+      background: transparent;
+    }
+  }
+
+  .side.right {
+    transform: rotateY(-270deg) translateX($cube-size / 2);
+    transform-origin: top right;
+
+    .square {
+      background: transparent;
+    }
+  }
+
+  .side.left {
+    transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+    transform-origin: center left;
+
+    .square {
+      background: transparent;
+    }
+  }
+
+  .side.top {
+    transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+    transform-origin: top center;
+
+    .square {
+      background: transparent;
+    }
+  }
+
+  .side.bottom {
+    transform: rotateX(90deg) translateY($cube-size / 2);
+    transform-origin: bottom center;
+
+    .square {
+      background: transparent;
+    }
+  }
+
+  .side.front {
+    transform: translateZ($cube-size / 2);
+
+    .square {
+      background: transparent;
+    }
+  }
+}
+
+.cube-wrapper.colors {
+  .side {
+    background: $dark;
+  }
+
+  .side.back {
+    transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
+
+  .side.right {
+    transform: rotateY(-270deg) translateX($cube-size / 2);
+    transform-origin: top right;
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
+
+  .side.left {
+    transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+    transform-origin: center left;
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
+
+  .side.top {
+    transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+    transform-origin: top center;
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
+
+  .side.bottom {
+    transform: rotateX(90deg) translateY($cube-size / 2);
+    transform-origin: bottom center;
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
+
+  .side.front {
+    transform: translateZ($cube-size / 2);
+
+    .square {
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          background: nth($cube-colors, random(length($cube-colors)));
+        }
+      }
+    }
+  }
 }
 
 .cube-wrapper.large {
-	display: block;
-	width: $cube-size-lg;
-	height: $cube-size-lg;
-	perspective: $cube-size-lg * 10;
-	perspective-origin: 50% $cube-size-lg * -3;
-}
+  padding-top: 20vh;
+  width: $cube-size-lg;
 
-.cube {
+  .side {
+    width: $cube-size-lg;
+    height: $cube-size-lg;
+  }
 
-	padding-top: $cube-size / 2;
-	position: relative;
-	width: $cube-size;
-	cursor: pointer;
-	transform-style: preserve-3d;
-	// animation: cube-spin 10s infinite linear;
+  .side.back {
+    transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
+  }
 
-	.side {
-		position: absolute;
-		width: $cube-size;
-		height: $cube-size;
-		background: transparent;
+  .side.right {
+    transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+  }
 
-		@include transition(background 500ms ease);
+  .side.left {
+    transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
+  }
 
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr 1fr;
+  .side.top {
+    transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
+  }
 
-		$s-min: 20;
-		$s-max: 70;
-		$l-min: 30;
-		$l-max: 90;
+  .side.bottom {
+    transform: rotateX(90deg) translateY($cube-size-lg / 2);
+  }
 
-		.square {
-			@include transition(background 500ms ease);
-		}
+  .side.front {
+    transform: translateZ($cube-size-lg / 2);
+  }
 
-		&.back {
-			transform: translateZ(($cube-size / 2) * -1) rotateY(180deg);
-			.square {
-				background: transparent;
-			}
-		}
-		&.right {
-			transform: rotateY(-270deg) translateX($cube-size / 2);
-			transform-origin: top right;
-			.square {
-				background: transparent;
-			}
-		}
-		&.left {
-			transform: rotateY(270deg) translateX(($cube-size / 2) * -1);
-			transform-origin: center left;
-			.square {
-				background: transparent;
-			}
-		}
-		&.top {
-			transform: rotateX(-90deg) translateY(($cube-size / 2) * -1);
-			transform-origin: top center;
-			.square {
-				background: transparent;
-			}
-		}
-		&.bottom {
-			transform: rotateX(90deg) translateY($cube-size / 2);
-			transform-origin: bottom center;
-			.square {
-				background: transparent;
-			}
-		}
-		&.front {
-			transform: translateZ($cube-size / 2);
-			.square {
-				background: transparent;
-			}
-		}
-	}
-}
-
-.cube.colors {
-	.side {
-		background: #000;
-		&.back {
-			transform: translateZ(($cube-size / 2) * -1) rotateY(180deg);
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-		&.right {
-			transform: rotateY(-270deg) translateX($cube-size / 2);
-			transform-origin: top right;
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-		&.left {
-			transform: rotateY(270deg) translateX(($cube-size / 2) * -1);
-			transform-origin: center left;
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-		&.top {
-			transform: rotateX(-90deg) translateY(($cube-size / 2) * -1);
-			transform-origin: top center;
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-		&.bottom {
-			transform: rotateX(90deg) translateY($cube-size / 2);
-			transform-origin: bottom center;
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-		&.front {
-			transform: translateZ($cube-size / 2);
-			.square {
-				@for $i from 1 through 9 {
-					&:nth-child(#{$i}) {
-						background: nth($cube-colors, random(length($cube-colors)));
-					}
-				}
-			}
-		}
-	}
-}
-
-.cube.large {
-
-	padding-top: 20vh;
-	width: $cube-size-lg;
-
-	.side {
-		width: $cube-size-lg;
-		height: $cube-size-lg;
-
-		&.back {
-			transform: translateZ(($cube-size-lg / 2) * -1) rotateY(180deg);
-		}
-		&.right {
-			transform: rotateY(-270deg) translateX($cube-size-lg / 2);
-		}
-		&.left {
-			transform: rotateY(270deg) translateX(($cube-size-lg / 2) * -1);
-		}
-		&.top {
-			transform: rotateX(-90deg) translateY(($cube-size-lg / 2) * -1);
-		}
-		&.bottom {
-			transform: rotateX(90deg) translateY($cube-size-lg / 2);
-		}
-		&.front {
-			transform: translateZ($cube-size-lg / 2);
-		}
-	}
-
-	.square {
-		border: $cube-square-border-lg;
-		border-radius: $cube-square-border-radius-lg;
-		// subtle shadow around the edge of each square -- trying to make it look a little 3d
-		box-shadow: $cube-square-box-shadow-lg;
-
-		transition: border 500ms ease;
-	}
-}
-
-.square {
-	border: $cube-square-border-sm;
-	border-radius: $cube-square-border-radius-sm;
-	// subtle shadow around the edge of each square -- trying to make it look a little 3d
-	box-shadow: $cube-square-box-shadow-sm;
-
-	// background: rgba(black, 0.05) !important;
-
-	transition: border 500ms ease;
-}
-
-.side.bottom .square,
-.side.top .square {
-	// background: rgba(black, 0.2) !important;
+  .square {
+    // subtle shadow around the edge of each square
+    box-shadow: $cube-square-box-shadow-lg;
+    border: $cube-square-border-lg;
+    border-radius: $cube-square-border-radius-lg;
+  }
 }

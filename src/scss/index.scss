@@ -2,6 +2,8 @@
 @import "./fonts";
 @import "./helpers";
 @import "./resets";
+@import "./themes";
+
 @import "./cube";
 
 ::-moz-selection {
@@ -20,7 +22,7 @@
 
 html {
   font-size: 16px;
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-family: system-ui, sans-serif;
 }
 
 body {
@@ -32,62 +34,172 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-height: 100vh;
+  font-family: $sans;
 
-  &[data-theme="light"] {
-    color: $text-color;
-    background: $background-color;
-  }
-
-  &[data-theme="default"],
-  &[data-theme="dark"] {
-    background: $background-color-inverted;
-    color: $text-color-inverted;
-    .cube .square {
-      border: $cube-square-border-sm-inverted;
-    }
-  }
-
-  transition: background 250ms ease, color 250ms ease;
-}
-
-.absolute {
-  position: absolute;
+  @include transition(background $transition-default, color $transition-default);
 }
 
 .container {
   display: block;
-  height: 100vh;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 $gutter;
   position: relative;
 }
 
 a {
   color: $link-color;
-  transition: color $transition-default, opacity $transition-fast;
+  text-decoration: none;
+
+  @include transition(color $transition-default, opacity $transition-fast);
 
   &:hover {
-    opacity: 0.65;
+    // opacity: 0.65;
+  }
+}
+
+a.animated-underline {
+  &::after {
+    content: '';
+    display: block;
+    width: 0;
+    margin: 0.25em 0;
+    height: 1px;
+    background: $link-color;
+    @include transition(background $transition-default, width $transition-default);
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
   }
 }
 
 main {
-  p {
-    font-size: 1rem;
-    max-width: 500px;
+  > section {
+    margin: $gutter 0;
   }
-  // section {
-  //   min-height: 100vh;
-  // }
-  // section.inverted {
-  //   color: $text-color-inverted;
-  //   background: $background-color-inverted;
-  // }
 }
 
 aside {
   position: fixed;
-  top: 0;
-  right: 10%;
+  bottom: 1rem;
+  right: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  margin: 0.5em 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+p {
+  margin: 1em 0;
+  font-size: 1rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.intro-heading {
+  font-size: 2rem;
+
+  @media (max-width: 600px) {
+    font-size: 10vw;
+  }
+}
+
+.intro-copy {
+  max-width: 500px;
+}
+
+.content-nav {
+  padding: 0 $gutter;
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+  }
+
+  li {
+    &:first-child {
+      a {
+        padding-left: 0;
+      }
+    }
+
+    a {
+
+      width: 100%;
+      display: inline-block;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1rem;
+
+  @media (min-width: 600px) {
+    &.auto {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    &.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &.four {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.work-item {
+  // border: 1px solid $light;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    .work-item-content {
+      transform: translate(0.25rem, -0.25rem);
+    }
+  }
+}
+
+.work-item-background {
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: $light;
+  z-index: -1;
+}
+
+.work-item-content {
+  z-index: 10;
+  background: $dark;
+  border: 1px solid $light;
+  transform: translate(0.1rem, -0.1rem);
+  @include transition(transform $transition-default);
+}
+
+
+.content-container {
+  padding: 1rem;
+}
+
+.hidden {
+  opacity: 0;
 }

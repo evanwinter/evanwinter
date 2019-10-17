@@ -8,25 +8,41 @@
 	<meta name="description" content="Evan Winter is a front-end engineer based in Chicago, Illinois." />
 	<meta name="author" content="Evan Winter" />
 
+	<link rel="stylesheet" href="https://use.typekit.net/rrs4cwq.css">
+
 	<link rel="icon" href="/favicon.ico" />
 </head>
-<body data-theme="default">
+<body data-theme="dark">
 	<main>
 
-		<section>
+		<section class="intro-section" data-animate="true" data-animation-name="fade-in">
 			<div class="container">
-				<h2>Hello, my name is Evan Winter. 👨🏻‍💻</h2>
-				<p>
-					<!-- I'm a front-end software engineer based in Chicago, specializing in building high-quality websites and applications. -->
+				<h1 class="intro-heading">Hello, my name is Evan Winter. 👨🏻‍💻</h1>
+				<p class="intro-copy">
+					I'm a front-end software engineer based in Chicago, specializing in building high-quality websites and applications.
 				</p>
 			</div>
+		</section>
+
+		<section class="content-nav-section">
+			<nav class="content-nav" role="navigation">
+				<ul>
+					<li><a href="?about" data-content-type="about">About</a></li>
+					<li><a href="?work" data-content-type="work">Work</a></li>
+					<li><a href="?contact" data-content-type="contact">Contact</a></li>
+				</ul>
+			</nav>
+		</section>
+
+		<section class="content-section">
+			<div class="container" id="content-root"></div>
 		</section>
 
 	</main>
 
 	<aside>
-		<div class="cube-wrapper large">
-			<div class="cube large">
+		<div class="cube">
+			<div class="cube-wrapper">
 				<div class="side front">
 					<div class="square"></div>
 					<div class="square"></div>

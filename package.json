@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/evanwinter/evanwinter#readme",
   "dependencies": {
+    "animejs": "^3.1.0",
     "current-device": "^0.8.2",
+    "modern-css-reset": "^1.0.4",
     "typography": "^0.16.19",
     "utilities": "^1.0.5"
   },

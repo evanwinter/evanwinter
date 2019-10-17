@@ -5,8 +5,13 @@ const Cube = {
 
 	init: function() {
 		this.cube = document.querySelector(".cube")
+		this.listen()
+	},
+
+	listen: function() {
+		// randomize theme on click
 		this.cube.addEventListener("click", (e) => {
-			Theme.invert()
+			Theme.random()
 		})
 	},
 }

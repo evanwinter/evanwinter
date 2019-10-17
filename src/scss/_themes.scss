@@ -1,0 +1,237 @@
+body {
+	&[data-theme="light"] {
+	  background: $background-color;
+	  color: $text-color;
+
+	  .work-item {
+	  	// border-color: $text-color;
+		  .work-item-background {
+		  	background: $text-color;
+		  }
+		  .work-item-content {
+		  	background: $background-color;
+		  	border-color: $text-color;
+		  }
+	  }
+
+	  a {
+	  	color: $text-color;
+	  	&:hover {
+	  		color: rgba($text-color, 0.9);
+	  	}
+	  	&::after {
+	  		background: $text-color;
+	  	}
+	  }
+	}
+
+	&[data-theme="slate"] {
+	  background: lightslategray;
+	  color: $light;
+
+	  .work-item {
+	  	// border-color: $light;
+		  .work-item-background {
+		  	background: $light;
+		  }
+		  .work-item-content {
+		  	background: lightslategray;
+		  	border-color: $light;
+		  }
+	  }
+
+	  a {
+	  	color: $light;
+	  	&:hover {
+	  		color: rgba($light, 0.9);
+	  	}
+	  	&::after {
+	  		background: $light;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $light;
+	  }
+	}
+
+	&[data-theme="red"] {
+	  background: $red;
+	  color: $light;
+
+	  .work-item {
+	  	// border-color: $light;
+		  .work-item-background {
+		  	background: $light;
+		  }
+		  .work-item-content {
+		  	background: $red;
+		  	border-color: $light;
+		  }
+	  }
+
+	  a {
+	  	color: $light;
+	  	&:hover {
+	  		color: rgba($light, 0.9);
+	  	}
+	  	&::after {
+	  		background: $light;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $light;
+	  }
+	}
+
+	&[data-theme="blue"] {
+	  background: $blue;
+	  color: $light;
+
+	  .work-item {
+	  	// border-color: $light;
+		  .work-item-background {
+		  	background: $light;
+		  }
+		  .work-item-content {
+		  	background: $blue;
+		  	border-color: $light;
+		  }
+	  }
+
+	  a {
+	  	color: $light;
+	  	&:hover {
+	  		color: rgba($light, 0.9);
+	  	}
+	  	&::after {
+	  		background: $light;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $light;
+	  }
+	}
+
+	&[data-theme="yellow"] {
+	  background: $yellow;
+	  color: $dark;
+
+	  .work-item {
+	  	// border-color: $dark;
+		  .work-item-background {
+		  	background: $dark;
+		  }
+		  .work-item-content {
+		  	background: $yellow;
+		  	border-color: $dark;
+		  }
+	  }
+
+	  a {
+	  	color: $dark;
+	  	&:hover {
+	  		color: rgba($dark, 0.9);
+	  	}
+	  	&::after {
+	  		background: $dark;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $dark;
+	  }
+	}
+
+	&[data-theme="pink"] {
+	  background: $pink;
+	  color: $light;
+
+	  .work-item {
+	  	// border-color: $light;
+		  .work-item-background {
+		  	background: $light;
+		  }
+		  .work-item-content {
+		  	background: $pink;
+		  	border-color: $light;
+		  }
+	  }
+
+	  a {
+	  	color: $light;
+	  	&:hover {
+	  		color: rgba($light, 0.9);
+	  	}
+	  	&::after {
+	  		background: $light;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $light;
+	  }
+	}
+
+	&[data-theme="orange"] {
+	  background: $orange;
+	  color: $dark;
+
+	  .work-item {
+	  	// border-color: $dark;
+		  .work-item-background {
+		  	background: $dark;
+		  }
+		  .work-item-content {
+		  	background: $orange;
+		  	border-color: $dark;
+		  }
+	  }
+
+	  a {
+	  	color: $dark;
+	  	&:hover {
+	  		color: rgba($dark, 0.9);
+	  	}
+	  	&::after {
+	  		background: $dark;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $dark;
+	  }
+	}
+
+	&[data-theme="dark"] {
+	  background: $background-color-inverted;
+	  color: $text-color-inverted;
+
+	  .work-item {
+	  	// border-color: $text-color-inverted;
+		  .work-item-background {
+		  	background: $text-color-inverted;
+		  }
+		  .work-item-content {
+		  	background: $background-color-inverted;
+		  	border-color: $text-color-inverted;
+		  }
+	  }
+
+	  a {
+	  	color: $text-color-inverted;
+	  	&:hover {
+	  		color: rgba($text-color-inverted, 0.9);
+	  	}
+	  	&::after {
+	  		background: $text-color-inverted;
+	  	}
+	  }
+
+	  .cube .square {
+	    border-color: $light;
+	  }
+	}
+}
