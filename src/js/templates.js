@@ -1,18 +1,11 @@
 export const about = `
 	<div id="content-type-root" class="about-content">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.</p>
-		<p>Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>
+			Some technical things I'm interested in include React, progressive web apps, data visualization, design systems, and natural language processing.
+		</p>
+		<p>
+			Let's build something cool.
+		</p>
 	</div>
 `
 
@@ -23,8 +16,8 @@ export const work = `
 				<div class="work-item-background"></div>
 				<div class="work-item-content">
 					<div class="content-container">
-						<h3>Project Title</h3>
-						<p>A short project description, maybe describing technologies used or motivation.</p>
+						<h3>Visually</h3>
+						<p>Data visualization and analysis of song lyrics.</p>
 					</div>
 				</div>
 			</div>
@@ -73,4 +66,10 @@ export const contact = `
 		<p>Contact me!</p>
 		<a href="mailto:evan@evanwinter.me">Email</a>
 	</div>
+`
+
+export const notfound = `
+	<div id="content-type-root" class="404-content">
+		Sorry, there's nothing here.
+	</div>	
 `

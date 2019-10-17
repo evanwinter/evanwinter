@@ -7,17 +7,22 @@ const ContentController = {
 	 * Declare elements
 	 */
 	root: null,
+	rootClass: `#content-root`,
 	controller: null,
+	controllerClass: `.content-nav`,
 
 	/**
 	 * Initialize elements, content and listeners.
 	 */
 	init: function() {
-		this.root = document.querySelector("#content-root")
-		this.controller = document.querySelector(".content-nav")
+		// init elements
+		this.root = document.querySelector(this.rootClass)
+		this.controller = document.querySelector(this.controllerClass)
 
+		// handle direct navigation to a page
 		this.showCurrentPathContent()
 
+		// listen for page updates
 		this.listen()
 	},
 
@@ -41,30 +46,46 @@ const ContentController = {
 		// if the clicked element was a content nav item, get the content type to show
 		const { contentType } = e.target.dataset
 		const path = window.location.pathname.substr(1, window.location.pathname.length)
+
+		// if no content type, or if we're already showing this content, quit
 		if (!contentType || contentType === path) return
 
+		// if there's new content to show, update the content
+		this.transitionTo(contentType)
+	},
 
-		const tl = anime.timeline({
+	transitionTo: function(contentType) {
+		// default transition options
+		const defaults = {
 			easing: `easeInOutQuad`,
 			duration: 250
-		})
+		}
 
-		tl.add({
-			targets: '#content-root',
-			translateY: '2rem',
-			opacity: 0,
+		// define `hide` animation
+		const hideOptions = {
+			targets: this.rootClass,
+			translateY: `2rem`,
+			opacity: 0
+		}
+
+		// define `show` animation
+		const showOptions = {
+			targets: this.rootClass,
+			translateY: `0rem`,
+			opacity: 1
+		}
+
+		// create animejs timeline w/ defaults
+		const timeline = anime.timeline(defaults)
+
+		// add each transition step (hide, then update content, then show)
+		timeline.add({
+			...hideOptions,
 			complete: () => {
-				// update the URL without reloading page
 				window.history.pushState(null, null, contentType)
-				
-				// show the content of the given content type
 				this.show(contentType)
 			}
-		}).add({
-			targets: '#content-root',
-			translateY: '0rem',
-			opacity: 1,	
-		})
+		}).add(showOptions)
 	},
 
 	/**
@@ -86,11 +107,13 @@ const ContentController = {
 		// get path without leading backslash
 		const path = window.location.pathname.substr(1, window.location.pathname.length)
 
-		// check for a match between pathname and template name
-		const candidates = Object.keys(templates)
-		if (candidates.includes(path)) {
-			// if found, render that template
-			this.show(path)
+		// check if there's a template matching the current path
+		if (templates[path]) {
+			// if yes, show that template
+			const contentType = path
+			this.show(contentType)
+		} else if (path.length > 0) {
+			this.show(`notfound`)
 		}
 	}
 
