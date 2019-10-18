@@ -4,7 +4,6 @@ body {
 	  color: $text-color;
 
 	  .work-item {
-	  	// border-color: $text-color;
 		  .work-item-background {
 		  	background: $text-color;
 		  }
@@ -25,42 +24,11 @@ body {
 	  }
 	}
 
-	&[data-theme="slate"] {
-	  background: lightslategray;
-	  color: $light;
-
-	  .work-item {
-	  	// border-color: $light;
-		  .work-item-background {
-		  	background: $light;
-		  }
-		  .work-item-content {
-		  	background: lightslategray;
-		  	border-color: $light;
-		  }
-	  }
-
-	  a {
-	  	color: $light;
-	  	&:hover {
-	  		color: rgba($light, 0.8);
-	  	}
-	  	&::after {
-	  		background: $light;
-	  	}
-	  }
-
-	  .cube .square {
-	    border-color: $light;
-	  }
-	}
-
 	&[data-theme="red"] {
 	  background: $red;
 	  color: $light;
 
 	  .work-item {
-	  	// border-color: $light;
 		  .work-item-background {
 		  	background: $light;
 		  }
@@ -90,7 +58,6 @@ body {
 	  color: $light;
 
 	  .work-item {
-	  	// border-color: $light;
 		  .work-item-background {
 		  	background: $light;
 		  }
@@ -120,7 +87,6 @@ body {
 	  color: $dark;
 
 	  .work-item {
-	  	// border-color: $dark;
 		  .work-item-background {
 		  	background: $dark;
 		  }
@@ -150,7 +116,6 @@ body {
 	  color: $light;
 
 	  .work-item {
-	  	// border-color: $light;
 		  .work-item-background {
 		  	background: $light;
 		  }
@@ -180,7 +145,6 @@ body {
 	  color: $dark;
 
 	  .work-item {
-	  	// border-color: $dark;
 		  .work-item-background {
 		  	background: $dark;
 		  }
@@ -210,7 +174,6 @@ body {
 	  color: $text-color-inverted;
 
 	  .work-item {
-	  	// border-color: $text-color-inverted;
 		  .work-item-background {
 		  	background: $text-color-inverted;
 		  }

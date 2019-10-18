@@ -20,10 +20,10 @@ export const work = `
 				<div class="work-item-content">
 					<div class="content-container">
 						<div class="work-item-info">
-							<h3>Visually</h3>
-							<p>Data visualization and analysis of song lyrics.</p>
+							<h3 class="title">Visually</h3>
+							<p class="description">Data visualization and analysis of song lyrics.</p>
 						</div>
-						<div class="work-item-tech">
+						<div class="technologies">
 							<code>react, redux, scss</code>
 						</div>
 					</div>
@@ -34,11 +34,11 @@ export const work = `
 				<div class="work-item-content">
 					<div class="content-container">
 						<div class="work-item-info">
-							<h3>Typetest</h3>
-							<p>Simple web application that tests your typing speed.</p>
+							<h3 class="title">Visually</h3>
+							<p class="description">Data visualization and analysis of song lyrics.</p>
 						</div>
-						<div class="work-item-tech">
-							<code>javascript, html, scss</code>
+						<div class="technologies">
+							<code>react, redux, scss</code>
 						</div>
 					</div>
 				</div>
@@ -47,8 +47,13 @@ export const work = `
 				<div class="work-item-background"></div>
 				<div class="work-item-content">
 					<div class="content-container">
-						<h3>Project Title</h3>
-						<p>A short project description, maybe describing technologies used or motivation.</p>
+						<div class="work-item-info">
+							<h3 class="title">Visually</h3>
+							<p class="description">Data visualization and analysis of song lyrics.</p>
+						</div>
+						<div class="technologies">
+							<code>react, redux, scss</code>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -56,8 +61,13 @@ export const work = `
 				<div class="work-item-background"></div>
 				<div class="work-item-content">
 					<div class="content-container">
-						<h3>Project Title</h3>
-						<p>A short project description, maybe describing technologies used or motivation.</p>
+						<div class="work-item-info">
+							<h3 class="title">Visually</h3>
+							<p class="description">Data visualization and analysis of song lyrics.</p>
+						</div>
+						<div class="technologies">
+							<code>react, redux, scss</code>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -65,8 +75,13 @@ export const work = `
 				<div class="work-item-background"></div>
 				<div class="work-item-content">
 					<div class="content-container">
-						<h3>Project Title</h3>
-						<p>A short project description, maybe describing technologies used or motivation.</p>
+						<div class="work-item-info">
+							<h3 class="title">Visually</h3>
+							<p class="description">Data visualization and analysis of song lyrics.</p>
+						</div>
+						<div class="technologies">
+							<code>react, redux, scss</code>
+						</div>
 					</div>
 				</div>
 			</div>
