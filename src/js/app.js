@@ -1,10 +1,10 @@
-import Content from "./content"
+import Router from "./router"
 import Cube from "./cube"
 import Theme from "./theme"
 
 const App = {
 	init: function() {
-		Content.init()
+		Router.init()
 		Cube.init()
 		Theme.init()
 	}

@@ -17,7 +17,7 @@ body {
 	  a {
 	  	color: $text-color;
 	  	&:hover {
-	  		color: rgba($text-color, 0.9);
+	  		color: rgba($text-color, 0.8);
 	  	}
 	  	&::after {
 	  		background: $text-color;
@@ -43,7 +43,7 @@ body {
 	  a {
 	  	color: $light;
 	  	&:hover {
-	  		color: rgba($light, 0.9);
+	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
 	  		background: $light;
@@ -73,7 +73,7 @@ body {
 	  a {
 	  	color: $light;
 	  	&:hover {
-	  		color: rgba($light, 0.9);
+	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
 	  		background: $light;
@@ -103,7 +103,7 @@ body {
 	  a {
 	  	color: $light;
 	  	&:hover {
-	  		color: rgba($light, 0.9);
+	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
 	  		background: $light;
@@ -133,7 +133,7 @@ body {
 	  a {
 	  	color: $dark;
 	  	&:hover {
-	  		color: rgba($dark, 0.9);
+	  		color: rgba($dark, 0.8);
 	  	}
 	  	&::after {
 	  		background: $dark;
@@ -163,7 +163,7 @@ body {
 	  a {
 	  	color: $light;
 	  	&:hover {
-	  		color: rgba($light, 0.9);
+	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
 	  		background: $light;
@@ -193,7 +193,7 @@ body {
 	  a {
 	  	color: $dark;
 	  	&:hover {
-	  		color: rgba($dark, 0.9);
+	  		color: rgba($dark, 0.8);
 	  	}
 	  	&::after {
 	  		background: $dark;
@@ -223,7 +223,7 @@ body {
 	  a {
 	  	color: $text-color-inverted;
 	  	&:hover {
-	  		color: rgba($text-color-inverted, 0.9);
+	  		color: rgba($text-color-inverted, 0.8);
 	  	}
 	  	&::after {
 	  		background: $text-color-inverted;

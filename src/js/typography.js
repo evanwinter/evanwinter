@@ -1,4 +1,3 @@
-// Import typography library
 import Typography from "typography"
 
 const FONTS = ["neue haas unica", "-apple-system", "system-ui", "sans-serif"]
