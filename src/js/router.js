@@ -1,10 +1,9 @@
 import * as templates from "./templates"
 import anime from "animejs"
 
+import Theme from "./theme"
+
 const Router = {
-	/**
-	 * Declare elements
-	 */
 	root: null,
 	rootClass: `#content-root`,
 	controller: null,
@@ -88,9 +87,31 @@ const Router = {
 			.add(showOptions)
 	},
 
+	routeNotFound: function(route) {
+		return route.length > 0
+	},
+
+	setThemeForRoute: function(route) {
+		switch(route) {
+			case "work":
+				Theme.set("dark")
+				break
+			case "about":
+				Theme.set("blue")
+				break
+			case "contact":
+				Theme.set("light")
+				break
+			default:
+				break
+		}
+	},
+
 	render: function(route) {
 		const content = templates[route]
 		const notFound = templates[`notfound`]
+
+		this.setThemeForRoute(route)
 
 		let nextContent = ``
 
