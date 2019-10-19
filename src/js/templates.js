@@ -1,36 +1,47 @@
 export const about = `
-	<div id="content-type-root" class="about-content copy-width">
-		<p>
-			I'm currently part of a fast-growing digital practice at Schafer Condon Carter,
-			an advertising agency located in Chicago's West Loop.
-		</p>
-		<p>
-			I graduated from the University of Wisconsin-Madison in 2018, where I studied
-			computer science and strategic communication.
-		</p>
-		<p>
-			Some things I'm exploring in my free time include data visualization,
-			progressive web apps, design systems, and natural language processing.
-		</p>
-		<p>
-			Here are a few technologies I've been working with recently:
-		</p>
-		<div class="flex min-content">
-			<div>
-				<ul>
-					<li>JavaScript (ES6+)</li>
-					<li>React</li>
-					<li>Node.js</li>
-					<li>GraphQL</li>
-				</ul>
-			</div>
-			<div>
-				<ul>
-					<li>HTML & (S)CSS</li>
-					<li>Wagtail</li>
-					<li>Adobe AEM</li>
-					<li>Magento 2</li>
-				</ul>
+	<div id="content-type-root" class="about-content grid two">
+		<div>
+			<p>
+				I'm currently living in Chicago, working as a developer for Schafer Condon Carter.
+				 We're a small team producing websites, apps, components, patterns, guidance, and
+				tools as part of the agency's fast-growing digital offering to help our clients create powerful digital experiences.
+			</p>
+			<p>
+				I'm primarily a front-end engineer, but I'm quickly expanding my familiarity
+				with other parts of the stack. I've got an eye for design and take an empathetic approach
+				to user experience.
+			</p>
+			<p>
+				I graduated from the University of Wisconsin-Madison in 2018, where I studied
+				computer science and strategic communication.
+			</p>
+		</div>
+		<div>
+			<p>
+				I'm an avid learner and like to keep up with the latest tech.
+				Some things I'm exploring in my free time include data visualization,
+				progressive web apps, design systems, and natural language processing.
+			</p>
+			<p>
+				A few technologies I've been working with recently include:
+			</p>
+			<div class="flex min-content">
+				<div>
+					<ul>
+						<li>JavaScript (ES6+)</li>
+						<li>React</li>
+						<li>GraphQL</li>
+						<li>Progressive web apps</li>
+					</ul>
+				</div>
+				<div>
+					<ul>
+						<li>HTML & (S)CSS</li>
+						<li>Wagtail</li>
+						<li>Adobe AEM</li>
+						<li>Magento 2</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

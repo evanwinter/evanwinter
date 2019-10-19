@@ -1,3 +1,6 @@
+/**
+ * Trigger styles when the screen is wider than `$breakpoint`
+ */
 @mixin larger-than($breakpoint) {
   @if $breakpoint == "xs" { @media (min-width: $breakpoint-xs + 1) { @content; } }
   @else if $breakpoint == "sm" { @media (min-width: $breakpoint-sm + 1) { @content; } }
@@ -6,6 +9,34 @@
   @else if $breakpoint == "xl" { @media (min-width: $breakpoint-xl + 1) { @content; } }
 }
 
+/**
+ * Mixin that handles prefixes for keyframes
+ */
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+/**
+ * Mixin that handles prefixes for animations
+ */
 @mixin animation($str) {
   -webkit-animation: #{$str};
   -moz-animation: #{$str};
@@ -14,10 +45,49 @@
   animation: #{$str};
 }
 
+/**
+ * Mixin that handles prefixes for transitions
+ */
 @mixin transition($args...) {
   -webkit-transition: $args;
   -moz-transition: $args;
   -ms-transition: $args;
   -o-transition: $args;
   transition: $args;
+}
+
+@mixin animated-underline() {
+  position: relative;
+
+  $dot-diameter: 5px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 1px;
+    opacity: 0;
+    margin: 0.25em auto;
+    background: $link-color;
+    transform: translateY(-0.5rem);
+
+    @include transition(border-radius $transition-default, transform $transition-default, opacity $transition-default, background $transition-default, width $transition-default, height $transition-default);
+  }
+
+  &[data-active="true"] {
+    &::after {
+      width: 100%;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  &:hover:not([data-active="true"]) {
+    &::after {
+      transform: translateY(0);
+      opacity: 0.5;
+      width: 10%;
+      height: 1px;
+      // width: 10%;
+    }
+  }
 }

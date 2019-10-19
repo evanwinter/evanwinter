@@ -14,6 +14,8 @@ const Router = {
 		this.root = document.querySelector(this.rootClass)
 		this.controller = document.querySelector(this.controllerClass)
 
+		this.links = Array.from(document.querySelectorAll(".content-nav a"))
+
 		// handle direct navigation to a page
 		this.refresh()
 
@@ -40,9 +42,11 @@ const Router = {
 	},
 
 	navigate: function(e) {
-		e.preventDefault()
-
 		const { route } = e.target.dataset
+
+		if (route)
+			e.preventDefault()
+
 		const currentRoute = this.getCurrentRoute()
 
 		// if no route or we're already on this route, quit
@@ -121,6 +125,14 @@ const Router = {
 
 	render: function(route) {
 		const nextContent = this.getContentForRoute(route)
+
+
+		if (nextContent && !this.isNotFound(route)) {
+			this.links.forEach(link => link.dataset.active = "false")
+			const activeLink = this.links.find(link => link.dataset.route === route)
+			activeLink.dataset.active = "true"
+		}
+
 		this.root.innerHTML = nextContent
 	},
 }

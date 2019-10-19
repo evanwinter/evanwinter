@@ -1,5 +1,4 @@
 @import "./variables";
-@import "./fonts";
 @import "./helpers";
 @import "./resets";
 @import "./themes";
@@ -56,27 +55,11 @@ a {
   &:hover {
     color: rgba($link-color, 0.8);
   }
-
 }
 
 body:not(.mobile):not(.tablet) {
-  .animated-underline {
-    &::after {
-      content: '';
-      display: block;
-      width: 0;
-      margin: 0.25em 0;
-      height: 1px;
-      background: $link-color;
-
-      @include transition(background $transition-default, width $transition-default);
-    }
-
-    &:hover {
-      &::after {
-        width: 100%;
-      }
-    }
+  .content-nav a {
+    @include animated-underline;
   }
 }
 
@@ -148,25 +131,40 @@ p {
 }
 
 .flex {
-
   display: flex;
 
   > * {
     margin: 0 1rem;
+
     &:first-child {
       margin-left: 0;
     }
+
     &:last-child {
       margin-right: 0;
     }
   }
-
 }
 
 .about-content {
+  &.grid[class] {
+    grid-gap: 2rem;
+    // grid-gap: 0rem;
+    // grid-template-columns: 1fr;
+    > div {
+      // max-width: 500px;
+    }
+    @media (max-width: 900px) {
+      grid-gap: 0rem;
+      grid-template-columns: 1fr;
+      > div {
+        max-width: 600px;
+      }
+    }
+  }
   .flex {
     ul {
-      margin-top: 1rem;
+      // margin-top: 1rem;
       margin-bottom: 0;
     }
   }
@@ -251,4 +249,10 @@ p {
 
 .copy-width {
   max-width: 600px;
+}
+
+.nav-icon {
+  width: 1rem;
+  height: 1rem;
+  padding-top: 0.25rem;
 }

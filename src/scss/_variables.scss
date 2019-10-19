@@ -43,11 +43,12 @@ $highlight-color: rgba(lightgray, 0.5);
 
 // transition durations
 $fast: 50ms;
+$quite-fast: 100ms;
 $pretty-fast: 250ms;
 $normal: 350ms;
 $slow: 750ms;
 $very-slow: 1250ms;
-$speed-default: $pretty-fast;
+$speed-default: $quite-fast;
 
 // easings
 $bezier-1: cubic-bezier(0.79, 0.08, 0.41, 0.1) !default;
@@ -55,6 +56,8 @@ $glide: cubic-bezier(0.14, 0.23, 0.13, 0.32) !default;
 $easing-default: ease;
 
 $transition-default: $speed-default $easing-default;
+$transition-slow: $slow $easing-default;
+$transition-normal: $normal $easing-default;
 $transition-fast: $fast $easing-default;
 
 $duration: $speed-default;
