@@ -2,13 +2,14 @@ export const about = `
 	<div id="content-type-root" class="about-content grid two">
 		<div>
 			<p>
-				I'm currently living in Chicago, working as a developer for Schafer Condon Carter.
-				 We're a small team producing websites, apps, components, patterns, guidance, and
-				tools as part of the agency's fast-growing digital offering to help our clients create powerful digital experiences.
+				I'm currently working as a developer for Schafer Condon Carter's digital
+				department. We're a small team producing websites, apps, components,
+				patterns, guidance, and tools to help our clients both large and small
+				create engaging digital experiences.
 			</p>
 			<p>
-				I'm primarily a front-end engineer, but I'm quickly expanding my familiarity
-				with other parts of the stack. I've got an eye for design and take an empathetic approach
+				I'm primarily a front-end engineer, but I'm quickly expanding my knowledge
+				of other parts of the stack. I've got an eye for design and take an empathetic approach
 				to user experience.
 			</p>
 			<p>
