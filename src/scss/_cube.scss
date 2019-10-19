@@ -145,29 +145,31 @@ $l-max: 90;
 //   animation: cube-spin 10s infinite linear;
 // }
 
-.cube-container:hover {
-  .side.back {
-    transform: translate(0) rotateX(0deg) rotateY(0deg);
-  }
+html:not(.mobile):not(.tablet) {
+  .cube-container:hover {
+    .side.back {
+      transform: translate(0) rotateX(0deg) rotateY(0deg);
+    }
 
-  .side.right {
-    transform: translate(0) rotateX(50deg) rotateY(50deg);
-  }
+    .side.right {
+      transform: translate(0) rotateX(50deg) rotateY(50deg);
+    }
 
-  .side.left {
-    transform: translate(0) rotateX(20deg) rotateY(10deg);
-  }
+    .side.left {
+      transform: translate(0) rotateX(20deg) rotateY(10deg);
+    }
 
-  .side.top {
-    transform: translate(0) rotateX(-45deg) rotateY(25deg);
-  }
+    .side.top {
+      transform: translate(0) rotateX(-45deg) rotateY(25deg);
+    }
 
-  .side.bottom {
-    transform: translate(0) rotateX(90deg) rotateY(100deg);
-  }
+    .side.bottom {
+      transform: translate(0) rotateX(90deg) rotateY(100deg);
+    }
 
-  .side.front {
-    transform: translateZ(0);
+    .side.front {
+      transform: translateZ(0);
+    }
   }
 }
 
