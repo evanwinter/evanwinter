@@ -1,5 +1,7 @@
 body {
+
 	&[data-theme="light"] {
+
 	  background: $background-color;
 	  color: $text-color;
 
@@ -30,6 +32,7 @@ body {
 	}
 
 	&[data-theme="red"] {
+
 	  background: $red;
 	  color: $light;
 
@@ -64,6 +67,7 @@ body {
 	}
 
 	&[data-theme="blue"] {
+
 	  background: $blue;
 	  color: $light;
 
@@ -98,6 +102,7 @@ body {
 	}
 
 	&[data-theme="yellow"] {
+
 	  background: $yellow;
 	  color: $dark;
 
@@ -132,6 +137,7 @@ body {
 	}
 
 	&[data-theme="pink"] {
+
 	  background: $pink;
 	  color: $light;
 
@@ -200,6 +206,7 @@ body {
 	}
 
 	&[data-theme="dark"] {
+
 	  background: $background-color-inverted;
 	  color: $text-color-inverted;
 

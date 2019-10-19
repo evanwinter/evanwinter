@@ -42,14 +42,18 @@ $l-max: 90;
 
 .cube-container {
   display: inline-block;
-  margin-left: 1rem;
-  // position: fixed;
-  // top: 1rem;
-  // right: 0;
+  margin-left: 1.5rem;
 
-  // @media (max-width: 600px) {
-  //   display: none;
-  // }
+  @media (max-width: 900px) {
+    display: none;
+    // position: fixed;
+    // top: 1.5rem;
+    // right: 0;
+  }
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 
 .cube {
@@ -60,10 +64,10 @@ $l-max: 90;
   perspective-origin: 50% ($cube-size * -3);
 
   &.large {
-  	width: $cube-size-lg;
-  	height: $cube-size-lg;
-  	perspective: $cube-size-lg * 10;
-  	perspective-origin: 50% ($cube-size-lg * -3);
+    width: $cube-size-lg;
+    height: $cube-size-lg;
+    perspective: $cube-size-lg * 10;
+    perspective-origin: 50% ($cube-size-lg * -3);
   }
 }
 

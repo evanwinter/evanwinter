@@ -9,7 +9,6 @@ const Cube = {
 	},
 
 	listen: function() {
-		// randomize theme on click
 		this.cube.addEventListener("click", (e) => {
 			Theme.random()
 		})

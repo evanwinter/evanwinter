@@ -50,7 +50,6 @@ body {
 
 a {
   color: $link-color;
-  text-decoration: none;
 
   @include transition(color $transition-default, opacity $transition-fast);
 
@@ -58,7 +57,10 @@ a {
     color: rgba($link-color, 0.8);
   }
 
-  &.animated-underline {
+}
+
+body:not(.mobile):not(.tablet) {
+  .animated-underline {
     &::after {
       content: '';
       display: block;
@@ -119,6 +121,10 @@ p {
 .content-nav {
   padding: 0 $gutter;
 
+  a {
+    text-decoration: none;
+  }
+
   ul {
     padding: 0;
     margin: 0;
@@ -137,6 +143,31 @@ p {
       width: 100%;
       display: inline-block;
       padding: 0.5rem;
+    }
+  }
+}
+
+.flex {
+
+  display: flex;
+
+  > * {
+    margin: 0 1rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}
+
+.about-content {
+  .flex {
+    ul {
+      margin-top: 1rem;
+      margin-bottom: 0;
     }
   }
 }
@@ -216,6 +247,8 @@ p {
   }
 }
 
-.about-content {
+.about-content {}
+
+.copy-width {
   max-width: 600px;
 }
