@@ -2,7 +2,6 @@ import * as templates from "./templates"
 import anime from "animejs"
 
 import Theme from "./theme"
-import Content from "./content"
 
 const Router = {
 	root: null,
@@ -83,8 +82,6 @@ const Router = {
 				complete: () => {
 					window.history.replaceState(null, null, route)
 					this.render(route)
-					Content.destroy()
-					Content.init()
 				},
 			})
 			.add(showOptions)
@@ -95,7 +92,7 @@ const Router = {
 	},
 
 	setThemeForRoute: function(route) {
-		switch(route) {
+		switch (route) {
 			case "work":
 				Theme.set("dark")
 				break
@@ -119,7 +116,7 @@ const Router = {
 
 		// this.setThemeForRoute(route)
 
-		return content || ''
+		return content || ""
 	},
 
 	render: function(route) {

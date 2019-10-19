@@ -1,5 +1,12 @@
 body {
+
 	&[data-theme="light"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $text-color;
+		}
+
 	  background: $background-color;
 	  color: $text-color;
 
@@ -30,6 +37,12 @@ body {
 	}
 
 	&[data-theme="red"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $light;
+		}
+
 	  background: $red;
 	  color: $light;
 
@@ -64,6 +77,12 @@ body {
 	}
 
 	&[data-theme="blue"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $light;
+		}
+
 	  background: $blue;
 	  color: $light;
 
@@ -98,6 +117,12 @@ body {
 	}
 
 	&[data-theme="yellow"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $dark;
+		}
+
 	  background: $yellow;
 	  color: $dark;
 
@@ -132,6 +157,12 @@ body {
 	}
 
 	&[data-theme="pink"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $light;
+		}
+
 	  background: $pink;
 	  color: $light;
 
@@ -166,6 +197,7 @@ body {
 	}
 
 	&[data-theme="orange"] {
+
 	  background: $orange;
 	  color: $dark;
 
@@ -200,6 +232,12 @@ body {
 	}
 
 	&[data-theme="dark"] {
+
+		&:not(.mobile):not(.tablet) a.animated-underline::after {
+			background: $link-color;
+			background: $text-color-inverted;
+		}
+
 	  background: $background-color-inverted;
 	  color: $text-color-inverted;
 
