@@ -140,3 +140,8 @@ export const notfound = `
 		Sorry, there's nothing here.
 	</div>
 `
+
+export const home = `
+	<div id="content-type-root" class="home-content">
+	</div>
+`

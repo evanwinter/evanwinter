@@ -64,16 +64,17 @@
   &::after {
     content: '';
     display: block;
-    width: 2px;
+    width: 0px;
     height: 1px;
     opacity: 0;
     margin: 0.25em auto;
     background: $link-color;
-    transform: translateY(-0.5rem);
+    // transform: translateY(-0.5rem);
 
     @include transition(border-radius $transition-default, transform $transition-default, opacity $transition-default, background $transition-default, width $transition-default, height $transition-default);
   }
 
+  // active
   &[data-active="true"] {
     &::after {
       width: 100%;
@@ -81,11 +82,14 @@
       opacity: 1;
     }
   }
+
+  // hover
   &:hover:not([data-active="true"]) {
     &::after {
       transform: translateY(0);
       opacity: 0.5;
-      width: 10%;
+      // border-radius: 50%;
+      width: 35%;
       height: 1px;
       // width: 10%;
     }
