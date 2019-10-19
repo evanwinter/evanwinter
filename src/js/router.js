@@ -32,8 +32,8 @@ const Router = {
 	},
 
 	getCurrentRoute: function() {
-		const { pathname } = window.location
-		return pathname.substr(1, pathname.length)
+		const { hash } = window.location
+		return hash.substr(1, hash.length)
 	},
 
 	refresh: function() {
@@ -44,8 +44,8 @@ const Router = {
 	navigate: function(e) {
 		const { route } = e.target.dataset
 
-		if (route)
-			e.preventDefault()
+		// if (route)
+		// 	e.preventDefault()
 
 		const currentRoute = this.getCurrentRoute()
 
@@ -84,7 +84,7 @@ const Router = {
 			.add({
 				...hideOptions,
 				complete: () => {
-					window.history.replaceState(null, null, route)
+					// window.history.replaceState(null, null, route)
 					this.render(route)
 				},
 			})
