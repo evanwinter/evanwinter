@@ -9,7 +9,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $background-color;
+		  	// background: rgba($background-color, 0.8);
 		  	border-color: $text-color;
+		  	&:hover {
+		  		background: $background-color;
+		  		// background: rgba($background-color, 0.8);
+		  	}
 		  }
 	  }
 
@@ -34,7 +39,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $red;
+		  	// background: rgba($red, 0.8);
 		  	border-color: $light;
+		  	&:hover {
+		  		background: $red;
+		  		// background: rgba($red, 0.8);
+		  	}
 		  }
 	  }
 
@@ -63,7 +73,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $blue;
+		  	// background: rgba($blue, 0.8);
 		  	border-color: $light;
+		  	&:hover {
+		  		background: $blue;
+		  		// background: rgba($blue, 0.8);
+		  	}
 		  }
 	  }
 
@@ -92,7 +107,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $yellow;
+		  	// background: rgba($yellow, 0.8);
 		  	border-color: $dark;
+		  	&:hover {
+		  		background: $yellow;
+		  		// background: rgba($yellow, 0.8);
+		  	}
 		  }
 	  }
 
@@ -121,7 +141,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $pink;
+		  	// background: rgba($pink, 0.8);
 		  	border-color: $light;
+		  	&:hover {
+		  		background: $pink;
+		  		// background: rgba($pink, 0.8);
+		  	}
 		  }
 	  }
 
@@ -150,7 +175,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $orange;
+		  	// background: rgba($orange, 0.8);
 		  	border-color: $dark;
+		  	&:hover {
+		  		background: $orange;
+		  		// background: rgba($orange, 0.8);
+		  	}
 		  }
 	  }
 
@@ -179,7 +209,12 @@ body {
 		  }
 		  .work-item-content {
 		  	background: $background-color-inverted;
+		  	// background: rgba($background-color-inverted, 0.8);
 		  	border-color: $text-color-inverted;
+		  	&:hover {
+		  		background: $background-color-inverted;
+		  		// background: rgba($background-color-inverted, 0.8);
+		  	}
 		  }
 	  }
 

@@ -12,7 +12,7 @@ $cube-colors: red, orange, yellow, green, blue, white;
 
 $cube-size-lg: 400px;
 
-$cube-size: 48px;
+$cube-size: 36px;
 $cube-square-border-radius: 3px;
 $cube-square-border: 1px solid #222;
 $cube-square-box-shadow: inset 0 0 1px 1px rgba($dark, 0.25);
@@ -40,10 +40,22 @@ $s-max: 70;
 $l-min: 30;
 $l-max: 90;
 
+.cube-container {
+  display: inline-block;
+  margin-left: 1rem;
+  // position: fixed;
+  // top: 1rem;
+  // right: 0;
+
+  // @media (max-width: 600px) {
+  //   display: none;
+  // }
+}
+
 .cube {
-  display: block;
+  display: inline-block;
   width: $cube-size * 2;
-  height: $cube-size * 2;
+  height: $cube-size;
   perspective: $cube-size * 10;
   perspective-origin: 50% ($cube-size * -3);
 
@@ -55,8 +67,17 @@ $l-max: 90;
   }
 }
 
+// .cube-wrapper {
+//   padding-top: $cube-size / 2;
+//   position: relative;
+//   width: $cube-size;
+//   cursor: pointer;
+//   transform-style: preserve-3d;
+//   animation: cube-spin 10s infinite linear;
+// }
+
 .cube-wrapper {
-  padding-top: $cube-size / 2;
+  // padding-top: $cube-size / 2;
   position: relative;
   width: $cube-size;
   cursor: pointer;

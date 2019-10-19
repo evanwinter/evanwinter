@@ -84,12 +84,6 @@ main {
   }
 }
 
-.cube-container {
-  position: fixed;
-  bottom: 1rem;
-  right: 0;
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   margin: 0.5em 0;
@@ -181,7 +175,7 @@ p {
 
     &:hover {
       .work-item-content {
-        transform: translate(0.25rem, -0.25rem);
+        transform: translate(0.5rem, -0.5rem);
       }
     }
   }

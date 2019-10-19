@@ -2,6 +2,7 @@ import * as templates from "./templates"
 import anime from "animejs"
 
 import Theme from "./theme"
+import Content from "./content"
 
 const Router = {
 	root: null,
@@ -82,13 +83,15 @@ const Router = {
 				complete: () => {
 					window.history.replaceState(null, null, route)
 					this.render(route)
+					Content.destroy()
+					Content.init()
 				},
 			})
 			.add(showOptions)
 	},
 
-	routeNotFound: function(route) {
-		return route.length > 0
+	isNotFound: function(route) {
+		return !templates[route] && route.length > 0
 	},
 
 	setThemeForRoute: function(route) {
@@ -107,20 +110,20 @@ const Router = {
 		}
 	},
 
-	render: function(route) {
+	getContentForRoute: function(route) {
 		const content = templates[route]
-		const notFound = templates[`notfound`]
+		const notFoundContent = templates[`notfound`]
 
-		this.setThemeForRoute(route)
+		const noContentForRoute = this.isNotFound(route)
+		if (noContentForRoute) return notFoundContent
 
-		let nextContent = ``
+		// this.setThemeForRoute(route)
 
-		if (!!content) {
-			nextContent = content
-		} else if (route.length > 0) {
-			nextContent = notFound
-		}
+		return content || ''
+	},
 
+	render: function(route) {
+		const nextContent = this.getContentForRoute(route)
 		this.root.innerHTML = nextContent
 	},
 }
