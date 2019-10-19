@@ -199,7 +199,7 @@ $l-max: 90;
     // subtle shadow around the edge of each square -- trying to make it look a little 3d
     box-shadow: $cube-square-box-shadow-sm;
 
-    @include transition(background $transition-default, border-color $transition-default);
+    @include transition(background $transition-normal, border-color $transition-normal);
   }
 
   .side.back {

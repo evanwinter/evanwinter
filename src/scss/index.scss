@@ -36,7 +36,7 @@ body {
   font-family: $sans;
   font-weight: 400;
 
-  @include transition(background $transition-default, color $transition-default);
+  @include transition(background $transition-normal, color $transition-normal);
 }
 
 .container {
@@ -50,7 +50,7 @@ body {
 a {
   color: $link-color;
 
-  @include transition(color $transition-default, opacity $transition-fast);
+  @include transition(color $transition-normal, opacity $transition-fast);
 
   &:hover {
     color: rgba($link-color, 0.8);
@@ -218,7 +218,7 @@ p {
     background: $light;
     z-index: -1;
 
-    @include transition(background $transition-default);
+    @include transition(background $transition-normal);
   }
 
   .work-item-content {
@@ -229,7 +229,7 @@ p {
     border: 1px solid $light;
     transform: translate(0.1rem, -0.1rem);
 
-    @include transition(transform $transition-default, background $transition-default);
+    @include transition(transform $transition-default, background $transition-normal);
 
     .content-container {
       height: 100%;
