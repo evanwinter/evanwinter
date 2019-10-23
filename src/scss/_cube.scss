@@ -105,8 +105,8 @@ $front-skew: translateZ(0);
   bottom: 1.5rem;
 
   @media (max-width: 900px) {
-
     display: none;
+
     // display: none;
     // position: fixed;
     // top: 1.5rem;
@@ -162,26 +162,32 @@ html:not(.mobile):not(.tablet) {
   .cube-container:hover {
     .side.back {
       // transform: $back-skew;
+
     }
 
     .side.right {
       // transform: $right-skew;
+
     }
 
     .side.left {
       // transform: $left-skew;
+
     }
 
     .side.top {
       // transform: $top-skew;
+
     }
 
     .side.bottom {
       // transform: $bottom-skew;
+
     }
 
     .side.front {
       // transform: $front-skew;
+
     }
   }
 }
@@ -222,6 +228,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $back-skew;
+
     }
 
     .square {
@@ -235,6 +242,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $right-skew;
+
     }
 
     .square {
@@ -248,6 +256,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $left-skew;
+
     }
 
     .square {
@@ -261,6 +270,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $top-skew;
+
     }
 
     .square {
@@ -274,6 +284,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $bottom-skew;
+
     }
 
     .square {
@@ -286,6 +297,7 @@ html:not(.mobile):not(.tablet) {
 
     &.after {
       // transform: $front-skew;
+
     }
 
     .square {

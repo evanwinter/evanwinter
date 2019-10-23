@@ -2,11 +2,31 @@
  * Trigger styles when the screen is wider than `$breakpoint`
  */
 @mixin larger-than($breakpoint) {
-  @if $breakpoint == "xs" { @media (min-width: $breakpoint-xs + 1) { @content; } }
-  @else if $breakpoint == "sm" { @media (min-width: $breakpoint-sm + 1) { @content; } }
-  @else if $breakpoint == "md" { @media (min-width: $breakpoint-md + 1) { @content; } }
-  @else if $breakpoint == "lg" { @media (min-width: $breakpoint-lg + 1) { @content; } }
-  @else if $breakpoint == "xl" { @media (min-width: $breakpoint-xl + 1) { @content; } }
+  @if $breakpoint == "xs" {
+    @media (min-width: $breakpoint-xs + 1) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "sm" {
+    @media (min-width: $breakpoint-sm + 1) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "md" {
+    @media (min-width: $breakpoint-md + 1) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "lg" {
+    @media (min-width: $breakpoint-lg + 1) {
+      @content;
+    }
+  }
+  @else if $breakpoint == "xl" {
+    @media (min-width: $breakpoint-xl + 1) {
+      @content;
+    }
+  }
 }
 
 /**
@@ -56,7 +76,7 @@
   transition: $args;
 }
 
-@mixin animated-underline() {
+@mixin animated-underline {
   position: relative;
 
   $dot-diameter: 5px;
@@ -88,5 +108,4 @@
       opacity: 1;
     }
   }
-
 }

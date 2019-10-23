@@ -16,8 +16,7 @@ const Theme = {
 
 	cycle: function() {
 		// if at end of theme array, start over at 0
-		if (this.themeIndex === this.themes.length-1)
-			this.themeIndex = -1
+		if (this.themeIndex === this.themes.length - 1) this.themeIndex = -1
 
 		const nextTheme = this.themes[++this.themeIndex]
 		this.set(nextTheme)
