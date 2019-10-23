@@ -40,6 +40,13 @@ $s-max: 70;
 $l-min: 30;
 $l-max: 90;
 
+$back-skew: translate(0) rotateX(0deg) rotateY(0deg);
+$right-skew: translate(0) rotateX(50deg) rotateY(50deg);
+$left-skew: translate(0) rotateX(20deg) rotateY(10deg);
+$top-skew: translate(0) rotateX(-45deg) rotateY(25deg);
+$bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
+$front-skew: translateZ(0);
+
 @mixin cube-bg {
   width: $cube-size-lg;
   height: $cube-size-lg;
@@ -90,28 +97,34 @@ $l-max: 90;
 }
 
 .cube-container {
-  display: inline-block;
-  margin-left: 1.5rem;
+  // display: inline-block;
+  // margin-left: 1.5rem;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  bottom: 1.5rem;
 
   @media (max-width: 900px) {
+
+    display: none;
     // display: none;
     // position: fixed;
     // top: 1.5rem;
     // right: 0;
-    position: fixed;
-    z-index: 10;
-    right: 0;
-    bottom: 1.5rem;
+    // position: fixed;
+    // z-index: 10;
+    // right: 1.5rem;
+    // bottom: 1.5rem;
 
-    .cube {
-      // @include cube-bg();
-
-    }
+    // .cube {
+    //   @include cube-bg();
+    // }
   }
 
   @media (max-width: 600px) {
     // display: none;
-    // position: fixed;
+    // position: absolute;
+    // top: 0;
     // left: 0;
     // top: 0;
     // z-index: -1;
@@ -148,27 +161,27 @@ $l-max: 90;
 html:not(.mobile):not(.tablet) {
   .cube-container:hover {
     .side.back {
-      transform: translate(0) rotateX(0deg) rotateY(0deg);
+      // transform: $back-skew;
     }
 
     .side.right {
-      transform: translate(0) rotateX(50deg) rotateY(50deg);
+      // transform: $right-skew;
     }
 
     .side.left {
-      transform: translate(0) rotateX(20deg) rotateY(10deg);
+      // transform: $left-skew;
     }
 
     .side.top {
-      transform: translate(0) rotateX(-45deg) rotateY(25deg);
+      // transform: $top-skew;
     }
 
     .side.bottom {
-      transform: translate(0) rotateX(90deg) rotateY(100deg);
+      // transform: $bottom-skew;
     }
 
     .side.front {
-      transform: translateZ(0);
+      // transform: $front-skew;
     }
   }
 }
@@ -208,7 +221,7 @@ html:not(.mobile):not(.tablet) {
     transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
 
     &.after {
-      transform: rotateY(180deg);
+      // transform: $back-skew;
     }
 
     .square {
@@ -221,7 +234,7 @@ html:not(.mobile):not(.tablet) {
     transform-origin: top right;
 
     &.after {
-      transform: rotateY(-270deg);
+      // transform: $right-skew;
     }
 
     .square {
@@ -234,7 +247,7 @@ html:not(.mobile):not(.tablet) {
     transform-origin: center left;
 
     &.after {
-      transform: rotateY(270deg);
+      // transform: $left-skew;
     }
 
     .square {
@@ -247,7 +260,7 @@ html:not(.mobile):not(.tablet) {
     transform-origin: top center;
 
     &.after {
-      transform: rotateX(-90deg);
+      // transform: $top-skew;
     }
 
     .square {
@@ -260,7 +273,7 @@ html:not(.mobile):not(.tablet) {
     transform-origin: bottom center;
 
     &.after {
-      transform: rotateX(90deg);
+      // transform: $bottom-skew;
     }
 
     .square {
@@ -272,7 +285,7 @@ html:not(.mobile):not(.tablet) {
     transform: translateZ($cube-size / 2);
 
     &.after {
-      transform: translateZ(0);
+      // transform: $front-skew;
     }
 
     .square {

@@ -33,7 +33,7 @@ body {
 
 	  a {
 	  	color: $text-color;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($text-color, 0.8);
 	  	}
 	  	&::after {
@@ -75,7 +75,7 @@ body {
 
 	  a {
 	  	color: $light;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
@@ -124,7 +124,7 @@ body {
 
 	  a {
 	  	color: $light;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
@@ -173,7 +173,7 @@ body {
 
 	  a {
 	  	color: $dark;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($dark, 0.8);
 	  	}
 	  	&::after {
@@ -220,7 +220,7 @@ body {
 
 	  a {
 	  	color: $light;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($light, 0.8);
 	  	}
 	  	&::after {
@@ -258,7 +258,7 @@ body {
 
 	  a {
 	  	color: $dark;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($dark, 0.8);
 	  	}
 	  	&::after {
@@ -307,7 +307,7 @@ body {
 
 	  a {
 	  	color: $text-color-inverted;
-	  	&:hover {
+	  	&:hover:not([data-active="true"]) {
 	  		color: rgba($text-color-inverted, 0.8);
 	  	}
 	  	&::after {

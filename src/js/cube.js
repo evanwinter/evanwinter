@@ -6,12 +6,11 @@ const Cube = {
 	init: function() {
 		this.cube = document.querySelector(".cube")
 		this.listen()
-		this.form()
 	},
 
 	listen: function() {
 		this.cube.addEventListener("click", (e) => {
-			Theme.random()
+			Theme.cycle()
 		})
 	},
 

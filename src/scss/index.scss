@@ -52,7 +52,7 @@ a {
 
   @include transition(color $transition-normal, opacity $transition-fast);
 
-  &:hover {
+  &:hover:not([data-active="true"]) {
     color: rgba($link-color, 0.8);
   }
 }
