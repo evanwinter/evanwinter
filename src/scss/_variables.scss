@@ -33,10 +33,10 @@ $breakpoint-xl: 1200px;
 
 // element colors
 $primary: $dark;
-$text-color: $dark;
-$text-color-inverted: $light;
-$background-color: $light;
-$background-color-inverted: #111;
+$text-color: $light;
+$text-color-inverted: $dark;
+$background-color: $dark;
+$background-color-inverted: $light;
 $link-color: $primary;
 $link-color-hover: $primary;
 $highlight-color: rgba(lightgray, 0.5);

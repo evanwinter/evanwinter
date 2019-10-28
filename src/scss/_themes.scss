@@ -9,41 +9,41 @@ body {
 
     &:not(.mobile):not(.tablet) .content-nav a::after {
       background: $link-color;
-      background: $text-color;
+      background: $dark;
     }
 
-    background: $background-color;
-    color: $text-color;
+    background: $light;
+    color: $dark;
 
     .work-item {
       .work-item-background {
-        background: $text-color;
+        background: $dark;
       }
 
       .work-item-content {
-        background: $background-color;
+        background: $light;
 
-        // background: rgba($background-color, 0.8);
-        border-color: $text-color;
+        // background: rgba($light, 0.8);
+        border-color: $dark;
 
         &:hover {
-          background: $background-color;
+          background: $light;
 
-          // background: rgba($background-color, 0.8);
+          // background: rgba($light, 0.8);
 
         }
       }
     }
 
     a {
-      color: $text-color;
+      color: $dark;
 
       &:hover:not([data-active="true"]) {
-        color: rgba($text-color, 0.8);
+        color: rgba($dark, 0.8);
       }
 
       &::after {
-        background: $text-color;
+        background: $dark;
       }
     }
   }
@@ -327,47 +327,45 @@ body {
     &:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
       &::after {
         // width: 10%;
-
       }
     }
 
     &:not(.mobile):not(.tablet) .content-nav a::after {
-      background: $link-color;
-      background: $text-color-inverted;
+      background: $light;
     }
 
-    background: $background-color-inverted;
-    color: $text-color-inverted;
+    background: $dark;
+    color: $light;
 
     .work-item {
       .work-item-background {
-        background: $text-color-inverted;
+        background: $light;
       }
 
       .work-item-content {
-        background: $background-color-inverted;
+        background: $dark;
 
-        // background: rgba($background-color-inverted, 0.8);
-        border-color: $text-color-inverted;
+        // background: rgba($dark, 0.8);
+        border-color: $light;
 
         &:hover {
-          background: $background-color-inverted;
+          background: $dark;
 
-          // background: rgba($background-color-inverted, 0.8);
+          // background: rgba($dark, 0.8);
 
         }
       }
     }
 
     a {
-      color: $text-color-inverted;
+      color: $light;
 
       &:hover:not([data-active="true"]) {
-        color: rgba($text-color-inverted, 0.8);
+        color: rgba($light, 0.8);
       }
 
       &::after {
-        background: $text-color-inverted;
+        background: $light;
       }
     }
 
@@ -378,6 +376,54 @@ body {
       // 	border-color: rgba($light, 0.1);
       // }
 
+    }
+  }
+}
+
+
+@mixin set-theme($themeName) {
+
+  &[data-theme="$themeName"] {
+    background: $dark;
+    color: $light;
+
+    // Desktop nav item styles
+    &:not(.mobile):not(.tablet) .content-nav a::after {
+      background: $light;
+    }
+
+    // Work item styles
+    .work-item {
+      .work-item-background {
+        background: $light;
+      }
+
+      .work-item-content {
+        background: $dark;
+        border-color: $light;
+
+        &:hover {
+          background: $dark;
+        }
+      }
+    }
+
+    // General link styles
+    a {
+      color: $light;
+
+      &:hover:not([data-active="true"]) {
+        color: rgba($light, 0.8);
+      }
+
+      &::after {
+        background: $light;
+      }
+    }
+
+    // Cube styles
+    .cube-container .cube .square {
+      border-color: $light;
     }
   }
 }

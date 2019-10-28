@@ -1,9 +1,8 @@
-import Utils from "./utilities"
+import Utils from "../helpers/utilities"
 
 const Theme = {
 	body: null,
 
-	themeIndex: 0,
 	themes: ["dark", "light", "blue", "red", "yellow", "orange"],
 
 	init: function() {
@@ -12,14 +11,6 @@ const Theme = {
 
 	set: function(theme) {
 		this.body.dataset.theme = theme
-	},
-
-	cycle: function() {
-		// if at end of theme array, start over at 0
-		if (this.themeIndex === this.themes.length - 1) this.themeIndex = -1
-
-		const nextTheme = this.themes[++this.themeIndex]
-		this.set(nextTheme)
 	},
 
 	invert: function() {

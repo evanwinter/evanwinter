@@ -1,7 +1,7 @@
 import device from "current-device"
-import typography from "./typography"
+import typography from "./components/typography"
 
 import "../scss/index.scss"
-import App from "./app"
+import App from "./components/app"
 
 document.addEventListener("DOMContentLoaded", () => App.init())

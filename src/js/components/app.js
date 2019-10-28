@@ -7,7 +7,7 @@ const App = {
 		Router.init()
 		Cube.init()
 		Theme.init()
-	},
+	}
 }
 
 export default App
