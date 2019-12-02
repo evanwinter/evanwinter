@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is source code for my personal website.
-=======
 This is the source code for my personal website.
->>>>>>> 51a33d61c9775db5532f4ad63ba5b57da0937779
 
 ### Setup
 
