@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel src/index.html",
     "build": "rm -rf dist/ && parcel build src/index.html",
-    "format": "prettier 'src/**/*.js' --write"
+    "format": "prettier 'src/**/*.js' 'src/**/*.scss' --write"
   },
   "repository": {
     "type": "git",

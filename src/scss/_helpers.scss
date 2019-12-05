@@ -2,110 +2,110 @@
  * Trigger styles when the screen is wider than `$breakpoint`
  */
 @mixin larger-than($breakpoint) {
-  @if $breakpoint == "xs" {
-    @media (min-width: $breakpoint-xs + 1) {
-      @content;
-    }
-  }
-  @else if $breakpoint == "sm" {
-    @media (min-width: $breakpoint-sm + 1) {
-      @content;
-    }
-  }
-  @else if $breakpoint == "md" {
-    @media (min-width: $breakpoint-md + 1) {
-      @content;
-    }
-  }
-  @else if $breakpoint == "lg" {
-    @media (min-width: $breakpoint-lg + 1) {
-      @content;
-    }
-  }
-  @else if $breakpoint == "xl" {
-    @media (min-width: $breakpoint-xl + 1) {
-      @content;
-    }
-  }
+	@if $breakpoint == "xs" {
+		@media (min-width: $breakpoint-xs + 1) {
+			@content;
+		}
+	} @else if $breakpoint == "sm" {
+		@media (min-width: $breakpoint-sm + 1) {
+			@content;
+		}
+	} @else if $breakpoint == "md" {
+		@media (min-width: $breakpoint-md + 1) {
+			@content;
+		}
+	} @else if $breakpoint == "lg" {
+		@media (min-width: $breakpoint-lg + 1) {
+			@content;
+		}
+	} @else if $breakpoint == "xl" {
+		@media (min-width: $breakpoint-xl + 1) {
+			@content;
+		}
+	}
 }
 
 /**
  * Mixin that handles prefixes for keyframes
  */
 @mixin keyframes($animation-name) {
-  @-webkit-keyframes #{$animation-name} {
-    @content;
-  }
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
 
-  @-moz-keyframes #{$animation-name} {
-    @content;
-  }
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
 
-  @-ms-keyframes #{$animation-name} {
-    @content;
-  }
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
 
-  @-o-keyframes #{$animation-name} {
-    @content;
-  }
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
 
-  @keyframes #{$animation-name} {
-    @content;
-  }
+	@keyframes #{$animation-name} {
+		@content;
+	}
 }
 
 /**
  * Mixin that handles prefixes for animations
  */
 @mixin animation($str) {
-  -webkit-animation: #{$str};
-  -moz-animation: #{$str};
-  -ms-animation: #{$str};
-  -o-animation: #{$str};
-  animation: #{$str};
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
 }
 
 /**
  * Mixin that handles prefixes for transitions
  */
 @mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
+	-webkit-transition: $args;
+	-moz-transition: $args;
+	-ms-transition: $args;
+	-o-transition: $args;
+	transition: $args;
 }
 
 @mixin animated-underline {
-  position: relative;
+	position: relative;
 
-  $dot-diameter: 5px;
+	$dot-diameter: 5px;
 
-  &::after {
-    content: '';
-    display: block;
-    width: 0px;
-    height: 1px;
-    opacity: 0.5;
-    margin: 0.25em auto;
-    background: $link-color;
+	&::after {
+		content: "";
+		display: block;
+		width: 0px;
+		height: 1px;
+		opacity: 0.5;
+		margin: 0.25em auto;
+		background: $link-color;
 
-    @include transition(opacity $transition-default, background $transition-default, width $transition-default);
-  }
+		@include transition(
+			opacity $transition-default,
+			background $transition-default,
+			width $transition-default
+		);
+	}
 
-  // hover and not active
-  &:hover:not([data-active="true"]) {
-    &::after {
-      width: 50%;
-      opacity: 0.5;
-    }
-  }
+	// hover and not active
+	&:hover:not([data-active="true"]) {
+		&::after {
+			width: 50%;
+			opacity: 0.5;
+		}
+	}
 
-  // active
-  &[data-active="true"] {
-    &::after {
-      width: 100%;
-      opacity: 1;
-    }
-  }
+	// active
+	&[data-active="true"] {
+		&::after {
+			width: 100%;
+			opacity: 1;
+		}
+	}
 }

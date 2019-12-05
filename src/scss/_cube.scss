@@ -1,11 +1,11 @@
 @keyframes cube-spin {
-  0% {
-    transform: rotateY(45deg);
-  }
+	0% {
+		transform: rotateY(45deg);
+	}
 
-  100% {
-    transform: rotateY(405deg);
-  }
+	100% {
+		transform: rotateY(405deg);
+	}
 }
 
 $cube-colors: red, orange, yellow, green, blue, white;
@@ -48,105 +48,105 @@ $bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
 $front-skew: translateZ(0);
 
 @mixin cube-bg {
-  width: $cube-size-lg;
-  height: $cube-size-lg;
-  perspective: $cube-size-lg * 10;
-  perspective-origin: 50% ($cube-size-lg * -3);
+	width: $cube-size-lg;
+	height: $cube-size-lg;
+	perspective: $cube-size-lg * 10;
+	perspective-origin: 50% ($cube-size-lg * -3);
 
-  .cube-wrapper {
-    padding-top: 20vh;
-    width: $cube-size-lg;
-    animation: none;
+	.cube-wrapper {
+		padding-top: 20vh;
+		width: $cube-size-lg;
+		animation: none;
 
-    .side {
-      width: $cube-size-lg;
-      height: $cube-size-lg;
-    }
+		.side {
+			width: $cube-size-lg;
+			height: $cube-size-lg;
+		}
 
-    .side.back {
-      transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
-    }
+		.side.back {
+			transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
+		}
 
-    .side.right {
-      transform: rotateY(-270deg) translateX($cube-size-lg / 2);
-    }
+		.side.right {
+			transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+		}
 
-    .side.left {
-      transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
-    }
+		.side.left {
+			transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
+		}
 
-    .side.top {
-      transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
-    }
+		.side.top {
+			transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
+		}
 
-    .side.bottom {
-      transform: rotateX(90deg) translateY($cube-size-lg / 2);
-    }
+		.side.bottom {
+			transform: rotateX(90deg) translateY($cube-size-lg / 2);
+		}
 
-    .side.front {
-      transform: translateZ($cube-size-lg / 2);
-    }
+		.side.front {
+			transform: translateZ($cube-size-lg / 2);
+		}
 
-    .square {
-      // subtle shadow around the edge of each square
-      box-shadow: $cube-square-box-shadow-lg;
-      border: $cube-square-border-lg;
-      border-radius: $cube-square-border-radius-lg;
-    }
-  }
+		.square {
+			// subtle shadow around the edge of each square
+			box-shadow: $cube-square-box-shadow-lg;
+			border: $cube-square-border-lg;
+			border-radius: $cube-square-border-radius-lg;
+		}
+	}
 }
 
 .cube-container {
-  // display: inline-block;
-  // margin-left: 1.5rem;
-  position: fixed;
-  z-index: 10;
-  right: 0;
-  bottom: 1.5rem;
+	// display: inline-block;
+	// margin-left: 1.5rem;
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	bottom: 1.5rem;
 
-  @media (max-width: 900px) {
-    display: none;
+	@media (max-width: 900px) {
+		display: none;
 
-    // display: none;
-    // position: fixed;
-    // top: 1.5rem;
-    // right: 0;
-    // position: fixed;
-    // z-index: 10;
-    // right: 1.5rem;
-    // bottom: 1.5rem;
+		// display: none;
+		// position: fixed;
+		// top: 1.5rem;
+		// right: 0;
+		// position: fixed;
+		// z-index: 10;
+		// right: 1.5rem;
+		// bottom: 1.5rem;
 
-    // .cube {
-    //   @include cube-bg();
-    // }
-  }
+		// .cube {
+		//   @include cube-bg();
+		// }
+	}
 
-  @media (max-width: 600px) {
-    // display: none;
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // top: 0;
-    // z-index: -1;
-    // .cube {
-    //   @include cube-bg();
-    // }
-  }
+	@media (max-width: 600px) {
+		// display: none;
+		// position: absolute;
+		// top: 0;
+		// left: 0;
+		// top: 0;
+		// z-index: -1;
+		// .cube {
+		//   @include cube-bg();
+		// }
+	}
 }
 
 .cube {
-  display: inline-block;
-  width: $cube-size * 2;
-  height: $cube-size;
-  perspective: $cube-size * 10;
-  perspective-origin: 50% ($cube-size * -3);
+	display: inline-block;
+	width: $cube-size * 2;
+	height: $cube-size;
+	perspective: $cube-size * 10;
+	perspective-origin: 50% ($cube-size * -3);
 
-  &.large {
-    width: $cube-size-lg;
-    height: $cube-size-lg;
-    perspective: $cube-size-lg * 10;
-    perspective-origin: 50% ($cube-size-lg * -3);
-  }
+	&.large {
+		width: $cube-size-lg;
+		height: $cube-size-lg;
+		perspective: $cube-size-lg * 10;
+		perspective-origin: 50% ($cube-size-lg * -3);
+	}
 }
 
 // .cube-wrapper {
@@ -159,272 +159,266 @@ $front-skew: translateZ(0);
 // }
 
 html:not(.mobile):not(.tablet) {
-  .cube-container:hover {
-    .side.back {
-      // transform: $back-skew;
+	.cube-container:hover {
+		.side.back {
+			// transform: $back-skew;
+		}
 
-    }
+		.side.right {
+			// transform: $right-skew;
+		}
 
-    .side.right {
-      // transform: $right-skew;
+		.side.left {
+			// transform: $left-skew;
+		}
 
-    }
+		.side.top {
+			// transform: $top-skew;
+		}
 
-    .side.left {
-      // transform: $left-skew;
+		.side.bottom {
+			// transform: $bottom-skew;
+		}
 
-    }
-
-    .side.top {
-      // transform: $top-skew;
-
-    }
-
-    .side.bottom {
-      // transform: $bottom-skew;
-
-    }
-
-    .side.front {
-      // transform: $front-skew;
-
-    }
-  }
+		.side.front {
+			// transform: $front-skew;
+		}
+	}
 }
 
 .cube-wrapper {
-  position: relative;
-  width: $cube-size;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform: rotateY(45deg);
-  animation: cube-spin 10s infinite linear;
+	position: relative;
+	width: $cube-size;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transform: rotateY(45deg);
+	animation: cube-spin 10s infinite linear;
 
-  .side {
-    position: absolute;
-    width: $cube-size;
-    height: $cube-size;
-    background: transparent;
+	.side {
+		position: absolute;
+		width: $cube-size;
+		height: $cube-size;
+		background: transparent;
 
-    @include transition(background $transition-default, transform $transition-slow);
+		@include transition(
+			background $transition-default,
+			transform $transition-slow
+		);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
 
-  .square {
-    border: $cube-square-border-sm;
-    border-radius: $cube-square-border-radius-sm;
+	.square {
+		border: $cube-square-border-sm;
+		border-radius: $cube-square-border-radius-sm;
 
-    // subtle shadow around the edge of each square -- trying to make it look a little 3d
-    box-shadow: $cube-square-box-shadow-sm;
+		// subtle shadow around the edge of each square -- trying to make it look a little 3d
+		box-shadow: $cube-square-box-shadow-sm;
 
-    @include transition(background $transition-normal, border-color $transition-normal);
-  }
+		@include transition(
+			background $transition-normal,
+			border-color $transition-normal
+		);
+	}
 
-  .side.back {
-    transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+	.side.back {
+		transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
 
-    &.after {
-      // transform: $back-skew;
+		&.after {
+			// transform: $back-skew;
+		}
 
-    }
+		.square {
+			background: transparent;
+		}
+	}
 
-    .square {
-      background: transparent;
-    }
-  }
+	.side.right {
+		transform: rotateY(-270deg) translateX($cube-size / 2);
+		transform-origin: top right;
 
-  .side.right {
-    transform: rotateY(-270deg) translateX($cube-size / 2);
-    transform-origin: top right;
+		&.after {
+			// transform: $right-skew;
+		}
 
-    &.after {
-      // transform: $right-skew;
+		.square {
+			background: transparent;
+		}
+	}
 
-    }
+	.side.left {
+		transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+		transform-origin: center left;
 
-    .square {
-      background: transparent;
-    }
-  }
+		&.after {
+			// transform: $left-skew;
+		}
 
-  .side.left {
-    transform: rotateY(270deg) translateX($cube-size / 2 * -1);
-    transform-origin: center left;
+		.square {
+			background: transparent;
+		}
+	}
 
-    &.after {
-      // transform: $left-skew;
+	.side.top {
+		transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+		transform-origin: top center;
 
-    }
+		&.after {
+			// transform: $top-skew;
+		}
 
-    .square {
-      background: transparent;
-    }
-  }
+		.square {
+			background: transparent;
+		}
+	}
 
-  .side.top {
-    transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
-    transform-origin: top center;
+	.side.bottom {
+		transform: rotateX(90deg) translateY($cube-size / 2);
+		transform-origin: bottom center;
 
-    &.after {
-      // transform: $top-skew;
+		&.after {
+			// transform: $bottom-skew;
+		}
 
-    }
+		.square {
+			background: transparent;
+		}
+	}
 
-    .square {
-      background: transparent;
-    }
-  }
+	.side.front {
+		transform: translateZ($cube-size / 2);
 
-  .side.bottom {
-    transform: rotateX(90deg) translateY($cube-size / 2);
-    transform-origin: bottom center;
+		&.after {
+			// transform: $front-skew;
+		}
 
-    &.after {
-      // transform: $bottom-skew;
-
-    }
-
-    .square {
-      background: transparent;
-    }
-  }
-
-  .side.front {
-    transform: translateZ($cube-size / 2);
-
-    &.after {
-      // transform: $front-skew;
-
-    }
-
-    .square {
-      background: transparent;
-    }
-  }
+		.square {
+			background: transparent;
+		}
+	}
 }
 
 .cube-wrapper.colors {
-  .side {
-    background: $dark;
-  }
+	.side {
+		background: $dark;
+	}
 
-  .side.back {
-    transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+	.side.back {
+		transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 
-  .side.right {
-    transform: rotateY(-270deg) translateX($cube-size / 2);
-    transform-origin: top right;
+	.side.right {
+		transform: rotateY(-270deg) translateX($cube-size / 2);
+		transform-origin: top right;
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 
-  .side.left {
-    transform: rotateY(270deg) translateX($cube-size / 2 * -1);
-    transform-origin: center left;
+	.side.left {
+		transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+		transform-origin: center left;
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 
-  .side.top {
-    transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
-    transform-origin: top center;
+	.side.top {
+		transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+		transform-origin: top center;
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 
-  .side.bottom {
-    transform: rotateX(90deg) translateY($cube-size / 2);
-    transform-origin: bottom center;
+	.side.bottom {
+		transform: rotateX(90deg) translateY($cube-size / 2);
+		transform-origin: bottom center;
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 
-  .side.front {
-    transform: translateZ($cube-size / 2);
+	.side.front {
+		transform: translateZ($cube-size / 2);
 
-    .square {
-      @for $i from 1 through 9 {
-        &:nth-child(#{$i}) {
-          background: nth($cube-colors, random(length($cube-colors)));
-        }
-      }
-    }
-  }
+		.square {
+			@for $i from 1 through 9 {
+				&:nth-child(#{$i}) {
+					background: nth($cube-colors, random(length($cube-colors)));
+				}
+			}
+		}
+	}
 }
 
 .cube-wrapper.large {
-  padding-top: 20vh;
-  width: $cube-size-lg;
+	padding-top: 20vh;
+	width: $cube-size-lg;
 
-  .side {
-    width: $cube-size-lg;
-    height: $cube-size-lg;
-  }
+	.side {
+		width: $cube-size-lg;
+		height: $cube-size-lg;
+	}
 
-  .side.back {
-    transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
-  }
+	.side.back {
+		transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
+	}
 
-  .side.right {
-    transform: rotateY(-270deg) translateX($cube-size-lg / 2);
-  }
+	.side.right {
+		transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+	}
 
-  .side.left {
-    transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
-  }
+	.side.left {
+		transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
+	}
 
-  .side.top {
-    transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
-  }
+	.side.top {
+		transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
+	}
 
-  .side.bottom {
-    transform: rotateX(90deg) translateY($cube-size-lg / 2);
-  }
+	.side.bottom {
+		transform: rotateX(90deg) translateY($cube-size-lg / 2);
+	}
 
-  .side.front {
-    transform: translateZ($cube-size-lg / 2);
-  }
+	.side.front {
+		transform: translateZ($cube-size-lg / 2);
+	}
 
-  .square {
-    // subtle shadow around the edge of each square
-    box-shadow: $cube-square-box-shadow-lg;
-    border: $cube-square-border-lg;
-    border-radius: $cube-square-border-radius-lg;
-  }
+	.square {
+		// subtle shadow around the edge of each square
+		box-shadow: $cube-square-box-shadow-lg;
+		border: $cube-square-border-lg;
+		border-radius: $cube-square-border-radius-lg;
+	}
 }
