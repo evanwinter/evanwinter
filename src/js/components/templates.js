@@ -2,8 +2,8 @@ export const about = `
 	<div id="content-type-root" class="about-content grid two">
 		<div>
 			<p>
-				I'm currently working as a developer for Schafer Condon Carter's digital
-				department. We're a small team producing websites, apps, components,
+				I'm currently a developer for advertising agency Schafer Condon Carter. 
+				We're a small team producing websites, apps, components,
 				patterns, guidance, and tools to help our clients both large and small
 				create engaging digital experiences.
 			</p>
