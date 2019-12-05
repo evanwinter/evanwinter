@@ -21,12 +21,11 @@ const Cube = {
 		const interval = setInterval(() => {
 			sides[i].classList.remove("after")
 
-			if (i === sides.length - 1)
-				clearInterval(interval)
+			if (i === sides.length - 1) clearInterval(interval)
 
 			i++
 		}, 250)
-	}
+	},
 }
 
 export default Cube

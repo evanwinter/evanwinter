@@ -2,7 +2,7 @@ import * as templates from "./templates"
 import anime from "animejs"
 
 import Theme from "./theme"
-
+ 
 const Router = {
 	root: null,
 	rootClass: `#content-root`,
@@ -126,10 +126,11 @@ const Router = {
 	render: function(route) {
 		const nextContent = this.getContentForRoute(route)
 
-
 		if (nextContent && !this.isNotFound(route)) {
-			this.links.forEach(link => link.dataset.active = "false")
-			const activeLink = this.links.find(link => link.dataset.route === route)
+			this.links.forEach((link) => (link.dataset.active = "false"))
+			const activeLink = this.links.find(
+				(link) => link.dataset.route === route
+			)
 			activeLink.dataset.active = "true"
 		}
 

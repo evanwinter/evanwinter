@@ -27,7 +27,9 @@ const Theme = {
 
 	getRandomColor: function() {
 		const currentTheme = this.body.dataset.theme
-		const otherThemes = this.themes.filter((theme) => theme !== currentTheme) // don't repeat themes
+		const otherThemes = this.themes.filter(
+			(theme) => theme !== currentTheme
+		) // don't repeat themes
 		const randomIndex = Utils.getRandomNumber(0, otherThemes.length - 1)
 		return otherThemes[randomIndex]
 	},
