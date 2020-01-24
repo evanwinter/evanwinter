@@ -98,13 +98,13 @@ const Router = {
 	setThemeForRoute: function(route) {
 		switch (route) {
 			case "work":
-				Theme.set("dark")
+				// Theme.set("dark")
 				break
 			case "about":
-				Theme.set("blue")
+				// Theme.set("blue")
 				break
 			case "contact":
-				Theme.set("light")
+				// Theme.set("light")
 				break
 			default:
 				break

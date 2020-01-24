@@ -1,75 +1,107 @@
-// white, gray, black
-$light: #fefefe;
-$medium: #999;
-$dark: #151515;
+:root {
+	--light: #fefefe;
+	--medium: #999;
+	--dark: #151515;
 
-// colors
-$blue-kitandace: #002573;
-$blue-donetodeath: #130db1;
-$blue-atlassian: #0747a6;
-$perfect-blue: rgb(7, 71, 166);
-$emoji-guy-blue: #2726cf;
-$blue: $emoji-guy-blue;
-$lightblue: #74b3ce;
-$yellow: #f7d708;
-$tan: #ffdbb5;
-$ice: #f1faee;
-$red: #b80c09;
-$orange: #fe9000;
-$orange-vibrant: #ff6700;
-$pink: #ff8484;
-$lime: #00ff4f;
+	// colors
+	--blue: rgb(7, 71, 166);
+	--lightblue: #74b3ce;
+	--yellow: #f7d708;
+	--tan: #ffdbb5;
+	--ice: #f1faee;
+	--red: #b80c09;
+	--orange: #fe9000;
+	--orange-vibrant: #ff6700;
+	--pink: #ff8484;
+	--lime: #00ff4f;
 
-$papayawhip: papayawhip;
-$linen: linen;
-$oldlace: oldlace;
+	// breakpoints
+	--breakpoint-xs: 400px;
+	--breakpoint-sm: 600px;
+	--breakpoint-md: 800px;
+	--breakpoint-lg: 1000px;
+	--breakpoint-xl: 1200px;
 
-// breakpoints
-$breakpoint-xs: 400px;
-$breakpoint-sm: 600px;
-$breakpoint-md: 800px;
-$breakpoint-lg: 1000px;
-$breakpoint-xl: 1200px;
+	// element colors
+	--primary: var(--dark);
+	--text-color: var(--light);
+	--text-color-inverted: var(--dark);
+	--background-color: var(--dark);
+	--background-color-inverted: var(--light);
+	--link-color: var(--primary);
+	--link-color-hover: var(--primary);
+	--highlight-color: rgba(lightgray, 0.5);
 
-// element colors
-$primary: $dark;
-$text-color: $light;
-$text-color-inverted: $dark;
-$background-color: $dark;
-$background-color-inverted: $light;
-$link-color: $primary;
-$link-color-hover: $primary;
-$highlight-color: rgba(lightgray, 0.5);
+	// transition durations
+	--fast: 50ms;
+	--quite-fast: 100ms;
+	--pretty-fast: 250ms;
+	--normal: 350ms;
+	--slow: 750ms;
+	--very-slow: 1250ms;
+	--speed-default: var(--quite-fast);
 
-// transition durations
-$fast: 50ms;
-$quite-fast: 100ms;
-$pretty-fast: 250ms;
-$normal: 350ms;
-$slow: 750ms;
-$very-slow: 1250ms;
-$speed-default: $quite-fast;
+	// easings
+	--bezier-1: cubic-bezier(0.79, 0.08, 0.41, 0.1);
+	--glide: cubic-bezier(0.14, 0.23, 0.13, 0.32);
+	--easing-default: ease;
 
-// easings
-$bezier-1: cubic-bezier(0.79, 0.08, 0.41, 0.1) !default;
-$glide: cubic-bezier(0.14, 0.23, 0.13, 0.32) !default;
-$easing-default: ease;
+	--transition-default: var(--speed-default) var(--easing-default);
+	--transition-slow: var(--slow) var(--easing-default);
+	--transition-normal: var(--normal) var(--easing-default);
+	--transition-fast: var(--fast) var(--easing-default);
 
-$transition-default: $speed-default $easing-default;
-$transition-slow: $slow $easing-default;
-$transition-normal: $normal $easing-default;
-$transition-fast: $fast $easing-default;
+	--duration: var(--speed-default);
+	--ease: var(--easing-default);
 
-$duration: $speed-default;
-$ease: $easing-default;
+	// fonts
+	--sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
+	--serif: "adobe-garamond-pro", Gotham, serif;
 
-// fonts
-$sans: "neue-haas-unica", Helvetica, Arial, system-ui, sans-serif;
-$serif: "adobe-garamond-pro", Gotham, serif;
+	--gutter: 2rem;
 
-$gutter: 2rem;
+	--z-top: 10;
+	--z-middle: 5;
+	--z-bottom: 0;
+  --z-under: -1;
+  
+  --cube-colors: red, orange, yellow, green, blue, white;
 
-$z-top: 10;
-$z-middle: 5;
-$z-bottom: 0;
-$z-under: -1;
+  --cube-size-lg: 400px;
+
+  --cube-size: 36px;
+  --cube-square-border-radius: 3px;
+  --cube-square-border: 1px solid #222;
+  --cube-square-box-shadow: inset 0 0 1px 1px rgba(var(--dark), 0.25);
+
+  --cube-square-border-radius-sm: 2px;
+  --cube-square-border-sm: 1px solid #222;
+  --cube-square-box-shadow-sm: inset 0 0 0px 0px rgba(var(--dark), 1);
+
+  --cube-square-border-radius-lg: 2px;
+  --cube-square-border-lg: 2px solid #222;
+  --cube-square-box-shadow-lg: inset 0 0 0px 0px rgba(var(--dark), 1);
+
+  // --cube-square-border-radius-sm-inverted: 2px;
+  --cube-square-border-sm-inverted: 1px solid var(--light);
+
+  // --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
+
+  // --cube-square-border-radius-sm-inverted: 2px;
+  --cube-square-border-sm-inverted: 2px solid var(--light);
+
+  // --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
+
+  --s-min: 20;
+  --s-max: 70;
+  --l-min: 30;
+  --l-max: 90;
+
+  --back-skew: translate(0) rotateX(0deg) rotateY(0deg);
+  --right-skew: translate(0) rotateX(50deg) rotateY(50deg);
+  --left-skew: translate(0) rotateX(20deg) rotateY(10deg);
+  --top-skew: translate(0) rotateX(-45deg) rotateY(25deg);
+  --bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
+  --front-skew: translateZ(0);
+
+}

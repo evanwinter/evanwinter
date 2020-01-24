@@ -3,23 +3,23 @@
  */
 @mixin larger-than($breakpoint) {
 	@if $breakpoint == "xs" {
-		@media (min-width: $breakpoint-xs + 1) {
+		@media (min-width: var(--breakpoint-xs) + 1) {
 			@content;
 		}
 	} @else if $breakpoint == "sm" {
-		@media (min-width: $breakpoint-sm + 1) {
+		@media (min-width: var(--breakpoint-sm) + 1) {
 			@content;
 		}
 	} @else if $breakpoint == "md" {
-		@media (min-width: $breakpoint-md + 1) {
+		@media (min-width: var(--breakpoint-md) + 1) {
 			@content;
 		}
 	} @else if $breakpoint == "lg" {
-		@media (min-width: $breakpoint-lg + 1) {
+		@media (min-width: var(--breakpoint-lg) + 1) {
 			@content;
 		}
 	} @else if $breakpoint == "xl" {
-		@media (min-width: $breakpoint-xl + 1) {
+		@media (min-width: var(--breakpoint-xl) + 1) {
 			@content;
 		}
 	}
@@ -84,12 +84,12 @@
 		height: 1px;
 		opacity: 0.5;
 		margin: 0.25em auto;
-		background: $link-color;
+		background: var(--link-color);
 
 		@include transition(
-			opacity $transition-default,
-			background $transition-default,
-			width $transition-default
+			opacity var(--transition-default),
+			background var(--transition-default),
+			width var(--transition-default)
 		);
 	}
 

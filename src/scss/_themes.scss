@@ -7,41 +7,41 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $dark;
+			background: var(--link-color);
+			background: var(--dark);
 		}
 
-		background: $light;
-		color: $dark;
+		background: var(--light);
+		color: var(--dark);
 
 		.work-item {
 			.work-item-background {
-				background: $dark;
+				background: var(--dark);
 			}
 
 			.work-item-content {
-				background: $light;
+				background: var(--light);
 
-				// background: rgba($light, 0.8);
-				border-color: $dark;
+				// background: rgba(var(--light), 0.8);
+				border-color: var(--dark);
 
 				&:hover {
-					background: $light;
+					background: var(--light);
 
-					// background: rgba($light, 0.8);
+					// background: rgba(var(--light), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $dark;
+			color: var(--dark);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
+				color: rgba(var(--dark), 0.8);
 			}
 
 			&::after {
-				background: $dark;
+				background: var(--dark);
 			}
 		}
 	}
@@ -54,49 +54,49 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
+			background: var(--link-color);
+			background: var(--light);
 		}
 
-		background: $red;
-		color: $light;
+		background: var(--red);
+		color: var(--light);
 
 		.work-item {
 			.work-item-background {
-				background: $light;
+				background: var(--light);
 			}
 
 			.work-item-content {
-				background: $red;
+				background: var(--red);
 
-				// background: rgba($red, 0.8);
-				border-color: $light;
+				// background: rgba(var(--red), 0.8);
+				border-color: var(--light);
 
 				&:hover {
-					background: $red;
+					background: var(--red);
 
-					// background: rgba($red, 0.8);
+					// background: rgba(var(--red), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $light;
+			color: var(--light);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
+				color: rgba(var(--light), 0.8);
 			}
 
 			&::after {
-				background: $light;
+				background: var(--light);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $light;
+			border-color: var(--light);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
+			// 	border-color: rgba(var(--light), 0.1);
 			// }
 		}
 	}
@@ -109,49 +109,49 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
+			background: var(--link-color);
+			background: var(--light);
 		}
 
-		background: $blue;
-		color: $light;
+		background: var(--blue);
+		color: var(--light);
 
 		.work-item {
 			.work-item-background {
-				background: $light;
+				background: var(--light);
 			}
 
 			.work-item-content {
-				background: $blue;
+				background: var(--blue);
 
-				// background: rgba($blue, 0.8);
-				border-color: $light;
+				// background: rgba(var(--blue), 0.8);
+				border-color: var(--light);
 
 				&:hover {
-					background: $blue;
+					background: var(--blue);
 
-					// background: rgba($blue, 0.8);
+					// background: rgba(var(--blue), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $light;
+			color: var(--light);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
+				color: rgba(var(--light), 0.8);
 			}
 
 			&::after {
-				background: $light;
+				background: var(--light);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $light;
+			border-color: var(--light);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
+			// 	border-color: rgba(var(--light), 0.1);
 			// }
 		}
 	}
@@ -164,49 +164,49 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $dark;
+			background: var(--link-color);
+			background: var(--dark);
 		}
 
-		background: $yellow;
-		color: $dark;
+		background: var(--yellow);
+		color: var(--dark);
 
 		.work-item {
 			.work-item-background {
-				background: $dark;
+				background: var(--dark);
 			}
 
 			.work-item-content {
-				background: $yellow;
+				background: var(--yellow);
 
-				// background: rgba($yellow, 0.8);
-				border-color: $dark;
+				// background: rgba(var(--yellow), 0.8);
+				border-color: var(--dark);
 
 				&:hover {
-					background: $yellow;
+					background: var(--yellow);
 
-					// background: rgba($yellow, 0.8);
+					// background: rgba(var(--yellow), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $dark;
+			color: var(--dark);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
+				color: rgba(var(--dark), 0.8);
 			}
 
 			&::after {
-				background: $dark;
+				background: var(--dark);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $dark;
+			border-color: var(--dark);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($dark, 0.1);
+			// 	border-color: rgba(var(--dark), 0.1);
 			// }
 		}
 	}
@@ -217,93 +217,93 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
+			background: var(--link-color);
+			background: var(--light);
 		}
 
-		background: $pink;
-		color: $light;
+		background: var(--pink);
+		color: var(--light);
 
 		.work-item {
 			.work-item-background {
-				background: $light;
+				background: var(--light);
 			}
 
 			.work-item-content {
-				background: $pink;
+				background: var(--pink);
 
-				// background: rgba($pink, 0.8);
-				border-color: $light;
+				// background: rgba(var(--pink), 0.8);
+				border-color: var(--light);
 
 				&:hover {
-					background: $pink;
+					background: var(--pink);
 
-					// background: rgba($pink, 0.8);
+					// background: rgba(var(--pink), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $light;
+			color: var(--light);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
+				color: rgba(var(--light), 0.8);
 			}
 
 			&::after {
-				background: $light;
+				background: var(--light);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $light;
+			border-color: var(--light);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
+			// 	border-color: rgba(var(--light), 0.1);
 			// }
 		}
 	}
 
 	&[data-theme="orange"] {
-		background: $orange;
-		color: $dark;
+		background: var(--orange);
+		color: var(--dark);
 
 		.work-item {
 			.work-item-background {
-				background: $dark;
+				background: var(--dark);
 			}
 
 			.work-item-content {
-				background: $orange;
+				background: var(--orange);
 
-				// background: rgba($orange, 0.8);
-				border-color: $dark;
+				// background: rgba(var(--orange), 0.8);
+				border-color: var(--dark);
 
 				&:hover {
-					background: $orange;
+					background: var(--orange);
 
-					// background: rgba($orange, 0.8);
+					// background: rgba(var(--orange), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $dark;
+			color: var(--dark);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
+				color: rgba(var(--dark), 0.8);
 			}
 
 			&::after {
-				background: $dark;
+				background: var(--dark);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $dark;
+			border-color: var(--dark);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($dark, 0.1);
+			// 	border-color: rgba(var(--dark), 0.1);
 			// }
 		}
 	}
@@ -316,95 +316,95 @@ body {
 		}
 
 		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $light;
+			background: var(--light);
 		}
 
-		background: $dark;
-		color: $light;
+		background: var(--dark);
+		color: var(--light);
 
 		.work-item {
 			.work-item-background {
-				background: $light;
+				background: var(--light);
 			}
 
 			.work-item-content {
-				background: $dark;
+				background: var(--dark);
 
-				// background: rgba($dark, 0.8);
-				border-color: $light;
+				// background: rgba(var(--dark), 0.8);
+				border-color: var(--light);
 
 				&:hover {
-					background: $dark;
+					background: var(--dark);
 
-					// background: rgba($dark, 0.8);
+					// background: rgba(var(--dark), 0.8);
 				}
 			}
 		}
 
 		a {
-			color: $light;
+			color: var(--light);
 
 			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
+				color: rgba(var(--light), 0.8);
 			}
 
 			&::after {
-				background: $light;
+				background: var(--light);
 			}
 		}
 
 		.cube-container .cube .square {
-			border-color: $light;
+			border-color: var(--light);
 
 			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
+			// 	border-color: rgba(var(--light), 0.1);
 			// }
 		}
 	}
 }
 
-@mixin set-theme($themeName) {
-	&[data-theme="$themeName"] {
-		background: $dark;
-		color: $light;
+// @mixin set-theme($themeName) {
+// 	&[data-theme="$themeName"] {
+// 		background: $dark;
+// 		color: $light;
 
-		// Desktop nav item styles
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $light;
-		}
+// 		// Desktop nav item styles
+// 		&:not(.mobile):not(.tablet) .content-nav a::after {
+// 			background: $light;
+// 		}
 
-		// Work item styles
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
+// 		// Work item styles
+// 		.work-item {
+// 			.work-item-background {
+// 				background: $light;
+// 			}
 
-			.work-item-content {
-				background: $dark;
-				border-color: $light;
+// 			.work-item-content {
+// 				background: $dark;
+// 				border-color: $light;
 
-				&:hover {
-					background: $dark;
-				}
-			}
-		}
+// 				&:hover {
+// 					background: $dark;
+// 				}
+// 			}
+// 		}
 
-		// General link styles
-		a {
-			color: $light;
+// 		// General link styles
+// 		a {
+// 			color: $light;
 
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
+// 			&:hover:not([data-active="true"]) {
+// 				color: rgba($light, 0.8);
+// 			}
 
-			&::after {
-				background: $light;
-			}
-		}
+// 			&::after {
+// 				background: $light;
+// 			}
+// 		}
 
-		// Cube styles
-		.cube-container .cube .square {
-			border-color: $light;
-		}
-	}
-}
+// 		// Cube styles
+// 		.cube-container .cube .square {
+// 			border-color: $light;
+// 		}
+// 	}
+// }

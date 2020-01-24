@@ -8,90 +8,51 @@
 	}
 }
 
-$cube-colors: red, orange, yellow, green, blue, white;
-
-$cube-size-lg: 400px;
-
-$cube-size: 36px;
-$cube-square-border-radius: 3px;
-$cube-square-border: 1px solid #222;
-$cube-square-box-shadow: inset 0 0 1px 1px rgba($dark, 0.25);
-
-$cube-square-border-radius-sm: 2px;
-$cube-square-border-sm: 1px solid #222;
-$cube-square-box-shadow-sm: inset 0 0 0px 0px rgba($dark, 1);
-
-$cube-square-border-radius-lg: 2px;
-$cube-square-border-lg: 2px solid #222;
-$cube-square-box-shadow-lg: inset 0 0 0px 0px rgba($dark, 1);
-
-// $cube-square-border-radius-sm-inverted: 2px;
-$cube-square-border-sm-inverted: 1px solid $light;
-
-// $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
-
-// $cube-square-border-radius-sm-inverted: 2px;
-$cube-square-border-sm-inverted: 2px solid $light;
-
-// $cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba($light, 1);
-
-$s-min: 20;
-$s-max: 70;
-$l-min: 30;
-$l-max: 90;
-
-$back-skew: translate(0) rotateX(0deg) rotateY(0deg);
-$right-skew: translate(0) rotateX(50deg) rotateY(50deg);
-$left-skew: translate(0) rotateX(20deg) rotateY(10deg);
-$top-skew: translate(0) rotateX(-45deg) rotateY(25deg);
-$bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
-$front-skew: translateZ(0);
-
 @mixin cube-bg {
-	width: $cube-size-lg;
-	height: $cube-size-lg;
-	perspective: $cube-size-lg * 10;
-	perspective-origin: 50% ($cube-size-lg * -3);
+	width: var(--cube-size-lg);
+	height: var(--cube-size-lg);
+	perspective: var(--cube-size-lg) * 10;
+	perspective-origin: 50% (var(--cube-size-lg) * -3);
 
 	.cube-wrapper {
 		padding-top: 20vh;
-		width: $cube-size-lg;
+		width: var(--cube-size-lg);
 		animation: none;
 
 		.side {
-			width: $cube-size-lg;
-			height: $cube-size-lg;
+			width: var(--cube-size-lg);
+			height: var(--cube-size-lg);
 		}
 
 		.side.back {
-			transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
+			transform: translateZ(var(--cube-size-lg) / 2 * -1) rotateY(180deg);
 		}
 
 		.side.right {
-			transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+			transform: rotateY(-270deg) translateX(var(--cube-size-lg) / 2);
 		}
 
 		.side.left {
-			transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
+			transform: rotateY(270deg) translateX(var(--cube-size-lg) / 2 * -1);
 		}
 
 		.side.top {
-			transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
+			transform: rotateX(-90deg) translateY(var(--cube-size-lg) / 2 * -1);
 		}
 
 		.side.bottom {
-			transform: rotateX(90deg) translateY($cube-size-lg / 2);
+			transform: rotateX(90deg) translateY(var(--cube-size-lg) / 2);
 		}
 
 		.side.front {
-			transform: translateZ($cube-size-lg / 2);
+			transform: translateZ(var(--cube-size-lg) / 2);
 		}
 
 		.square {
 			// subtle shadow around the edge of each square
-			box-shadow: $cube-square-box-shadow-lg;
-			border: $cube-square-border-lg;
-			border-radius: $cube-square-border-radius-lg;
+			box-shadow: var(--cube-square-box-shadow-lg);
+			border: var(--cube-square-border-lg);
+			border-radius: var(--cube-square-border-radius-lg);
 		}
 	}
 }
@@ -136,23 +97,23 @@ $front-skew: translateZ(0);
 
 .cube {
 	display: inline-block;
-	width: $cube-size * 2;
-	height: $cube-size;
-	perspective: $cube-size * 10;
-	perspective-origin: 50% ($cube-size * -3);
+	width: calc(var(--cube-size) * 2);
+	height: var(--cube-size);
+	perspective: calc(var(--cube-size) * 10);
+	perspective-origin: 50% calc(var(--cube-size) * -3);
 
 	&.large {
-		width: $cube-size-lg;
-		height: $cube-size-lg;
-		perspective: $cube-size-lg * 10;
-		perspective-origin: 50% ($cube-size-lg * -3);
+		width: var(--cube-size-lg);
+		height: var(--cube-size-lg);
+		perspective: calc(var(--cube-size-lg) * 10);
+		perspective-origin: 50% calc(var(--cube-size-lg) * -3);
 	}
 }
 
 // .cube-wrapper {
-//   padding-top: $cube-size / 2;
+//   padding-top: var(--cube-size) / 2;
 //   position: relative;
-//   width: $cube-size;
+//   width: var(--cube-size);
 //   cursor: pointer;
 //   transform-style: preserve-3d;
 //   animation: cube-spin 10s infinite linear;
@@ -161,34 +122,34 @@ $front-skew: translateZ(0);
 html:not(.mobile):not(.tablet) {
 	.cube-container:hover {
 		.side.back {
-			// transform: $back-skew;
+			// transform: var(--back-skew);
 		}
 
 		.side.right {
-			// transform: $right-skew;
+			// transform: var(--right-skew);
 		}
 
 		.side.left {
-			// transform: $left-skew;
+			// transform: var(--left-skew);
 		}
 
 		.side.top {
-			// transform: $top-skew;
+			// transform: var(--top-skew);
 		}
 
 		.side.bottom {
-			// transform: $bottom-skew;
+			// transform: var(--bottom-skew);
 		}
 
 		.side.front {
-			// transform: $front-skew;
+			// transform: var(--front-skew);
 		}
 	}
 }
 
 .cube-wrapper {
 	position: relative;
-	width: $cube-size;
+	width: var(--cube-size);
 	cursor: pointer;
 	transform-style: preserve-3d;
 	transform: rotateY(45deg);
@@ -196,13 +157,13 @@ html:not(.mobile):not(.tablet) {
 
 	.side {
 		position: absolute;
-		width: $cube-size;
-		height: $cube-size;
+		width: var(--cube-size);
+		height: var(--cube-size);
 		background: transparent;
 
 		@include transition(
-			background $transition-default,
-			transform $transition-slow
+			background var(--transition-default),
+			transform var(--transition-slow)
 		);
 
 		display: grid;
@@ -211,23 +172,23 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.square {
-		border: $cube-square-border-sm;
-		border-radius: $cube-square-border-radius-sm;
+		border: var(--cube-square-border-sm);
+		border-radius: var(--cube-square-border-radius-sm);
 
 		// subtle shadow around the edge of each square -- trying to make it look a little 3d
-		box-shadow: $cube-square-box-shadow-sm;
+		box-shadow: var(--cube-square-box-shadow-sm);
 
 		@include transition(
-			background $transition-normal,
-			border-color $transition-normal
+			background var(--transition-normal),
+			border-color var(--transition-normal)
 		);
 	}
 
 	.side.back {
-		transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+		transform: translateZ(calc(var(--cube-size) / 2 * -1)) rotateY(180deg);
 
 		&.after {
-			// transform: $back-skew;
+			// transform: var(--back-skew);
 		}
 
 		.square {
@@ -236,11 +197,11 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.right {
-		transform: rotateY(-270deg) translateX($cube-size / 2);
+		transform: rotateY(-270deg) translateX(calc(var(--cube-size) / 2));
 		transform-origin: top right;
 
 		&.after {
-			// transform: $right-skew;
+			// transform: var(--right-skew);
 		}
 
 		.square {
@@ -249,11 +210,11 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.left {
-		transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+		transform: rotateY(270deg) translateX(calc(var(--cube-size) / 2 * -1));
 		transform-origin: center left;
 
 		&.after {
-			// transform: $left-skew;
+			// transform: var(--left-skew);
 		}
 
 		.square {
@@ -262,11 +223,11 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.top {
-		transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+		transform: rotateX(-90deg) translateY(calc(var(--cube-size) / 2 * -1));
 		transform-origin: top center;
 
 		&.after {
-			// transform: $top-skew;
+			// transform: var(--top-skew);
 		}
 
 		.square {
@@ -275,11 +236,11 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.bottom {
-		transform: rotateX(90deg) translateY($cube-size / 2);
+		transform: rotateX(90deg) translateY(calc(var(--cube-size) / 2));
 		transform-origin: bottom center;
 
 		&.after {
-			// transform: $bottom-skew;
+			// transform: var(--bottom-skew);
 		}
 
 		.square {
@@ -288,10 +249,10 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.front {
-		transform: translateZ($cube-size / 2);
+		transform: translateZ(var(--cube-size) / 2);
 
 		&.after {
-			// transform: $front-skew;
+			// transform: var(--front-skew);
 		}
 
 		.square {
@@ -302,80 +263,80 @@ html:not(.mobile):not(.tablet) {
 
 .cube-wrapper.colors {
 	.side {
-		background: $dark;
+		background: var(--dark);
 	}
 
 	.side.back {
-		transform: translateZ($cube-size / 2 * -1) rotateY(180deg);
+		transform: translateZ(calc(var(--cube-size) / 2 * -1)) rotateY(180deg);
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
 	}
 
 	.side.right {
-		transform: rotateY(-270deg) translateX($cube-size / 2);
+		transform: rotateY(-270deg) translateX(var(--cube-size) / 2);
 		transform-origin: top right;
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
 	}
 
 	.side.left {
-		transform: rotateY(270deg) translateX($cube-size / 2 * -1);
+		transform: rotateY(270deg) translateX(calc(var(--cube-size) / 2 * -1));
 		transform-origin: center left;
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
 	}
 
 	.side.top {
-		transform: rotateX(-90deg) translateY($cube-size / 2 * -1);
+		transform: rotateX(-90deg) translateY(calc(var(--cube-size) / 2 * -1));
 		transform-origin: top center;
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
 	}
 
 	.side.bottom {
-		transform: rotateX(90deg) translateY($cube-size / 2);
+		transform: rotateX(90deg) translateY(var(--cube-size) / 2);
 		transform-origin: bottom center;
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
 	}
 
 	.side.front {
-		transform: translateZ($cube-size / 2);
+		transform: translateZ(var(--cube-size) / 2);
 
 		.square {
 			@for $i from 1 through 9 {
 				&:nth-child(#{$i}) {
-					background: nth($cube-colors, random(length($cube-colors)));
+					// background: nth(var(--cube-colors, random(length(var(--cube-colors)))));
 				}
 			}
 		}
@@ -384,41 +345,41 @@ html:not(.mobile):not(.tablet) {
 
 .cube-wrapper.large {
 	padding-top: 20vh;
-	width: $cube-size-lg;
+	width: var(--cube-size-lg);
 
 	.side {
-		width: $cube-size-lg;
-		height: $cube-size-lg;
+		width: var(--cube-size-lg);
+		height: var(--cube-size-lg);
 	}
 
 	.side.back {
-		transform: translateZ($cube-size-lg / 2 * -1) rotateY(180deg);
+		transform: translateZ(calc(var(--cube-size-lg) / 2 * -1)) rotateY(180deg);
 	}
 
 	.side.right {
-		transform: rotateY(-270deg) translateX($cube-size-lg / 2);
+		transform: rotateY(-270deg) translateX(calc(var(--cube-size-lg) / 2));
 	}
 
 	.side.left {
-		transform: rotateY(270deg) translateX($cube-size-lg / 2 * -1);
+		transform: rotateY(270deg) translateX(calc(var(--cube-size-lg) / 2 * -1));
 	}
 
 	.side.top {
-		transform: rotateX(-90deg) translateY($cube-size-lg / 2 * -1);
+		transform: rotateX(-90deg) translateY(calc(var(--cube-size-lg) / 2 * -1));
 	}
 
 	.side.bottom {
-		transform: rotateX(90deg) translateY($cube-size-lg / 2);
+		transform: rotateX(90deg) translateY(calc(var(--cube-size-lg) / 2));
 	}
 
 	.side.front {
-		transform: translateZ($cube-size-lg / 2);
+		transform: translateZ(var(--cube-size-lg) / 2);
 	}
 
 	.square {
 		// subtle shadow around the edge of each square
-		box-shadow: $cube-square-box-shadow-lg;
-		border: $cube-square-border-lg;
-		border-radius: $cube-square-border-radius-lg;
+		box-shadow: var(--cube-square-box-shadow-lg);
+		border: var(--cube-square-border-lg);
+		border-radius: var(--cube-square-border-radius-lg);
 	}
 }
