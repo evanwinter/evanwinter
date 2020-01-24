@@ -16,10 +16,4 @@ const Content = {
 			item.addEventListener("click", this.selectWorkItem)
 		)
 	},
-
-	selectWorkItem: function(e) {
-		const id = e.currentTarget.id
-	},
 }
-
-export default Content
