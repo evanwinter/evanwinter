@@ -1,6 +1,7 @@
 import * as templates from "./templates"
 import anime from "animejs"
 
+import Transition from "./transition"
 import Theme from "./theme"
 
 const Router = {
@@ -25,11 +26,11 @@ const Router = {
 
 		this.links = Array.from(this.controller.querySelectorAll("a"))
 
-		// handle direct navigation to a page
-		this.refresh()
-
 		// listen for page updates
 		this.listen()
+
+		// handle direct navigation to a page
+		this.refresh()
 	},
 
 	listen: function() {
@@ -47,7 +48,7 @@ const Router = {
 
 	refresh: function() {
 		const currentRoute = this.getCurrentRoute()
-		this.transitionTo(currentRoute)
+		Transition.to(currentRoute, this.render.bind(this))
 	},
 
 	navigate: function(e) {
@@ -61,43 +62,7 @@ const Router = {
 		// if no route or we're already on this route, quit
 		if (!route || route === currentRoute) return
 
-		this.transitionTo(route)
-	},
-
-	transitionTo: function(route) {
-		// default transition options
-		const defaults = {
-			easing: `easeInOutQuad`,
-			duration: 250,
-		}
-
-		// define `hide` animation
-		const hideOptions = {
-			targets: this.rootClass,
-			translateY: `2rem`,
-			opacity: 0,
-		}
-
-		// define `show` animation
-		const showOptions = {
-			targets: this.rootClass,
-			translateY: `0rem`,
-			opacity: 1,
-		}
-
-		// create animejs timeline w/ defaults
-		const timeline = anime.timeline(defaults)
-
-		// add each transition step (hide, then update content, then show)
-		timeline
-			.add({
-				...hideOptions,
-				complete: () => {
-					// window.history.replaceState(null, null, route)
-					this.render(route)
-				},
-			})
-			.add(showOptions)
+		Transition.to(route, this.render.bind(this))
 	},
 
 	isNotFound: function(route) {
@@ -126,8 +91,6 @@ const Router = {
 
 		const noContentForRoute = this.isNotFound(route)
 		if (noContentForRoute) return notFoundContent
-
-		// this.setThemeForRoute(route)
 
 		return content || ""
 	},

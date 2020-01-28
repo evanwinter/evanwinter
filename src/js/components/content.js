@@ -22,5 +22,3 @@ const Content = {
 		console.log(id)
 	},
 }
-
-export default Content

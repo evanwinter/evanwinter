@@ -106,6 +106,7 @@ p {
 	.intro-copy {
 		font-size: 1.25rem;
 		max-width: 600px;
+		color: #999;
 	}
 }
 
@@ -159,12 +160,6 @@ p {
 	&.grid[class] {
 		grid-gap: 2rem;
 
-		// grid-gap: 0rem;
-		// grid-template-columns: 1fr;
-		> div {
-			// max-width: 500px;
-		}
-
 		@media (max-width: 900px) {
 			grid-gap: 0rem;
 			grid-template-columns: 1fr;
@@ -177,7 +172,6 @@ p {
 
 	.flex {
 		ul {
-			// margin-top: 1rem;
 			margin-bottom: 0;
 		}
 	}
