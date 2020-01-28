@@ -11,8 +11,8 @@
 @mixin cube-bg {
 	width: var(--cube-size-lg);
 	height: var(--cube-size-lg);
-	perspective: var(--cube-size-lg) * 10;
-	perspective-origin: 50% (var(--cube-size-lg) * -3);
+	perspective: calc(var(--cube-size-lg) * 10);
+	perspective-origin: 50% calc(var(--cube-size-lg) * -3);
 
 	.cube-wrapper {
 		padding-top: 20vh;
@@ -57,6 +57,32 @@
 	}
 }
 
+@mixin deform-on-hover {
+	.side.back {
+		transform: var(--back-skew);
+	}
+
+	.side.right {
+		transform: var(--right-skew);
+	}
+
+	.side.left {
+		transform: var(--left-skew);
+	}
+
+	.side.top {
+		transform: var(--top-skew);
+	}
+
+	.side.bottom {
+		transform: var(--bottom-skew);
+	}
+
+	.side.front {
+		transform: var(--front-skew);
+	}
+}
+
 .cube-container {
 	// display: inline-block;
 	// margin-left: 1.5rem;
@@ -64,6 +90,10 @@
 	z-index: 10;
 	right: 0;
 	bottom: 1.5rem;
+
+	&:hover {
+		@include deform-on-hover;
+	}
 
 	@media (max-width: 900px) {
 		display: none;
@@ -119,34 +149,6 @@
 //   animation: cube-spin 10s infinite linear;
 // }
 
-html:not(.mobile):not(.tablet) {
-	.cube-container:hover {
-		.side.back {
-			// transform: var(--back-skew);
-		}
-
-		.side.right {
-			// transform: var(--right-skew);
-		}
-
-		.side.left {
-			// transform: var(--left-skew);
-		}
-
-		.side.top {
-			// transform: var(--top-skew);
-		}
-
-		.side.bottom {
-			// transform: var(--bottom-skew);
-		}
-
-		.side.front {
-			// transform: var(--front-skew);
-		}
-	}
-}
-
 .cube-wrapper {
 	position: relative;
 	width: var(--cube-size);
@@ -187,8 +189,8 @@ html:not(.mobile):not(.tablet) {
 	.side.back {
 		transform: translateZ(calc(var(--cube-size) / 2 * -1)) rotateY(180deg);
 
-		&.after {
-			// transform: var(--back-skew);
+		&.skew {
+			transform: var(--back-skew);
 		}
 
 		.square {
@@ -200,8 +202,8 @@ html:not(.mobile):not(.tablet) {
 		transform: rotateY(-270deg) translateX(calc(var(--cube-size) / 2));
 		transform-origin: top right;
 
-		&.after {
-			// transform: var(--right-skew);
+		&.skew {
+			transform: var(--right-skew);
 		}
 
 		.square {
@@ -213,8 +215,8 @@ html:not(.mobile):not(.tablet) {
 		transform: rotateY(270deg) translateX(calc(var(--cube-size) / 2 * -1));
 		transform-origin: center left;
 
-		&.after {
-			// transform: var(--left-skew);
+		&.skew {
+			transform: var(--left-skew);
 		}
 
 		.square {
@@ -226,8 +228,8 @@ html:not(.mobile):not(.tablet) {
 		transform: rotateX(-90deg) translateY(calc(var(--cube-size) / 2 * -1));
 		transform-origin: top center;
 
-		&.after {
-			// transform: var(--top-skew);
+		&.skew {
+			transform: var(--top-skew);
 		}
 
 		.square {
@@ -239,8 +241,8 @@ html:not(.mobile):not(.tablet) {
 		transform: rotateX(90deg) translateY(calc(var(--cube-size) / 2));
 		transform-origin: bottom center;
 
-		&.after {
-			// transform: var(--bottom-skew);
+		&.skew {
+			transform: var(--bottom-skew);
 		}
 
 		.square {
@@ -249,10 +251,10 @@ html:not(.mobile):not(.tablet) {
 	}
 
 	.side.front {
-		transform: translateZ(var(--cube-size) / 2);
+		transform: translateZ(calc(var(--cube-size) / 2));
 
-		&.after {
-			// transform: var(--front-skew);
+		&.skew {
+			transform: var(--front-skew);
 		}
 
 		.square {

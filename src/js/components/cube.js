@@ -11,20 +11,33 @@ const Cube = {
 
 	listen: function() {
 		this.cube.addEventListener("click", (e) => {
-			Theme.random()
+			Theme.randomize()
 		})
 	},
 
 	form: function() {
 		const sides = Array.from(document.querySelectorAll(".cube .side"))
+		this.stagger(sides, true)
+	},
+
+	deform: function() {
+		const sides = Array.from(document.querySelectorAll(".cube .side"))
+		this.stagger(sides, false)
+	},
+
+	stagger: function(sides, staggerIn) {
 		let i = 0
 		const interval = setInterval(() => {
-			sides[i].classList.remove("after")
+			staggerIn
+				? sides[i].classList.remove("skew")
+				: sides[i].classList.add("skew")
 
-			if (i === sides.length - 1) clearInterval(interval)
+			if (i === sides.length - 1) {
+				clearInterval(interval)
+			}
 
 			i++
-		}, 250)
+		}, 100)
 	},
 }
 

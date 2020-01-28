@@ -6,11 +6,11 @@
 @import "./cube";
 
 ::-moz-selection {
-	background: var(--highlight-color);
+	background: rgba(gray, 0.5);
 }
 
 ::selection {
-	background: var(--highlight-color);
+	background: rgba(gray, 0.5);
 }
 
 * {
@@ -26,17 +26,21 @@ html {
 
 body {
 	color: var(--text-color);
-	text-shadow: 0.25px 0.25px 1px rgba(var(--dark), 0.15);
 	background: var(--background-color);
+
+	font-family: var(--sans);
+	text-shadow: 0.25px 0.25px 1px rgba(var(--dark), 0.15);
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	width: 100%;
 	min-height: 100vh;
-	font-family: var(--sans);
 	font-weight: 400;
 
-	@include transition(background var(--transition-normal), color var(--transition-normal));
+	@include transition(
+		background var(--transition-normal),
+		color var(--transition-normal)
+	);
 }
 
 .container {
@@ -50,17 +54,22 @@ body {
 a {
 	color: var(--link-color);
 
-	@include transition(color var(--transition-normal), opacity var(--transition-fast));
+	@include transition(
+		color var(--transition-normal),
+		opacity var(--transition-fast)
+	);
+
+	&:hover {
+		color: var(--link-color-hover);
+	}
 
 	&:hover:not([data-active="true"]) {
-		color: rgba(var(--link-color), 0.8);
+		// color: rgba(var(--link-color), 0.8);
 	}
 }
 
-main {
-	> section {
-		margin: var(--gutter) 0;
-	}
+main > section {
+	margin: var(--gutter) 0;
 }
 
 h1,
@@ -100,12 +109,11 @@ p {
 	}
 }
 
-.content-nav {
+.nav {
 	padding: 0 var(--gutter);
 
 	a {
 		text-decoration: none;
-
 		@include animated-underline;
 	}
 
@@ -253,9 +261,6 @@ p {
 	}
 }
 
-.about-content {
-}
-
 .copy-width {
 	max-width: 600px;
 }
@@ -264,4 +269,12 @@ p {
 	width: 1rem;
 	height: 1rem;
 	padding-top: 0.25rem;
+}
+
+.anim {
+	opacity: 0;
+
+	&.ease-in {
+		// transform: translateY(3rem);
+	}
 }

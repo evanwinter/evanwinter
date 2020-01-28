@@ -7,14 +7,23 @@ const Router = {
 	root: null,
 	rootClass: `#content-root`,
 	controller: null,
-	controllerClass: `.content-nav`,
+	controllerClass: `.nav`,
 
 	init: function() {
+		anime({
+			targets: ".anim.ease-in",
+			opacity: 1,
+			// translateY: 0,
+			duration: 3000,
+			delay: 500,
+			// delay: anime.stagger(500)
+		})
+
 		// init elements
 		this.root = document.querySelector(this.rootClass)
 		this.controller = document.querySelector(this.controllerClass)
 
-		this.links = Array.from(document.querySelectorAll(".content-nav a"))
+		this.links = Array.from(this.controller.querySelectorAll("a"))
 
 		// handle direct navigation to a page
 		this.refresh()

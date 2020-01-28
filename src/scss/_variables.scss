@@ -1,4 +1,5 @@
 :root {
+	// blacks, whites, grays
 	--light: #fefefe;
 	--medium: #999;
 	--dark: #151515;
@@ -23,14 +24,16 @@
 	--breakpoint-xl: 1200px;
 
 	// element colors
-	--primary: var(--dark);
 	--text-color: var(--light);
-	--text-color-inverted: var(--dark);
 	--background-color: var(--dark);
+	--link-color: var(--text-color);
+	--link-color-hover: darken(var(--link-color), 50%);
+
+	--text-color-inverted: var(--dark);
 	--background-color-inverted: var(--light);
-	--link-color: var(--primary);
-	--link-color-hover: var(--primary);
-	--highlight-color: rgba(lightgray, 0.5);
+	--link-color-inverted: var(--light);
+
+	--highlight-color: rgba(gray, 0.5);
 
 	// transition durations
 	--fast: 50ms;
@@ -63,45 +66,53 @@
 	--z-top: 10;
 	--z-middle: 5;
 	--z-bottom: 0;
-  --z-under: -1;
-  
-  --cube-colors: red, orange, yellow, green, blue, white;
+	--z-under: -1;
 
-  --cube-size-lg: 400px;
+	--cube-colors: red, orange, yellow, green, blue, white;
 
-  --cube-size: 36px;
-  --cube-square-border-radius: 3px;
-  --cube-square-border: 1px solid #222;
-  --cube-square-box-shadow: inset 0 0 1px 1px rgba(var(--dark), 0.25);
+	--cube-size-lg: 400px;
 
-  --cube-square-border-radius-sm: 2px;
-  --cube-square-border-sm: 1px solid #222;
-  --cube-square-box-shadow-sm: inset 0 0 0px 0px rgba(var(--dark), 1);
+	--cube-edge-color: var(--text-color);
 
-  --cube-square-border-radius-lg: 2px;
-  --cube-square-border-lg: 2px solid #222;
-  --cube-square-box-shadow-lg: inset 0 0 0px 0px rgba(var(--dark), 1);
+	--cube-size: 36px;
+	--cube-square-border-radius: 3px;
+	--cube-square-border: 1px solid var(--cube-edge-color);
+	--cube-square-box-shadow: inset 0 0 1px 1px rgba(var(--dark), 0.25);
 
-  // --cube-square-border-radius-sm-inverted: 2px;
-  --cube-square-border-sm-inverted: 1px solid var(--light);
+	--cube-square-border-radius-sm: 2px;
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
+	--cube-square-box-shadow-sm: inset 0 0 0px 0px rgba(var(--dark), 1);
 
-  // --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
+	--cube-square-border-radius-lg: 2px;
+	--cube-square-border-lg: 2px solid var(--cube-edge-color);
+	--cube-square-box-shadow-lg: inset 0 0 0px 0px rgba(var(--dark), 1);
 
-  // --cube-square-border-radius-sm-inverted: 2px;
-  --cube-square-border-sm-inverted: 2px solid var(--light);
+	// --cube-square-border-radius-sm-inverted: 2px;
+	--cube-square-border-sm-inverted: 1px solid var(--light);
 
-  // --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
+	// --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
 
-  --s-min: 20;
-  --s-max: 70;
-  --l-min: 30;
-  --l-max: 90;
+	// --cube-square-border-radius-sm-inverted: 2px;
+	--cube-square-border-sm-inverted: 2px solid var(--light);
 
-  --back-skew: translate(0) rotateX(0deg) rotateY(0deg);
-  --right-skew: translate(0) rotateX(50deg) rotateY(50deg);
-  --left-skew: translate(0) rotateX(20deg) rotateY(10deg);
-  --top-skew: translate(0) rotateX(-45deg) rotateY(25deg);
-  --bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
-  --front-skew: translateZ(0);
+	// --cube-square-box-shadow-sm-inverted: inset 0 0 0px 0px rgba(var(--light), 1);
 
+	--s-min: 20;
+	--s-max: 70;
+	--l-min: 30;
+	--l-max: 90;
+
+	--back-skew: translate(0) rotateX(0deg) rotateY(0deg);
+	--right-skew: translate(0) rotateX(50deg) rotateY(50deg);
+	--left-skew: translate(0) rotateX(20deg) rotateY(10deg);
+	--top-skew: translate(0) rotateX(-45deg) rotateY(25deg);
+	--bottom-skew: translate(0) rotateX(90deg) rotateY(100deg);
+	--front-skew: translateZ(0);
+}
+
+[data-theme="light"] {
+	--text-color: var(--dark);
+	--link-color: var(--text-color);
+	--background-color: var(--light);
+	--cube-edge-color: var(--text-color);
 }
