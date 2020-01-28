@@ -3,7 +3,7 @@ import Cube from "./components/cube"
 import Theme from "./components/theme"
 
 const App = {
-	init: function() {
+	init: () => {
 		Router.init()
 		Cube.init()
 		Theme.init()

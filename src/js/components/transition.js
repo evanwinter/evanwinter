@@ -1,19 +1,19 @@
 import anime from "animejs"
 
 const Transition = {
-	rootClass: `#content-root`,
+	rootClass: `#root`,
 
 	to: function(route, renderFn) {
 		// default transition options
 		const defaults = {
 			easing: `easeInOutQuad`,
-			duration: 250,
+			duration: 300,
 		}
 
 		// define `hide` animation
 		const hideOptions = {
 			targets: this.rootClass,
-			translateY: `2rem`,
+			translateY: `1rem`,
 			opacity: 0,
 		}
 
@@ -38,6 +38,17 @@ const Transition = {
 				},
 			})
 			.add(showOptions)
+	},
+
+	initFadeIn: function() {
+		anime({
+			targets: ".anim.ease-in",
+			opacity: 1,
+			duration: 5000,
+			delay: 750,
+			// delay: anime.stagger(500)
+			// translateY: 0,
+		})
 	},
 }
 
