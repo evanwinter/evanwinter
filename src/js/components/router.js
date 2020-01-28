@@ -1,5 +1,4 @@
 import * as templates from "./templates"
-import anime from "animejs"
 
 import Transition from "./transition"
 import Theme from "./theme"
