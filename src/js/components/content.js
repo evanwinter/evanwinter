@@ -19,6 +19,7 @@ const Content = {
 
 	selectWorkItem: function(e) {
 		const id = e.currentTarget.id
+		console.log(id)
 	},
 }
 

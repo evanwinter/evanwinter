@@ -1,410 +1,47 @@
-body {
-	&[data-theme="light"] {
-		&:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
-			&::after {
-				// width: 10%;
-			}
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $dark;
-		}
-
-		background: $light;
-		color: $dark;
-
-		.work-item {
-			.work-item-background {
-				background: $dark;
-			}
-
-			.work-item-content {
-				background: $light;
-
-				// background: rgba($light, 0.8);
-				border-color: $dark;
-
-				&:hover {
-					background: $light;
-
-					// background: rgba($light, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $dark;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
-			}
-
-			&::after {
-				background: $dark;
-			}
-		}
-	}
-
-	&[data-theme="red"] {
-		&:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
-			&::after {
-				// width: 10%;
-			}
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
-		}
-
-		background: $red;
-		color: $light;
-
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
-
-			.work-item-content {
-				background: $red;
-
-				// background: rgba($red, 0.8);
-				border-color: $light;
-
-				&:hover {
-					background: $red;
-
-					// background: rgba($red, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $light;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
-
-			&::after {
-				background: $light;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $light;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
-			// }
-		}
-	}
-
-	&[data-theme="blue"] {
-		&:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
-			&::after {
-				// width: 10%;
-			}
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
-		}
-
-		background: $blue;
-		color: $light;
-
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
-
-			.work-item-content {
-				background: $blue;
-
-				// background: rgba($blue, 0.8);
-				border-color: $light;
-
-				&:hover {
-					background: $blue;
-
-					// background: rgba($blue, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $light;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
-
-			&::after {
-				background: $light;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $light;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
-			// }
-		}
-	}
-
-	&[data-theme="yellow"] {
-		&:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
-			&::after {
-				// width: 10%;
-			}
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $dark;
-		}
-
-		background: $yellow;
-		color: $dark;
-
-		.work-item {
-			.work-item-background {
-				background: $dark;
-			}
-
-			.work-item-content {
-				background: $yellow;
-
-				// background: rgba($yellow, 0.8);
-				border-color: $dark;
-
-				&:hover {
-					background: $yellow;
-
-					// background: rgba($yellow, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $dark;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
-			}
-
-			&::after {
-				background: $dark;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $dark;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($dark, 0.1);
-			// }
-		}
-	}
-
-	&[data-theme="pink"] {
-		.content-nav a[data-active] {
-			font-weight: 700;
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $link-color;
-			background: $light;
-		}
-
-		background: $pink;
-		color: $light;
-
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
-
-			.work-item-content {
-				background: $pink;
-
-				// background: rgba($pink, 0.8);
-				border-color: $light;
-
-				&:hover {
-					background: $pink;
-
-					// background: rgba($pink, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $light;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
-
-			&::after {
-				background: $light;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $light;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
-			// }
-		}
-	}
-
-	&[data-theme="orange"] {
-		background: $orange;
-		color: $dark;
-
-		.work-item {
-			.work-item-background {
-				background: $dark;
-			}
-
-			.work-item-content {
-				background: $orange;
-
-				// background: rgba($orange, 0.8);
-				border-color: $dark;
-
-				&:hover {
-					background: $orange;
-
-					// background: rgba($orange, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $dark;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($dark, 0.8);
-			}
-
-			&::after {
-				background: $dark;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $dark;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($dark, 0.1);
-			// }
-		}
-	}
-
-	&[data-theme="dark"] {
-		&:not(.mobile):not(.tablet) .content-nav a[data-active="true"] {
-			&::after {
-				// width: 10%;
-			}
-		}
-
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $light;
-		}
-
-		background: $dark;
-		color: $light;
-
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
-
-			.work-item-content {
-				background: $dark;
-
-				// background: rgba($dark, 0.8);
-				border-color: $light;
-
-				&:hover {
-					background: $dark;
-
-					// background: rgba($dark, 0.8);
-				}
-			}
-		}
-
-		a {
-			color: $light;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
-
-			&::after {
-				background: $light;
-			}
-		}
-
-		.cube-container .cube .square {
-			border-color: $light;
-
-			// @media (max-width: 900px) {
-			// 	border-color: rgba($light, 0.1);
-			// }
-		}
-	}
+[data-theme="red"] {
+	--background-color: var(--red);
+	--text-color: var(--light);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
 }
 
-@mixin set-theme($themeName) {
-	&[data-theme="$themeName"] {
-		background: $dark;
-		color: $light;
+[data-theme="blue"] {
+	--background-color: var(--blue);
+	--text-color: var(--light);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
+}
 
-		// Desktop nav item styles
-		&:not(.mobile):not(.tablet) .content-nav a::after {
-			background: $light;
-		}
+[data-theme="orange"] {
+	--background-color: var(--orange);
+	--text-color: var(--light);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
+}
 
-		// Work item styles
-		.work-item {
-			.work-item-background {
-				background: $light;
-			}
+[data-theme="dark"] {
+	--background-color: var(--dark);
+	--text-color: var(--light);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
+}
 
-			.work-item-content {
-				background: $dark;
-				border-color: $light;
+[data-theme="light"] {
+	--background-color: var(--light);
+	--text-color: var(--dark);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
+}
 
-				&:hover {
-					background: $dark;
-				}
-			}
-		}
-
-		// General link styles
-		a {
-			color: $light;
-
-			&:hover:not([data-active="true"]) {
-				color: rgba($light, 0.8);
-			}
-
-			&::after {
-				background: $light;
-			}
-		}
-
-		// Cube styles
-		.cube-container .cube .square {
-			border-color: $light;
-		}
-	}
+[data-theme="yellow"] {
+	--background-color: var(--yellow);
+	--text-color: var(--dark);
+	--link-color: var(--text-color);
+	--cube-edge-color: var(--text-color);
+	--cube-square-border-sm: 1px solid var(--cube-edge-color);
 }

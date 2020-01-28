@@ -6,11 +6,11 @@
 @import "./cube";
 
 ::-moz-selection {
-	background: $highlight-color;
+	background: rgba(gray, 0.5);
 }
 
 ::selection {
-	background: $highlight-color;
+	background: rgba(gray, 0.5);
 }
 
 * {
@@ -25,42 +25,51 @@ html {
 }
 
 body {
-	color: $text-color;
-	text-shadow: 0.25px 0.25px 1px rgba($dark, 0.15);
-	background: $background-color;
+	color: var(--text-color);
+	background: var(--background-color);
+
+	font-family: var(--sans);
+	text-shadow: 0.25px 0.25px 1px rgba(var(--dark), 0.15);
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
 	width: 100%;
 	min-height: 100vh;
-	font-family: $sans;
 	font-weight: 400;
 
-	@include transition(background $transition-normal, color $transition-normal);
+	@include transition(
+		background var(--transition-normal),
+		color var(--transition-normal)
+	);
 }
 
 .container {
 	display: block;
 	width: 100%;
 	margin: 0 auto;
-	padding: 0 $gutter;
+	padding: 0 var(--gutter);
 	position: relative;
 }
 
 a {
-	color: $link-color;
+	color: var(--link-color);
 
-	@include transition(color $transition-normal, opacity $transition-fast);
+	@include transition(
+		color var(--transition-normal),
+		opacity var(--transition-fast)
+	);
+
+	&:hover {
+		color: var(--link-color-hover);
+	}
 
 	&:hover:not([data-active="true"]) {
-		color: rgba($link-color, 0.8);
+		// color: rgba(var(--link-color), 0.8);
 	}
 }
 
-main {
-	> section {
-		margin: $gutter 0;
-	}
+main > section {
+	margin: var(--gutter) 0;
 }
 
 h1,
@@ -100,12 +109,11 @@ p {
 	}
 }
 
-.content-nav {
-	padding: 0 $gutter;
+.nav {
+	padding: 0 var(--gutter);
 
 	a {
 		text-decoration: none;
-
 		@include animated-underline;
 	}
 
@@ -220,23 +228,23 @@ p {
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		background: $light;
+		background: var(--light);
 		z-index: -1;
 
-		@include transition(background $transition-normal);
+		@include transition(background var(--transition-normal));
 	}
 
 	.work-item-content {
 		z-index: 10;
 		width: 100%;
 		height: 100%;
-		background: $dark;
-		border: 1px solid $light;
+		background: var(--dark);
+		border: 1px solid var(--light);
 		transform: translate(0.1rem, -0.1rem);
 
 		@include transition(
-			transform $transition-default,
-			background $transition-normal
+			transform var(--transition-default),
+			background var(--transition-normal)
 		);
 
 		.content-container {
@@ -253,9 +261,6 @@ p {
 	}
 }
 
-.about-content {
-}
-
 .copy-width {
 	max-width: 600px;
 }
@@ -264,4 +269,12 @@ p {
 	width: 1rem;
 	height: 1rem;
 	padding-top: 0.25rem;
+}
+
+.anim {
+	opacity: 0;
+
+	&.ease-in {
+		// transform: translateY(3rem);
+	}
 }

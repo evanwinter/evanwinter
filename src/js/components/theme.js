@@ -1,4 +1,4 @@
-import Utils from "../helpers/utilities"
+import { getRandomNumber } from "../helpers/utilities"
 
 const Theme = {
 	body: null,
@@ -20,7 +20,7 @@ const Theme = {
 		this.set(nextTheme)
 	},
 
-	random: function() {
+	randomize: function() {
 		const color = this.getRandomColor()
 		this.body.dataset.theme = color
 	},
@@ -28,7 +28,7 @@ const Theme = {
 	getRandomColor: function() {
 		const currentTheme = this.body.dataset.theme
 		const otherThemes = this.themes.filter((theme) => theme !== currentTheme) // don't repeat themes
-		const randomIndex = Utils.getRandomNumber(0, otherThemes.length - 1)
+		const randomIndex = getRandomNumber(0, otherThemes.length - 1)
 		return otherThemes[randomIndex]
 	},
 }
