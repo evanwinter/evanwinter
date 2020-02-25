@@ -1,3 +1,9 @@
+import pdf from "../../assets/documents/WinterEvanResume.pdf"
+
+console.log(pdf)
+
+console.log("asdfh")
+
 export const about = `
 	<div id="content-type-root" class="about-content grid two">
 		<div>
@@ -132,6 +138,9 @@ export const contact = `
 			<a href="https://linkedin.com/in/evan-andrew-winter" target="_blank"
 				rel="noopener noreferrer">LinkedIn</a>
 			or send me an email at <a href="mailto:evan@evanwinter.me" target="_blank">evan@evanwinter.me</a>.
+		</p>
+		<p>
+			You can download a copy of my professional resume <a href="${pdf}" target="_blank" rel="noopener noreferrer">here</a>.
 		</p>
 	</div>
 `
