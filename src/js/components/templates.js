@@ -1,9 +1,5 @@
 import pdf from "../../assets/documents/WinterEvanResume.pdf"
 
-console.log(pdf)
-
-console.log("asdfh")
-
 export const about = `
 	<div id="content-type-root" class="about-content grid two">
 		<div>
