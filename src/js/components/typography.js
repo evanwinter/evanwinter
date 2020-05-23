@@ -1,6 +1,6 @@
 import Typography from "typography"
 
-const FONTS = ["neue haas unica", "-apple-system", "system-ui", "sans-serif"]
+const FONTS = ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif']
 
 const typography = new Typography({
 	baseFontSize: "16px",

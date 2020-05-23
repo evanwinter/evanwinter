@@ -4,48 +4,17 @@ export const about = `
 	<div id="content-type-root" class="about-content grid two">
 		<div>
 			<p>
-				I'm currently a developer for advertising agency Schafer Condon Carter. 
-				We're a small team producing websites, apps, components,
-				patterns, guidance, and tools to help our clients both large and small
-				create engaging digital experiences.
-			</p>
-			<p>
-				I'm primarily a front-end engineer, but I'm quickly expanding my knowledge
-				of other parts of the stack. I've got an eye for design and take an empathetic approach
-				to user experience.
+				I'm currently a developer for Brookfield Properties, a real estate services company.
 			</p>
 			<p>
 				I graduated from the University of Wisconsin-Madison in 2018, where I studied
 				computer science and strategic communication.
 			</p>
-		</div>
-		<div>
 			<p>
 				I'm an avid learner and like to keep up with the latest tech.
 				Some things I'm exploring in my free time include data visualization,
 				progressive web apps, design systems, and natural language processing.
 			</p>
-			<p>
-				A few technologies I've been working with recently include:
-			</p>
-			<div class="flex min-content">
-				<div>
-					<ul>
-						<li>JavaScript (ES6+)</li>
-						<li>React</li>
-						<li>GraphQL</li>
-						<li>Progressive web apps</li>
-					</ul>
-				</div>
-				<div>
-					<ul>
-						<li>HTML & (S)CSS</li>
-						<li>Wagtail</li>
-						<li>Adobe AEM</li>
-						<li>Magento 2</li>
-					</ul>
-				</div>
-			</div>
 		</div>
 	</div>
 `
