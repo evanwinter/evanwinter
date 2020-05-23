@@ -12,7 +12,6 @@ const Cube = {
 	listen: function() {
 		this.cube.addEventListener("click", (e) => {
 			Theme.randomize()
-			window.navigator.vibrate(200);
 		})
 	},
 
