@@ -1,7 +1,7 @@
 import anime from "animejs"
 
 const Transition = {
-	rootClass: `#root`,
+	rootClass: `#main`, 
 
 	to: function(route, renderFn) {
 		// default transition options
@@ -44,7 +44,8 @@ const Transition = {
 		anime({
 			targets: ".anim.ease-in",
 			opacity: 1,
-			duration: 5000,
+			duration: 1000,
+			easing: "easeInOutQuad",
 			delay: 750,
 			// delay: anime.stagger(500)
 			// translateY: 0,

@@ -1,12 +1,12 @@
 import Router from "./components/router"
-import Cube from "./components/cube"
 import Theme from "./components/theme"
+import Nav from "./components/nav"
 
 const App = {
 	init: () => {
 		Router.init()
-		Cube.init()
-		Theme.init()
+    Theme.init()
+    Nav.init()
 	},
 }
 

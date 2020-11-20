@@ -1,124 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Evan Winter</title>
+		<meta
+			name="description"
+			content="Evan Winter is a front-end software engineer in Chicago, Illinois."
+		/>
+		<meta name="author" content="Evan Winter" />
+		<meta name="monetization" content="$ilp.uphold.com/3dH6dNfywHzx" />
+		<link rel="stylesheet" href="https://use.typekit.net/rrs4cwq.css" />
+		<link rel="icon" href="/favicon.ico" />
+	</head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Evan Winter</title>
-  <meta name="description" content="Evan Winter is a front-end engineer based in Chicago, Illinois." />
-  <meta name="author" content="Evan Winter" />
-  <meta name="monetization" content="$ilp.uphold.com/3dH6dNfywHzx" />
-  <link rel="stylesheet" href="https://use.typekit.net/rrs4cwq.css">
-  <link rel="icon" href="/favicon.ico" />
-</head>
-
-<body>
-  <main>
-    <section class="intro-section anim ease-in">
-      <div class="container">
-        <h1 class="intro-heading">Hello, my name is Evan Winter.
-          <div class="cube-container">
-            <div class="cube skew">
-              <div class="cube-wrapper">
-                <div class="side skew front">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-                <div class="side skew back">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-                <div class="side skew top">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-                <div class="side skew bottom">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-                <div class="side skew left">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-                <div class="side skew right">
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                  <div class="square"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </h1>
-        <p class="intro-copy">
-          I'm a front-end software engineer based in Chicago, specializing in building high-quality websites and
-          applications.
-        </p>
-      </div>
-    </section>
-    <section class="nav-section anim ease-in">
-      <nav class="nav" role="navigation">
-        <ul>
-          <li><a href="#home" data-route="home">Home</a></li>
-          <li><a href="#about" data-route="about">About</a></li>
-          <li><a href="#contact" data-route="contact">Contact</a></li>
-          <li><a href="https://github.com/evanwinter/" rel="noopener noreferrer" target="_blank">GitHub
-              <svg xmlns="http://www.w3.org/2000/svg" class="nav-icon" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-external-link">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                <polyline points="15 3 21 3 21 9"></polyline>
-                <line x1="10" y1="14" x2="21" y2="3"></line>
-              </svg>
-            </a></li>
-        </ul>
-      </nav>
-    </section>
-    <section class="content-section anim ease-in">
-      <div class="container" id="root"></div>
-    </section>
-  </main>
-  <script type="text/javascript" src="js/index.js"></script>
-</body>
-
+	<body>
+		<div class="layout anim ease-in">
+			<header id="header">
+				<h1>Evan Winter</h1>
+				<p>
+					Evan is a front-end software engineer building high-quality websites and software in Chicago.
+				</p>
+				<p>
+				</p>
+				<nav class="nav" role="navigation">
+					<a href="#home" data-route="home">Home</a>
+					<a href="#about" data-route="about">About</a>
+					<a href="#projects" data-route="projects">Projects</a>
+					<a href="#contact" data-route="contact">Contact</a>
+					<a href="#timeline" data-route="timeline">Timeline</a>
+					<a
+						href="https://github.com/evanwinter/"
+						target="_blank"
+						ref="noopener noreferrer"
+						>Github</a
+					>
+				</nav>
+			</header>
+			<main id="main"></main>
+		</div>
+		
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
 </html>

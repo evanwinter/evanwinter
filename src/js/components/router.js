@@ -5,7 +5,7 @@ import Theme from "./theme"
 
 const Router = {
 	root: null,
-	rootClass: `#root`,
+	rootClass: `#main`,
 	controller: null,
 	controllerClass: `.nav`,
 
